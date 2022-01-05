@@ -684,23 +684,29 @@ public class homeGUI extends javax.swing.JFrame {
         //</editor-fold>
         loginMap = new HashMap<>();
         try{
-            FileReader fileReader = new FileReader("CSV_Files/Members.csv");
+            FileReader fileReader = new FileReader("src/CSV_Files/Members.csv");
             BufferedReader csvReader = new BufferedReader(fileReader);
             
             String row;
-            
-            
+           
+            boolean isFirstLine = true;
             while ((row = csvReader.readLine())!=null){
+                //skip first line
+                if(isFirstLine){
+                    isFirstLine = false;
+                    continue;
+                }
                 String loginDetails[] = row.split(",");
-                String userName = loginDetails[4];
-                String password = loginDetails[5];
+                String userName = loginDetails[3];
+                String password = loginDetails[4];
                 loginMap.put(userName, password);
             }
             fileReader.close();
             csvReader.close();
         }
-        catch(FileNotFoundException e){}
-        catch(IOException ioe) {}
+        catch(FileNotFoundException e){System.out.println("File not found");}
+        catch(IOException ioe) {System.out.println("IO Exception");}
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
