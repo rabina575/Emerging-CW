@@ -6,7 +6,7 @@ package emerging_cw;
 
 /**
  *
- * @author Rabina
+ * @author Rabina, Aashna, Subriti
  */
 public class homeGUI extends javax.swing.JFrame {
 
