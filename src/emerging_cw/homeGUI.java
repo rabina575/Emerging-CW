@@ -4,6 +4,12 @@
  */
 package emerging_cw;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+
 /**
  *
  * @author Aashna, Rabina, Subriti
@@ -50,9 +56,9 @@ public class homeGUI extends javax.swing.JFrame {
         loginMember_jPanel = new javax.swing.JPanel();
         admin_jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        memberNameField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        memberPasswordField = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
@@ -264,11 +270,11 @@ public class homeGUI extends javax.swing.JFrame {
 
         jLabel3.setText("Username");
 
-        jTextField3.setText("jTextField1");
+        memberNameField.setText("jTextField1");
 
         jLabel4.setText("Password");
 
-        jTextField4.setText("jTextField1");
+        memberPasswordField.setText("jTextField1");
 
         jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -295,8 +301,8 @@ public class homeGUI extends javax.swing.JFrame {
                 .addGroup(loginMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginMember_jPanelLayout.createSequentialGroup()
                         .addGroup(loginMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(memberNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(memberPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(admin_jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32))
                     .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)))
@@ -308,11 +314,11 @@ public class homeGUI extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(memberNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(memberPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(admin_jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
@@ -599,6 +605,22 @@ public class homeGUI extends javax.swing.JFrame {
 
     private void admin_jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_jButton2ActionPerformed
         // TODO add your handling code here:
+        String enteredUserName = memberNameField.getText();
+        String enteredPassword = memberPasswordField.getText();
+       
+       if(loginMap.containsKey(enteredUserName)){
+           String storedPassword = loginMap.get(enteredUserName);
+           if(enteredPassword.equals(storedPassword)){
+               System.out.println("Login Successful");
+           }
+           else{
+               System.out.println("Nooooooooooo");
+           }
+        
+       }
+       else{
+           System.out.println("User not found");
+       }
     }//GEN-LAST:event_admin_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -636,6 +658,7 @@ public class homeGUI extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    static HashMap<String, String> loginMap;
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -660,7 +683,25 @@ public class homeGUI extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+        loginMap = new HashMap<>();
+        try{
+            FileReader fileReader = new FileReader("CSV_Files/Members.csv");
+            BufferedReader csvReader = new BufferedReader(fileReader);
+            
+            String row;
+            
+            
+            while ((row = csvReader.readLine())!=null){
+                String loginDetails[] = row.split(",");
+                String userName = loginDetails[4];
+                String password = loginDetails[5];
+                loginMap.put(userName, password);
+            }
+            fileReader.close();
+            csvReader.close();
+        }
+        catch(FileNotFoundException e){}
+        catch(IOException ioe) {}
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -704,15 +745,20 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+<<<<<<< HEAD
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+=======
+>>>>>>> cd37b5cbb52fa6cd7f258dac2c2e14f7e5db1244
     private javax.swing.JPanel loginAdmin_jPanel;
     private javax.swing.JPanel loginMember_jPanel;
     private javax.swing.JPanel main_jPanel;
+    private javax.swing.JTextField memberNameField;
+    private javax.swing.JTextField memberPasswordField;
     private javax.swing.JButton member_jButton;
     private javax.swing.JLabel newAccount_jLabel;
     private javax.swing.JButton registermember_jButton;
