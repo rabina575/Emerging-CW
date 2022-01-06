@@ -57,15 +57,15 @@ public class homeGUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         adminName_jTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        adminPassword_jTextField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        admin_jPasswordField = new javax.swing.JPasswordField();
         loginMember_jPanel = new javax.swing.JPanel();
         memberLogin_jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         memberNameField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        memberPasswordField = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        member_jPasswordField = new javax.swing.JPasswordField();
         jPanel3 = new javax.swing.JPanel();
         BackButton_Registration = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -234,6 +234,12 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
 
+        admin_jPasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                admin_jPasswordFieldActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout loginAdmin_jPanelLayout = new javax.swing.GroupLayout(loginAdmin_jPanel);
         loginAdmin_jPanel.setLayout(loginAdmin_jPanelLayout);
         loginAdmin_jPanelLayout.setHorizontalGroup(
@@ -248,31 +254,30 @@ public class homeGUI extends javax.swing.JFrame {
                         .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginAdmin_jPanelLayout.createSequentialGroup()
-                .addGap(0, 38, Short.MAX_VALUE)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addGroup(loginAdmin_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginAdmin_jPanelLayout.createSequentialGroup()
-                        .addGroup(loginAdmin_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(adminName_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(adminPassword_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(adminLogin_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32))
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(adminLogin_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminName_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(admin_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(loginAdmin_jPanelLayout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(jButton1))))
         );
         loginAdmin_jPanelLayout.setVerticalGroup(
             loginAdmin_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginAdmin_jPanelLayout.createSequentialGroup()
                 .addComponent(jButton1)
-                .addGap(29, 29, 29)
+                .addGap(17, 17, 17)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(adminName_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(adminPassword_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(admin_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(adminLogin_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         loginMember_jPanel.setBackground(new java.awt.Color(64, 132, 173));
@@ -293,12 +298,6 @@ public class homeGUI extends javax.swing.JFrame {
         jLabel3.setText("Username");
 
         jLabel4.setText("Password");
-
-        memberPasswordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                memberPasswordFieldActionPerformed(evt);
-            }
-        });
 
         jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -323,13 +322,13 @@ public class homeGUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginMember_jPanelLayout.createSequentialGroup()
                 .addGap(0, 38, Short.MAX_VALUE)
                 .addGroup(loginMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginMember_jPanelLayout.createSequentialGroup()
                         .addGroup(loginMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(memberNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(memberPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(memberLogin_jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32))
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(memberLogin_jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(member_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32))))
         );
         loginMember_jPanelLayout.setVerticalGroup(
             loginMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -342,8 +341,8 @@ public class homeGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(memberPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(member_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(memberLogin_jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
@@ -743,7 +742,7 @@ public class homeGUI extends javax.swing.JFrame {
     private void adminLogin_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminLogin_jButtonActionPerformed
         // TODO add your handling code here:
         String enteredUserName = adminName_jTextField.getText();
-        String enteredPassword = adminPassword_jTextField.getText();
+        String enteredPassword = admin_jPasswordField.getText();
         if(enteredUserName.equals("Admin")){
             if(enteredPassword.equals("@admin")){
                 jPanel4.setVisible(true);
@@ -763,7 +762,7 @@ public class homeGUI extends javax.swing.JFrame {
     private void memberLogin_jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberLogin_jButton2ActionPerformed
         // TODO add your handling code here:
         String enteredUserName = memberNameField.getText();
-        String enteredPassword = memberPasswordField.getText();
+        String enteredPassword = member_jPasswordField.getText();
        
        if(loginMap.containsKey(enteredUserName)){
            String storedPassword = loginMap.get(enteredUserName);
@@ -870,10 +869,6 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
-    private void memberPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberPasswordFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_memberPasswordFieldActionPerformed
-
     private void manual_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manual_jMenuItemActionPerformed
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser("src/CSV_Files/Members.csv");
@@ -903,6 +898,10 @@ public class homeGUI extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_open_jMenuItemActionPerformed
+
+    private void admin_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_jPasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_admin_jPasswordFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -974,8 +973,8 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JLabel academyimage_jLabel;
     private javax.swing.JButton adminLogin_jButton;
     private javax.swing.JTextField adminName_jTextField;
-    private javax.swing.JTextField adminPassword_jTextField;
     private javax.swing.JButton admin_jButton;
+    private javax.swing.JPasswordField admin_jPasswordField;
     private javax.swing.JLabel age_jLabel;
     private javax.swing.JTextField age_jTextField;
     private javax.swing.JButton back_jButton;
@@ -1016,8 +1015,8 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem manual_jMenuItem;
     private javax.swing.JButton memberLogin_jButton2;
     private javax.swing.JTextField memberNameField;
-    private javax.swing.JTextField memberPasswordField;
     private javax.swing.JButton member_jButton;
+    private javax.swing.JPasswordField member_jPasswordField;
     private javax.swing.JLabel name_jLabel;
     private javax.swing.JTextField name_jTextField;
     private javax.swing.JLabel newAccount_jLabel;
