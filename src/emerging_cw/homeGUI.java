@@ -574,7 +574,7 @@ public class homeGUI extends javax.swing.JFrame {
         searchBy_jButton.add(jRadioButton2);
         jRadioButton2.setText("Price");
         jPanel4.add(jRadioButton2);
-        jRadioButton2.setBounds(190, 13, 49, 30);
+        jRadioButton2.setBounds(190, 13, 70, 30);
 
         instrument_jPanel.add(jPanel4);
         jPanel4.setBounds(27, 142, 680, 300);
