@@ -102,7 +102,7 @@ public class homeGUI extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         back_jButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        fileHelp_jMenuBar = new javax.swing.JMenuBar();
         file_jMenu = new javax.swing.JMenu();
         open_jMenuItem = new javax.swing.JMenuItem();
         exit_jMenuItem = new javax.swing.JMenuItem();
@@ -121,11 +121,11 @@ public class homeGUI extends javax.swing.JFrame {
         main_jPanel.setBackground(new java.awt.Color(230, 244, 254));
         main_jPanel.setLayout(null);
 
-        academy_jlabel.setFont(new java.awt.Font("Pristina", 0, 36)); // NOI18N
-        academy_jlabel.setForeground(new java.awt.Color(51, 153, 255));
-        academy_jlabel.setText("Serene  Music Academy.");
+        academy_jlabel.setFont(new java.awt.Font("Pristina", 1, 36)); // NOI18N
+        academy_jlabel.setForeground(new java.awt.Color(164, 164, 245));
+        academy_jlabel.setText("Symphony Academy of Music.");
         main_jPanel.add(academy_jlabel);
-        academy_jlabel.setBounds(230, 30, 300, 44);
+        academy_jlabel.setBounds(170, 30, 400, 44);
 
         academyAddress_jlabel.setFont(new java.awt.Font("Maiandra GD", 0, 14)); // NOI18N
         academyAddress_jlabel.setForeground(new java.awt.Color(102, 204, 255));
@@ -651,7 +651,7 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
         instrument_jPanel.add(back_jButton);
-        back_jButton.setBounds(670, 440, 60, 30);
+        back_jButton.setBounds(650, 440, 60, 30);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Instrument Wallpaper.png"))); // NOI18N
         instrument_jPanel.add(jLabel7);
@@ -675,7 +675,7 @@ public class homeGUI extends javax.swing.JFrame {
         });
         file_jMenu.add(exit_jMenuItem);
 
-        jMenuBar1.add(file_jMenu);
+        fileHelp_jMenuBar.add(file_jMenu);
 
         help_jMenu.setText("Help");
 
@@ -687,9 +687,9 @@ public class homeGUI extends javax.swing.JFrame {
         });
         help_jMenu.add(manual_jMenuItem);
 
-        jMenuBar1.add(help_jMenu);
+        fileHelp_jMenuBar.add(help_jMenu);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(fileHelp_jMenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -703,11 +703,11 @@ public class homeGUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(main_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(instrument_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 51, Short.MAX_VALUE)))
+                    .addGap(0, 31, Short.MAX_VALUE)))
         );
 
         main_jPanel.getAccessibleContext().setAccessibleName("");
@@ -973,6 +973,7 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JButton back_jButton;
     private javax.swing.JLabel backgroundimage_jLabel;
     private javax.swing.JMenuItem exit_jMenuItem;
+    private javax.swing.JMenuBar fileHelp_jMenuBar;
     private javax.swing.JMenu file_jMenu;
     private javax.swing.JMenu help_jMenu;
     private javax.swing.JPanel home_jPanel;
@@ -993,7 +994,6 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
