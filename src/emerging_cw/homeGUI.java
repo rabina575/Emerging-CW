@@ -114,9 +114,9 @@ public class homeGUI extends javax.swing.JFrame {
         setBackground(new java.awt.Color(230, 244, 254));
         setBounds(new java.awt.Rectangle(390, 180, 0, 0));
         setIconImages(null);
-        setPreferredSize(new java.awt.Dimension(750, 500));
+        setPreferredSize(new java.awt.Dimension(750, 530));
         setResizable(false);
-        setSize(new java.awt.Dimension(750, 500));
+        setSize(new java.awt.Dimension(750, 530));
 
         main_jPanel.setBackground(new java.awt.Color(230, 244, 254));
         main_jPanel.setLayout(null);
@@ -655,7 +655,7 @@ public class homeGUI extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Instrument Wallpaper.png"))); // NOI18N
         instrument_jPanel.add(jLabel7);
-        jLabel7.setBounds(0, 0, 990, 470);
+        jLabel7.setBounds(0, 0, 990, 500);
 
         file_jMenu.setText("File");
 
@@ -701,11 +701,13 @@ public class homeGUI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(main_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(main_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(instrument_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 1, Short.MAX_VALUE)))
+                    .addGap(0, 51, Short.MAX_VALUE)))
         );
 
         main_jPanel.getAccessibleContext().setAccessibleName("");
@@ -859,6 +861,20 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_memberPasswordFieldActionPerformed
 
+    private void manual_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manual_jMenuItemActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser("src/CSV_Files/Members.csv");
+        int userSelection = fileChooser.showOpenDialog(this);
+        if(userSelection == JFileChooser.APPROVE_OPTION){
+            File fileToSave = fileChooser.getSelectedFile();
+        }
+    }//GEN-LAST:event_manual_jMenuItemActionPerformed
+
+    private void exit_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_jMenuItemActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_exit_jMenuItemActionPerformed
+
     private void open_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_open_jMenuItemActionPerformed
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
@@ -874,20 +890,6 @@ public class homeGUI extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_open_jMenuItemActionPerformed
-
-    private void exit_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_jMenuItemActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_exit_jMenuItemActionPerformed
-
-    private void manual_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manual_jMenuItemActionPerformed
-        // TODO add your handling code here:
-        JFileChooser fileChooser = new JFileChooser("src/CSV_Files/Members.csv");
-        int userSelection = fileChooser.showOpenDialog(this);
-        if(userSelection == JFileChooser.APPROVE_OPTION){
-            File fileToSave = fileChooser.getSelectedFile();
-        }
-    }//GEN-LAST:event_manual_jMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
