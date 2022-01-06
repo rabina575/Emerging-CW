@@ -752,11 +752,11 @@ public class homeGUI extends javax.swing.JFrame {
                 jPanel3.setVisible(false);
             }
             else{
-                System.out.println("Incorrect Password");
+                JOptionPane.showMessageDialog(this, "Incorrect Password","ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
             }
         }
         else{
-            System.out.println("Invalid Username");
+            JOptionPane.showMessageDialog(this, "Invalid Username","ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
         }        
     }//GEN-LAST:event_adminLogin_jButtonActionPerformed
 
@@ -778,11 +778,11 @@ public class homeGUI extends javax.swing.JFrame {
                back_jButton.setVisible(true);               
            }
            else{
-               System.out.println("Invalid Password");
+               JOptionPane.showMessageDialog(this, "Invalid Password","ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
            }        
        }
        else{
-           System.out.println("User not found");
+           JOptionPane.showMessageDialog(this, "User not found","ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
        }       
     }//GEN-LAST:event_memberLogin_jButton2ActionPerformed
 
@@ -819,28 +819,41 @@ public class homeGUI extends javax.swing.JFrame {
         String age= age_jTextField.getText();
         String specialization= specialization_jTextField.getText();
         String username= username_jTextField.getText();
-        String password= password_jPasswordField.getText();        
-        
-        String[]values= {name,age,specialization,username,password};
-        int rowCount= MemberInfo_jTable.getRowCount();
-        int columnCount= MemberInfo_jTable.getColumnCount();
-        int rowIndex=0;
-        do
+        String password= password_jPasswordField.getText();
+        String repassword= repassword_jPasswordField.getText();
+        if (password.equals(repassword))
         {
-            String s= (String)MemberInfo_jTable.getValueAt(rowIndex,0);
-            if (s!= null && s.length()!=0)
+            String[]values= {name,age,specialization,username,password};
+            int rowCount= MemberInfo_jTable.getRowCount();
+            int columnCount= MemberInfo_jTable.getColumnCount();
+            int rowIndex=0;
+            do
             {
-                rowIndex++;
+                String s= (String)MemberInfo_jTable.getValueAt(rowIndex,0);
+                if (s!= null && s.length()!=0)
+                {
+                    rowIndex++;
+                }
+                else
+                {
+                    break;
+                }
             }
-            else
+            while (rowIndex<rowCount);
+            for (int i=0; i<columnCount; i++)
             {
-                break;
+                MemberInfo_jTable.setValueAt(values[i],rowIndex,i);
             }
+            name_jTextField.setText("");
+            age_jTextField.setText("");
+            specialization_jTextField.setText("");
+            username_jTextField.setText("");
+            password_jPasswordField.setText("");
+            repassword_jPasswordField.setText("");
         }
-        while (rowIndex<rowCount);
-        for (int i=0; i<columnCount; i++)
+        else
         {
-            MemberInfo_jTable.setValueAt(values[i],rowIndex,i);
+            JOptionPane.showMessageDialog(rootPane, "Incorrect Password. Please re-check!");
         }
     }//GEN-LAST:event_Submit_jButtonActionPerformed
 
@@ -951,11 +964,6 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
     }                                                
-
-    private void Exit_buttonActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
-        System.exit(0);
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton_Registration;
