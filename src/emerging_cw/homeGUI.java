@@ -640,9 +640,9 @@ public class homeGUI extends javax.swing.JFrame {
         jPanel2.setBounds(10, 20, 720, 100);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setText("Admin and Instruments");
+        jLabel6.setText("Instruments");
         instrument_jPanel.add(jLabel6);
-        jLabel6.setBounds(310, 120, 160, 17);
+        jLabel6.setBounds(320, 120, 90, 17);
 
         back_jButton.setText("Back");
         back_jButton.addActionListener(new java.awt.event.ActionListener() {
@@ -766,27 +766,22 @@ public class homeGUI extends javax.swing.JFrame {
        if(loginMap.containsKey(enteredUserName)){
            String storedPassword = loginMap.get(enteredUserName);
            if(enteredPassword.equals(storedPassword)){
+               instrument_jPanel.setVisible(true);
                jPanel4.setVisible(true);
-               main_jPanel.setVisible(true);
-               home_jPanel.setVisible(false);
+               loginMember_jPanel.setVisible(false);
+               users_jPanel.setVisible(false);
+               main_jPanel.setVisible(false);
+               home_jPanel.setVisible(false);        
                jPanel3.setVisible(false);
+               back_jButton.setVisible(true);               
            }
            else{
                System.out.println("Invalid Password");
-           }
-        
+           }        
        }
        else{
            System.out.println("User not found");
-       }
-       instrument_jPanel.setVisible(true);
-       jPanel4.setVisible(true);
-       loginMember_jPanel.setVisible(false);
-       users_jPanel.setVisible(false);
-       main_jPanel.setVisible(false);
-       home_jPanel.setVisible(false);        
-       jPanel3.setVisible(false);
-       back_jButton.setVisible(true);
+       }       
     }//GEN-LAST:event_memberLogin_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
