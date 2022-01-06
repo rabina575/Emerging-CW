@@ -649,10 +649,7 @@ public class homeGUI extends javax.swing.JFrame {
         instrument_jPanel.add(jLabel6);
         jLabel6.setBounds(310, 120, 160, 17);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Back.png"))); // NOI18N
         jButton4.setText("Back");
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -945,13 +942,8 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-<<<<<<< HEAD
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-=======
->>>>>>> ad24e3cdfb43fb081b449780a834a99bef3a6cfb
     private javax.swing.JPanel loginAdmin_jPanel;
     private javax.swing.JPanel loginMember_jPanel;
     private javax.swing.JPanel main_jPanel;
