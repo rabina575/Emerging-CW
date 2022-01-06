@@ -25,7 +25,7 @@ public class homeGUI extends javax.swing.JFrame {
         loginMember_jPanel.setVisible(false);
         jPanel3.setVisible(false);
         jPanel4.setVisible(false);
-        //main_jPanel1.setVisible(false);
+        back_jButton.setVisible(false);
     }
 
     /**
@@ -96,7 +96,7 @@ public class homeGUI extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        back_jButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -634,14 +634,14 @@ public class homeGUI extends javax.swing.JFrame {
         instrument_jPanel.add(jLabel6);
         jLabel6.setBounds(310, 120, 160, 17);
 
-        jButton4.setText("Back");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        back_jButton.setText("Back");
+        back_jButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                back_jButtonActionPerformed(evt);
             }
         });
-        instrument_jPanel.add(jButton4);
-        jButton4.setBounds(670, 440, 60, 30);
+        instrument_jPanel.add(back_jButton);
+        back_jButton.setBounds(670, 440, 60, 30);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Instrument Wallpaper.png"))); // NOI18N
         instrument_jPanel.add(jLabel7);
@@ -685,8 +685,6 @@ public class homeGUI extends javax.swing.JFrame {
         home_jPanel.setVisible(false);
         jPanel3.setVisible(true);
         jPanel4.setVisible(false);
-        
-        
     }//GEN-LAST:event_registermember_jButtonActionPerformed
 
     private void member_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_member_jButtonActionPerformed
@@ -744,6 +742,7 @@ public class homeGUI extends javax.swing.JFrame {
        main_jPanel.setVisible(false);
        home_jPanel.setVisible(false);        
        jPanel3.setVisible(false);
+       back_jButton.setVisible(true);
     }//GEN-LAST:event_memberLogin_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -804,14 +803,14 @@ public class homeGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Submit_jButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void back_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_jButtonActionPerformed
         // TODO add your handling code here:
         jPanel4.setVisible(false);
         main_jPanel.setVisible(true);
         home_jPanel.setVisible(true);
         users_jPanel.setVisible(true);
         instrument_jPanel.setVisible(false);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_back_jButtonActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
@@ -900,12 +899,12 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JButton admin_jButton;
     private javax.swing.JLabel age_jLabel;
     private javax.swing.JTextField age_jTextField;
+    private javax.swing.JButton back_jButton;
     private javax.swing.JLabel backgroundimage_jLabel;
     private javax.swing.JPanel home_jPanel;
     private javax.swing.JPanel instrument_jPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
