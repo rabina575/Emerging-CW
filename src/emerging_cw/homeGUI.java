@@ -133,7 +133,7 @@ public class homeGUI extends javax.swing.JFrame {
         academyAddress_jlabel.setIconTextGap(0);
         academyAddress_jlabel.setMaximumSize(new java.awt.Dimension(0, 0));
         main_jPanel.add(academyAddress_jlabel);
-        academyAddress_jlabel.setBounds(290, 80, 220, 18);
+        academyAddress_jlabel.setBounds(340, 80, 220, 18);
 
         home_jPanel.setBackground(new java.awt.Color(230, 244, 254));
         home_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
@@ -376,7 +376,7 @@ public class homeGUI extends javax.swing.JFrame {
         );
 
         main_jPanel.add(home_jPanel);
-        home_jPanel.setBounds(27, 142, 680, 300);
+        home_jPanel.setBounds(27, 137, 680, 300);
 
         jPanel3.setBackground(new java.awt.Color(230, 244, 254));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
@@ -518,7 +518,7 @@ public class homeGUI extends javax.swing.JFrame {
                         .addComponent(Submit_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(46, Short.MAX_VALUE))
+                        .addContainerGap(32, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(BackButton_Registration)
@@ -526,7 +526,7 @@ public class homeGUI extends javax.swing.JFrame {
         );
 
         main_jPanel.add(jPanel3);
-        jPanel3.setBounds(27, 142, 680, 300);
+        jPanel3.setBounds(27, 137, 680, 300);
 
         backgroundimage_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Music Notes.png"))); // NOI18N
         backgroundimage_jLabel.setMinimumSize(new java.awt.Dimension(500, 700));
@@ -587,7 +587,7 @@ public class homeGUI extends javax.swing.JFrame {
         jRadioButton2.setBounds(190, 13, 70, 30);
 
         instrument_jPanel.add(jPanel4);
-        jPanel4.setBounds(27, 142, 680, 300);
+        jPanel4.setBounds(27, 137, 680, 300);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -637,7 +637,7 @@ public class homeGUI extends javax.swing.JFrame {
         );
 
         instrument_jPanel.add(jPanel2);
-        jPanel2.setBounds(10, 20, 720, 100);
+        jPanel2.setBounds(10, 15, 720, 100);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("Instruments");
@@ -651,7 +651,7 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
         instrument_jPanel.add(back_jButton);
-        back_jButton.setBounds(650, 440, 60, 30);
+        back_jButton.setBounds(650, 437, 60, 30);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Instrument Wallpaper.png"))); // NOI18N
         instrument_jPanel.add(jLabel7);
