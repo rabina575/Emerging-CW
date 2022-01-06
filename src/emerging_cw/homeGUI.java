@@ -37,6 +37,7 @@ public class homeGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        searchBy_jButton = new javax.swing.ButtonGroup();
         main_jPanel = new javax.swing.JPanel();
         academy_jlabel = new javax.swing.JLabel();
         academyAddress_jlabel = new javax.swing.JLabel();
@@ -86,6 +87,8 @@ public class homeGUI extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -93,8 +96,8 @@ public class homeGUI extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -547,13 +550,12 @@ public class homeGUI extends javax.swing.JFrame {
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
         jPanel4.setLayout(null);
 
-        jLabel14.setText("Display");
+        jLabel14.setText("Search by:");
         jPanel4.add(jLabel14);
-        jLabel14.setBounds(500, 0, 40, 14);
+        jLabel14.setBounds(30, 20, 60, 14);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -574,7 +576,24 @@ public class homeGUI extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
 
         jPanel4.add(jScrollPane2);
-        jScrollPane2.setBounds(30, 40, 610, 250);
+        jScrollPane2.setBounds(30, 60, 610, 220);
+
+        jRadioButton1.setBackground(new java.awt.Color(166, 206, 229));
+        searchBy_jButton.add(jRadioButton1);
+        jRadioButton1.setText("Category");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jRadioButton1);
+        jRadioButton1.setBounds(100, 13, 71, 30);
+
+        jRadioButton2.setBackground(new java.awt.Color(166, 206, 229));
+        searchBy_jButton.add(jRadioButton2);
+        jRadioButton2.setText("Price");
+        jPanel4.add(jRadioButton2);
+        jRadioButton2.setBounds(190, 13, 49, 30);
 
         instrument_jPanel.add(jPanel4);
         jPanel4.setBounds(27, 142, 680, 300);
@@ -629,19 +648,22 @@ public class homeGUI extends javax.swing.JFrame {
         instrument_jPanel.add(jPanel2);
         jPanel2.setBounds(10, 20, 720, 100);
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setText("Admin and Instruments");
+        instrument_jPanel.add(jLabel6);
+        jLabel6.setBounds(310, 120, 160, 17);
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Back.png"))); // NOI18N
         jButton4.setText("Back");
+        jButton4.setBorderPainted(false);
+        jButton4.setContentAreaFilled(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
         instrument_jPanel.add(jButton4);
-        jButton4.setBounds(680, 440, 55, 23);
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setText("Admin and Instruments");
-        instrument_jPanel.add(jLabel6);
-        jLabel6.setBounds(310, 120, 160, 17);
+        jButton4.setBounds(640, 430, 110, 40);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Instrument Wallpaper.png"))); // NOI18N
         instrument_jPanel.add(jLabel7);
@@ -788,7 +810,7 @@ public class homeGUI extends javax.swing.JFrame {
         users_jPanel.setVisible(false);
         main_jPanel.setVisible(false);
         home_jPanel.setVisible(false);
-        //main_jPanel1.setVisible(true);
+        instrument_jPanel.setVisible(true);
         jPanel4.setVisible(true);
         jPanel3.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -801,6 +823,10 @@ public class homeGUI extends javax.swing.JFrame {
         users_jPanel.setVisible(true);
         instrument_jPanel.setVisible(false);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -898,6 +924,8 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
@@ -917,6 +945,7 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JButton registermember_jButton;
     private javax.swing.JLabel repassword_jLabel;
     private javax.swing.JPasswordField repassword_jPasswordField;
+    private javax.swing.ButtonGroup searchBy_jButton;
     private javax.swing.JLabel specialization_jLabel;
     private javax.swing.JTextField specialization_jTextField;
     private javax.swing.JLabel username_jLabel;
