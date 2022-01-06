@@ -49,14 +49,14 @@ public class homeGUI extends javax.swing.JFrame {
         member_jButton = new javax.swing.JButton();
         newAccount_jLabel = new javax.swing.JLabel();
         loginAdmin_jPanel = new javax.swing.JPanel();
-        admin_jButton1 = new javax.swing.JButton();
+        adminLogin_jButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        adminName_jTextField = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        adminPassword_jTextField = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         loginMember_jPanel = new javax.swing.JPanel();
-        admin_jButton2 = new javax.swing.JButton();
+        memberLogin_jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         memberNameField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -204,23 +204,19 @@ public class homeGUI extends javax.swing.JFrame {
         loginAdmin_jPanel.setToolTipText("");
         loginAdmin_jPanel.setPreferredSize(new java.awt.Dimension(238, 257));
 
-        admin_jButton1.setBackground(new java.awt.Color(190, 190, 253));
-        admin_jButton1.setFont(new java.awt.Font("Book Antiqua", 1, 16)); // NOI18N
-        admin_jButton1.setForeground(new java.awt.Color(51, 120, 156));
-        admin_jButton1.setText("Login ");
-        admin_jButton1.addActionListener(new java.awt.event.ActionListener() {
+        adminLogin_jButton.setBackground(new java.awt.Color(190, 190, 253));
+        adminLogin_jButton.setFont(new java.awt.Font("Book Antiqua", 1, 16)); // NOI18N
+        adminLogin_jButton.setForeground(new java.awt.Color(51, 120, 156));
+        adminLogin_jButton.setText("Login ");
+        adminLogin_jButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                admin_jButton1ActionPerformed(evt);
+                adminLogin_jButtonActionPerformed(evt);
             }
         });
 
         jLabel1.setText("Username");
 
-        jTextField1.setText("jTextField1");
-
         jLabel2.setText("Password");
-
-        jTextField2.setText("jTextField1");
 
         jButton1.setText("Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -247,9 +243,9 @@ public class homeGUI extends javax.swing.JFrame {
                 .addGroup(loginAdmin_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginAdmin_jPanelLayout.createSequentialGroup()
                         .addGroup(loginAdmin_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(admin_jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(adminName_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(adminPassword_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(adminLogin_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32))
                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
@@ -260,13 +256,13 @@ public class homeGUI extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(adminName_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(adminPassword_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addComponent(admin_jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(adminLogin_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
 
@@ -275,13 +271,13 @@ public class homeGUI extends javax.swing.JFrame {
         loginMember_jPanel.setToolTipText("");
         loginMember_jPanel.setPreferredSize(new java.awt.Dimension(238, 257));
 
-        admin_jButton2.setBackground(new java.awt.Color(190, 190, 253));
-        admin_jButton2.setFont(new java.awt.Font("Book Antiqua", 1, 16)); // NOI18N
-        admin_jButton2.setForeground(new java.awt.Color(51, 120, 156));
-        admin_jButton2.setText("Login ");
-        admin_jButton2.addActionListener(new java.awt.event.ActionListener() {
+        memberLogin_jButton2.setBackground(new java.awt.Color(190, 190, 253));
+        memberLogin_jButton2.setFont(new java.awt.Font("Book Antiqua", 1, 16)); // NOI18N
+        memberLogin_jButton2.setForeground(new java.awt.Color(51, 120, 156));
+        memberLogin_jButton2.setText("Login ");
+        memberLogin_jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                admin_jButton2ActionPerformed(evt);
+                memberLogin_jButton2ActionPerformed(evt);
             }
         });
 
@@ -320,7 +316,7 @@ public class homeGUI extends javax.swing.JFrame {
                         .addGroup(loginMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(memberNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(memberPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(admin_jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(memberLogin_jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(32, 32, 32))
                     .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
@@ -337,7 +333,7 @@ public class homeGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(memberPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(admin_jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(memberLogin_jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
 
@@ -718,15 +714,27 @@ public class homeGUI extends javax.swing.JFrame {
         loginMember_jPanel.setVisible(true);
     }//GEN-LAST:event_member_jButtonActionPerformed
 
-    private void admin_jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_jButton1ActionPerformed
+    private void adminLogin_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminLogin_jButtonActionPerformed
         // TODO add your handling code here:
-        jPanel4.setVisible(true);
-        main_jPanel.setVisible(true);
-        home_jPanel.setVisible(false);
-        jPanel3.setVisible(false);
-    }//GEN-LAST:event_admin_jButton1ActionPerformed
+        String enteredUserName = adminName_jTextField.getText();
+        String enteredPassword = adminPassword_jTextField.getText();
+        if(enteredUserName.equals("Admin")){
+            if(enteredPassword.equals("@admin")){
+                jPanel4.setVisible(true);
+                main_jPanel.setVisible(true);
+                home_jPanel.setVisible(false);
+                jPanel3.setVisible(false);
+            }
+            else{
+                System.out.println("Incorrect Password");
+            }
+        }
+        else{
+            System.out.println("Invalid Username");
+        }
+    }//GEN-LAST:event_adminLogin_jButtonActionPerformed
 
-    private void admin_jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_jButton2ActionPerformed
+    private void memberLogin_jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberLogin_jButton2ActionPerformed
         // TODO add your handling code here:
         String enteredUserName = memberNameField.getText();
         String enteredPassword = memberPasswordField.getText();
@@ -734,17 +742,20 @@ public class homeGUI extends javax.swing.JFrame {
        if(loginMap.containsKey(enteredUserName)){
            String storedPassword = loginMap.get(enteredUserName);
            if(enteredPassword.equals(storedPassword)){
-               System.out.println("Login Successful");
+               jPanel4.setVisible(true);
+               main_jPanel.setVisible(true);
+               home_jPanel.setVisible(false);
+               jPanel3.setVisible(false);
            }
            else{
-               System.out.println("Nooooooooooo");
+               System.out.println("Invalid Password");
            }
         
        }
        else{
            System.out.println("User not found");
        }
-    }//GEN-LAST:event_admin_jButton2ActionPerformed
+    }//GEN-LAST:event_memberLogin_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -858,23 +869,29 @@ public class homeGUI extends javax.swing.JFrame {
         //</editor-fold>
         loginMap = new HashMap<>();
         try{
-            FileReader fileReader = new FileReader("CSV_Files/Members.csv");
+            FileReader fileReader = new FileReader("src/CSV_Files/Members.csv");
             BufferedReader csvReader = new BufferedReader(fileReader);
             
             String row;
-            
-            
+           
+            boolean isFirstLine = true;
             while ((row = csvReader.readLine())!=null){
+                //skip first line
+                if(isFirstLine){
+                    isFirstLine = false;
+                    continue;
+                }
                 String loginDetails[] = row.split(",");
-                String userName = loginDetails[4];
-                String password = loginDetails[5];
+                String userName = loginDetails[3];
+                String password = loginDetails[4];
                 loginMap.put(userName, password);
             }
             fileReader.close();
             csvReader.close();
         }
-        catch(FileNotFoundException e){}
-        catch(IOException ioe) {}
+        catch(FileNotFoundException e){System.out.println("File not found");}
+        catch(IOException ioe) {System.out.println("IO Exception");}
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -895,9 +912,10 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JLabel academyAddress_jlabel;
     private javax.swing.JLabel academy_jlabel;
     private javax.swing.JLabel academyimage_jLabel;
+    private javax.swing.JButton adminLogin_jButton;
+    private javax.swing.JTextField adminName_jTextField;
+    private javax.swing.JTextField adminPassword_jTextField;
     private javax.swing.JButton admin_jButton;
-    private javax.swing.JButton admin_jButton1;
-    private javax.swing.JButton admin_jButton2;
     private javax.swing.JLabel age_jLabel;
     private javax.swing.JTextField age_jTextField;
     private javax.swing.JLabel backgroundimage_jLabel;
@@ -927,13 +945,17 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
+<<<<<<< HEAD
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+=======
+>>>>>>> ad24e3cdfb43fb081b449780a834a99bef3a6cfb
     private javax.swing.JPanel loginAdmin_jPanel;
     private javax.swing.JPanel loginMember_jPanel;
     private javax.swing.JPanel main_jPanel;
+    private javax.swing.JButton memberLogin_jButton2;
     private javax.swing.JTextField memberNameField;
     private javax.swing.JTextField memberPasswordField;
     private javax.swing.JButton member_jButton;
