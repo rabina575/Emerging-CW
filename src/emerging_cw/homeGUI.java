@@ -62,7 +62,6 @@ public class homeGUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         memberPasswordField = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         BackButton_Registration = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -283,11 +282,13 @@ public class homeGUI extends javax.swing.JFrame {
 
         jLabel3.setText("Username");
 
-        memberNameField.setText("jTextField1");
-
         jLabel4.setText("Password");
 
-        memberPasswordField.setText("jTextField1");
+        memberPasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                memberPasswordFieldActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -337,27 +338,14 @@ public class homeGUI extends javax.swing.JFrame {
                 .addGap(26, 26, 26))
         );
 
-        jButton3.setText("jButton3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout home_jPanelLayout = new javax.swing.GroupLayout(home_jPanel);
         home_jPanel.setLayout(home_jPanelLayout);
         home_jPanelLayout.setHorizontalGroup(
             home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, home_jPanelLayout.createSequentialGroup()
-                .addGroup(home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(home_jPanelLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(academyimage_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, home_jPanelLayout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGap(20, 20, 20)
+                .addComponent(academyimage_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(users_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginAdmin_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -372,10 +360,7 @@ public class homeGUI extends javax.swing.JFrame {
                 .addGroup(home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(loginMember_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(users_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(home_jPanelLayout.createSequentialGroup()
-                        .addComponent(academyimage_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(jButton3))
+                    .addComponent(academyimage_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(loginAdmin_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(20, 20, 20))
         );
@@ -649,17 +634,14 @@ public class homeGUI extends javax.swing.JFrame {
         instrument_jPanel.add(jLabel6);
         jLabel6.setBounds(310, 120, 160, 17);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Back.png"))); // NOI18N
         jButton4.setText("Back");
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
         instrument_jPanel.add(jButton4);
-        jButton4.setBounds(640, 430, 110, 40);
+        jButton4.setBounds(670, 440, 60, 30);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Instrument Wallpaper.png"))); // NOI18N
         instrument_jPanel.add(jLabel7);
@@ -731,7 +713,7 @@ public class homeGUI extends javax.swing.JFrame {
         }
         else{
             System.out.println("Invalid Username");
-        }
+        }        
     }//GEN-LAST:event_adminLogin_jButtonActionPerformed
 
     private void memberLogin_jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberLogin_jButton2ActionPerformed
@@ -755,6 +737,13 @@ public class homeGUI extends javax.swing.JFrame {
        else{
            System.out.println("User not found");
        }
+       instrument_jPanel.setVisible(true);
+       jPanel4.setVisible(true);
+       loginMember_jPanel.setVisible(false);
+       users_jPanel.setVisible(false);
+       main_jPanel.setVisible(false);
+       home_jPanel.setVisible(false);        
+       jPanel3.setVisible(false);
     }//GEN-LAST:event_memberLogin_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -815,17 +804,6 @@ public class homeGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Submit_jButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        loginMember_jPanel.setVisible(false);
-        users_jPanel.setVisible(false);
-        main_jPanel.setVisible(false);
-        home_jPanel.setVisible(false);
-        instrument_jPanel.setVisible(true);
-        jPanel4.setVisible(true);
-        jPanel3.setVisible(false);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         jPanel4.setVisible(false);
@@ -838,6 +816,10 @@ public class homeGUI extends javax.swing.JFrame {
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void memberPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberPasswordFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_memberPasswordFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -923,7 +905,6 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JPanel instrument_jPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -945,13 +926,8 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
-<<<<<<< HEAD
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-=======
->>>>>>> ad24e3cdfb43fb081b449780a834a99bef3a6cfb
     private javax.swing.JPanel loginAdmin_jPanel;
     private javax.swing.JPanel loginMember_jPanel;
     private javax.swing.JPanel main_jPanel;
