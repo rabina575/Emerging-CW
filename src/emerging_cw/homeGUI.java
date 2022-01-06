@@ -4,11 +4,15 @@
  */
 package emerging_cw;
 
+import java.awt.Desktop;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -98,6 +102,12 @@ public class homeGUI extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         back_jButton = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        file_jMenu = new javax.swing.JMenu();
+        open_jMenuItem = new javax.swing.JMenuItem();
+        exit_jMenuItem = new javax.swing.JMenuItem();
+        help_jMenu = new javax.swing.JMenu();
+        manual_jMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("main_Frame");
@@ -647,6 +657,40 @@ public class homeGUI extends javax.swing.JFrame {
         instrument_jPanel.add(jLabel7);
         jLabel7.setBounds(0, 0, 990, 470);
 
+        file_jMenu.setText("File");
+
+        open_jMenuItem.setText("Open");
+        open_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                open_jMenuItemActionPerformed(evt);
+            }
+        });
+        file_jMenu.add(open_jMenuItem);
+
+        exit_jMenuItem.setText("Exit");
+        exit_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exit_jMenuItemActionPerformed(evt);
+            }
+        });
+        file_jMenu.add(exit_jMenuItem);
+
+        jMenuBar1.add(file_jMenu);
+
+        help_jMenu.setText("Help");
+
+        manual_jMenuItem.setText("User Manual");
+        manual_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                manual_jMenuItemActionPerformed(evt);
+            }
+        });
+        help_jMenu.add(manual_jMenuItem);
+
+        jMenuBar1.add(help_jMenu);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -661,7 +705,7 @@ public class homeGUI extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(instrument_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 21, Short.MAX_VALUE)))
+                    .addGap(0, 1, Short.MAX_VALUE)))
         );
 
         main_jPanel.getAccessibleContext().setAccessibleName("");
@@ -820,6 +864,36 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_memberPasswordFieldActionPerformed
 
+    private void open_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_open_jMenuItemActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Choose a file to open");
+        int userSelection = fileChooser.showOpenDialog(this);
+        if(userSelection == JFileChooser.APPROVE_OPTION){
+            File fileToOpen = fileChooser.getSelectedFile();
+            Desktop desktop = Desktop.getDesktop();
+            try {
+                desktop.open(fileToOpen);
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(this, "Error","ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_open_jMenuItemActionPerformed
+
+    private void exit_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_jMenuItemActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_exit_jMenuItemActionPerformed
+
+    private void manual_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manual_jMenuItemActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser("src/CSV_Files/Members.csv");
+        int userSelection = fileChooser.showOpenDialog(this);
+        if(userSelection == JFileChooser.APPROVE_OPTION){
+            File fileToSave = fileChooser.getSelectedFile();
+        }
+    }//GEN-LAST:event_manual_jMenuItemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -901,6 +975,9 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JTextField age_jTextField;
     private javax.swing.JButton back_jButton;
     private javax.swing.JLabel backgroundimage_jLabel;
+    private javax.swing.JMenuItem exit_jMenuItem;
+    private javax.swing.JMenu file_jMenu;
+    private javax.swing.JMenu help_jMenu;
     private javax.swing.JPanel home_jPanel;
     private javax.swing.JPanel instrument_jPanel;
     private javax.swing.JButton jButton1;
@@ -919,6 +996,7 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -930,6 +1008,7 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JPanel loginAdmin_jPanel;
     private javax.swing.JPanel loginMember_jPanel;
     private javax.swing.JPanel main_jPanel;
+    private javax.swing.JMenuItem manual_jMenuItem;
     private javax.swing.JButton memberLogin_jButton2;
     private javax.swing.JTextField memberNameField;
     private javax.swing.JTextField memberPasswordField;
@@ -937,6 +1016,7 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JLabel name_jLabel;
     private javax.swing.JTextField name_jTextField;
     private javax.swing.JLabel newAccount_jLabel;
+    private javax.swing.JMenuItem open_jMenuItem;
     private javax.swing.JLabel password_jLabel;
     private javax.swing.JPasswordField password_jPasswordField;
     private javax.swing.JButton registermember_jButton;
