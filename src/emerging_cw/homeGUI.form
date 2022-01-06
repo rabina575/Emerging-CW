@@ -321,9 +321,9 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jTextField1" min="-2" pref="164" max="-2" attributes="0"/>
-                                      <Component id="jTextField2" min="-2" pref="164" max="-2" attributes="0"/>
-                                      <Component id="admin_jButton1" min="-2" pref="164" max="-2" attributes="0"/>
+                                      <Component id="adminName_jTextField" min="-2" pref="164" max="-2" attributes="0"/>
+                                      <Component id="adminPassword_jTextField" min="-2" pref="164" max="-2" attributes="0"/>
+                                      <Component id="adminLogin_jButton" min="-2" pref="164" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               </Group>
@@ -339,20 +339,20 @@
                           <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTextField1" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="adminName_jTextField" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextField2" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="adminPassword_jTextField" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace pref="10" max="32767" attributes="0"/>
-                          <Component id="admin_jButton1" min="-2" pref="39" max="-2" attributes="0"/>
+                          <Component id="adminLogin_jButton" min="-2" pref="39" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="admin_jButton1">
+                <Component class="javax.swing.JButton" name="adminLogin_jButton">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="fd" green="be" red="be" type="rgb"/>
@@ -366,7 +366,7 @@
                     <Property name="text" type="java.lang.String" value="Login "/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="admin_jButton1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adminLogin_jButtonActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel1">
@@ -374,20 +374,14 @@
                     <Property name="text" type="java.lang.String" value="Username"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
+                <Component class="javax.swing.JTextField" name="adminName_jTextField">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Password"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="jTextField2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
+                <Component class="javax.swing.JTextField" name="adminPassword_jTextField">
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton1">
                   <Properties>
@@ -441,7 +435,7 @@
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="memberNameField" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
                                       <Component id="memberPasswordField" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
-                                      <Component id="admin_jButton2" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                                      <Component id="memberLogin_jButton2" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               </Group>
@@ -463,14 +457,14 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="memberPasswordField" min="-2" pref="35" max="-2" attributes="0"/>
                           <EmptySpace pref="22" max="32767" attributes="0"/>
-                          <Component id="admin_jButton2" min="-2" pref="39" max="-2" attributes="0"/>
+                          <Component id="memberLogin_jButton2" min="-2" pref="39" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JButton" name="admin_jButton2">
+                <Component class="javax.swing.JButton" name="memberLogin_jButton2">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="fd" green="be" red="be" type="rgb"/>
@@ -484,7 +478,7 @@
                     <Property name="text" type="java.lang.String" value="Login "/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="admin_jButton2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="memberLogin_jButton2ActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel3">
