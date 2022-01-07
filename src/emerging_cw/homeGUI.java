@@ -170,7 +170,7 @@ public class homeGUI extends javax.swing.JFrame {
         academyAddress_jlabel.setIconTextGap(0);
         academyAddress_jlabel.setMaximumSize(new java.awt.Dimension(0, 0));
         main_jPanel.add(academyAddress_jlabel);
-        academyAddress_jlabel.setBounds(360, 80, 200, 18);
+        academyAddress_jlabel.setBounds(250, 80, 310, 19);
 
         home_jPanel.setBackground(new java.awt.Color(230, 244, 254));
         home_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
@@ -580,11 +580,11 @@ public class homeGUI extends javax.swing.JFrame {
                             .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(age_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(name_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                         .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rePassword_jLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(password_jLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(username_jLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(rePassword_jLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(password_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(username_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(repassword_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -655,7 +655,7 @@ public class homeGUI extends javax.swing.JFrame {
         searchBy_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         searchBy_jLabel.setText("Search by:");
         instrumentMain_jPanel.add(searchBy_jLabel);
-        searchBy_jLabel.setBounds(30, 60, 70, 18);
+        searchBy_jLabel.setBounds(30, 60, 70, 19);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1346,11 +1346,7 @@ public class homeGUI extends javax.swing.JFrame {
 
     private void manual_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manual_jMenuItemActionPerformed
         // TODO add your handling code here:
-        JFileChooser fileChooser = new JFileChooser("src/CSV_Files/Members.csv");
-        int userSelection = fileChooser.showOpenDialog(this);
-        if(userSelection == JFileChooser.APPROVE_OPTION){
-            File fileToSave = fileChooser.getSelectedFile();
-        }
+        JFileChooser();
     }//GEN-LAST:event_manual_jMenuItemActionPerformed
 
     private void exit_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_jMenuItemActionPerformed
@@ -1360,18 +1356,7 @@ public class homeGUI extends javax.swing.JFrame {
 
     private void open_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_open_jMenuItemActionPerformed
         // TODO add your handling code here:
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Choose a file to open");
-        int userSelection = fileChooser.showOpenDialog(this);
-        if(userSelection == JFileChooser.APPROVE_OPTION){
-            File fileToOpen = fileChooser.getSelectedFile();
-            Desktop desktop = Desktop.getDesktop();
-            try {
-                desktop.open(fileToOpen);
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(this, "Error.","ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
-            }
-        }
+        JFileChooser();
     }//GEN-LAST:event_open_jMenuItemActionPerformed
 
     private void admin_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_jPasswordFieldActionPerformed
@@ -1580,7 +1565,23 @@ public class homeGUI extends javax.swing.JFrame {
                 new homeGUI().setVisible(true);
             }
         });
-    }                                                
+    }   
+    
+    public void JFileChooser()
+    {
+        JFileChooser fileChooser = new JFileChooser("src/CSV_Files");
+        fileChooser.setDialogTitle("Choose a file to open");
+        int userSelection = fileChooser.showOpenDialog(this);
+        if(userSelection == JFileChooser.APPROVE_OPTION){
+            File fileToOpen = fileChooser.getSelectedFile();
+            Desktop desktop = Desktop.getDesktop();
+            try {
+                desktop.open(fileToOpen);
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(this, "Error.","ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel academyAddress_jlabel;

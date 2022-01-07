@@ -174,7 +174,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="360" y="80" width="200" height="-1"/>
+              <AbsoluteConstraints x="250" y="80" width="310" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -689,11 +689,11 @@
                                       <Component id="name_jTextField" min="-2" pref="138" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="103" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="rePassword_jLabel" alignment="1" min="-2" pref="115" max="-2" attributes="0"/>
-                                  <Component id="password_jLabel" alignment="1" min="-2" pref="115" max="-2" attributes="0"/>
-                                  <Component id="username_jLabel" alignment="1" min="-2" pref="115" max="-2" attributes="0"/>
+                                  <Component id="rePassword_jLabel" alignment="1" min="-2" pref="129" max="-2" attributes="0"/>
+                                  <Component id="password_jLabel" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+                                  <Component id="username_jLabel" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
