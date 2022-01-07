@@ -93,7 +93,7 @@ public class homeGUI extends javax.swing.JFrame {
         instruments_jLabel = new javax.swing.JLabel();
         searchBy_jLabel = new javax.swing.JLabel();
         instrumentTable_jScrollPane = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        instrument_jTable = new javax.swing.JTable();
         category_jRadioButton = new javax.swing.JRadioButton();
         categorySearch_jLabel = new javax.swing.JLabel();
         category_jTextField = new javax.swing.JTextField();
@@ -170,7 +170,7 @@ public class homeGUI extends javax.swing.JFrame {
         academyAddress_jlabel.setIconTextGap(0);
         academyAddress_jlabel.setMaximumSize(new java.awt.Dimension(0, 0));
         main_jPanel.add(academyAddress_jlabel);
-        academyAddress_jlabel.setBounds(250, 80, 310, 19);
+        academyAddress_jlabel.setBounds(250, 80, 310, 18);
 
         home_jPanel.setBackground(new java.awt.Color(230, 244, 254));
         home_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
@@ -247,7 +247,7 @@ public class homeGUI extends javax.swing.JFrame {
                 .addComponent(newAccount_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(registerMember_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         loginAdmin_jPanel.setBackground(new java.awt.Color(64, 132, 173));
@@ -319,7 +319,7 @@ public class homeGUI extends javax.swing.JFrame {
         loginAdmin_jPanelLayout.setVerticalGroup(
             loginAdmin_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginAdmin_jPanelLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(adminName_jLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(adminName_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -331,7 +331,7 @@ public class homeGUI extends javax.swing.JFrame {
                 .addComponent(adminLogin_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(backAdmin_jButton)
-                .addGap(5, 5, 5))
+                .addContainerGap())
         );
 
         loginMember_jPanel.setBackground(new java.awt.Color(64, 132, 173));
@@ -389,8 +389,8 @@ public class homeGUI extends javax.swing.JFrame {
         );
         loginMember_jPanelLayout.setVerticalGroup(
             loginMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginMember_jPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+            .addGroup(loginMember_jPanelLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addComponent(memberName_jLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(memberName_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -400,9 +400,9 @@ public class homeGUI extends javax.swing.JFrame {
                 .addComponent(member_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23)
                 .addComponent(memberLogin_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(backMember_jButton)
-                .addContainerGap())
+                .addGap(30, 30, 30))
         );
 
         javax.swing.GroupLayout home_jPanelLayout = new javax.swing.GroupLayout(home_jPanel);
@@ -426,10 +426,10 @@ public class homeGUI extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(academyImage_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loginAdmin_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                    .addComponent(loginMember_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                    .addComponent(users_jPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE))
-                .addGap(27, 27, 27))
+                    .addComponent(users_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(loginAdmin_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(loginMember_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         main_jPanel.add(home_jPanel);
@@ -511,18 +511,19 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
 
+        memberInfo_jTable.setBackground(new java.awt.Color(234, 234, 253));
         memberInfo_jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
-                "Name", "Age", "Specialization", "Username", "Password"
+                "Name", "Specialization", "Age", "Username", "Password"
             }
         ));
-        memberInfo_jTable.setGridColor(new java.awt.Color(204, 204, 255));
+        memberInfo_jTable.setGridColor(new java.awt.Color(203, 228, 255));
         memberInfo_jTable.setSelectionBackground(new java.awt.Color(166, 206, 229));
-        memberInfo_jTable.setShowGrid(false);
+        memberInfo_jTable.setShowGrid(true);
         registered_jScrollPane.setViewportView(memberInfo_jTable);
 
         clearRegistration_jButton.setBackground(new java.awt.Color(166, 206, 229));
@@ -650,14 +651,15 @@ public class homeGUI extends javax.swing.JFrame {
         instruments_jLabel.setForeground(new java.awt.Color(251, 216, 251));
         instruments_jLabel.setText("Instruments");
         instrumentMain_jPanel.add(instruments_jLabel);
-        instruments_jLabel.setBounds(272, 9, 170, 30);
+        instruments_jLabel.setBounds(272, 39, 170, 60);
 
         searchBy_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         searchBy_jLabel.setText("Search by:");
         instrumentMain_jPanel.add(searchBy_jLabel);
-        searchBy_jLabel.setBounds(30, 60, 70, 19);
+        searchBy_jLabel.setBounds(30, 20, 70, 18);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        instrument_jTable.setBackground(new java.awt.Color(234, 234, 253));
+        instrument_jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -676,14 +678,15 @@ public class homeGUI extends javax.swing.JFrame {
                 "Instrument ID", "Instrument", "Model No.", "Brand", "Price", "Warranty"
             }
         ));
-        jTable1.setSelectionBackground(new java.awt.Color(166, 206, 229));
-        jTable1.setShowGrid(false);
-        jTable1.setShowHorizontalLines(true);
-        jTable1.setShowVerticalLines(true);
-        instrumentTable_jScrollPane.setViewportView(jTable1);
+        instrument_jTable.setGridColor(new java.awt.Color(203, 228, 255));
+        instrument_jTable.setSelectionBackground(new java.awt.Color(166, 206, 229));
+        instrument_jTable.setShowGrid(true);
+        instrument_jTable.setShowHorizontalLines(true);
+        instrument_jTable.setShowVerticalLines(true);
+        instrumentTable_jScrollPane.setViewportView(instrument_jTable);
 
         instrumentMain_jPanel.add(instrumentTable_jScrollPane);
-        instrumentTable_jScrollPane.setBounds(30, 130, 610, 150);
+        instrumentTable_jScrollPane.setBounds(30, 110, 610, 170);
 
         category_jRadioButton.setBackground(new java.awt.Color(166, 206, 229));
         searchBy_jButton.add(category_jRadioButton);
@@ -695,21 +698,26 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
         instrumentMain_jPanel.add(category_jRadioButton);
-        category_jRadioButton.setBounds(100, 50, 90, 30);
+        category_jRadioButton.setBounds(100, 10, 90, 30);
 
         categorySearch_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         categorySearch_jLabel.setText(" Category:");
         instrumentMain_jPanel.add(categorySearch_jLabel);
-        categorySearch_jLabel.setBounds(480, 50, 70, 40);
+        categorySearch_jLabel.setBounds(480, 10, 70, 40);
         instrumentMain_jPanel.add(category_jTextField);
-        category_jTextField.setBounds(550, 50, 90, 30);
+        category_jTextField.setBounds(550, 10, 90, 30);
 
         searchCategory_jButton.setBackground(new java.awt.Color(190, 190, 253));
         searchCategory_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
         searchCategory_jButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Category Search.png"))); // NOI18N
         searchCategory_jButton.setText("Search");
+        searchCategory_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchCategory_jButtonActionPerformed(evt);
+            }
+        });
         instrumentMain_jPanel.add(searchCategory_jButton);
-        searchCategory_jButton.setBounds(549, 90, 90, 30);
+        searchCategory_jButton.setBounds(550, 50, 90, 30);
 
         price_jRadioButton.setBackground(new java.awt.Color(166, 206, 229));
         searchBy_jButton.add(price_jRadioButton);
@@ -721,12 +729,12 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
         instrumentMain_jPanel.add(price_jRadioButton);
-        price_jRadioButton.setBounds(190, 50, 70, 30);
+        price_jRadioButton.setBounds(190, 10, 70, 30);
 
         priceSearch_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         priceSearch_jLabel.setText("Price:");
         instrumentMain_jPanel.add(priceSearch_jLabel);
-        priceSearch_jLabel.setBounds(510, 60, 60, 20);
+        priceSearch_jLabel.setBounds(510, 20, 60, 20);
 
         price_jComboBox.setBackground(new java.awt.Color(204, 204, 255));
         price_jComboBox.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
@@ -738,14 +746,14 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
         instrumentMain_jPanel.add(price_jComboBox);
-        price_jComboBox.setBounds(550, 50, 90, 30);
+        price_jComboBox.setBounds(550, 10, 90, 30);
 
         searchPrice_jButton.setBackground(new java.awt.Color(190, 190, 253));
         searchPrice_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
         searchPrice_jButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Price Search.png"))); // NOI18N
         searchPrice_jButton.setText("Search");
         instrumentMain_jPanel.add(searchPrice_jButton);
-        searchPrice_jButton.setBounds(549, 90, 90, 30);
+        searchPrice_jButton.setBounds(550, 50, 90, 30);
 
         instrument_jPanel.add(instrumentMain_jPanel);
         instrumentMain_jPanel.setBounds(27, 137, 680, 300);
@@ -1505,6 +1513,17 @@ public class homeGUI extends javax.swing.JFrame {
         brand_jTextField.setText("");
         warranty_jTextField.setText("");
     }//GEN-LAST:event_clearAddInstruments_jButtonActionPerformed
+
+    private void searchCategory_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCategory_jButtonActionPerformed
+        // TODO add your handling code here:
+        String category = category_jTextField.getText();
+        int count = 0;
+        if (category.equals(""))
+            {
+                JOptionPane.showMessageDialog(rootPane, "Please ensure that the search category is not void.");
+                count = 1;
+            }
+    }//GEN-LAST:event_searchCategory_jButtonActionPerformed
     
     /**
      * @param args the command line arguments
@@ -1638,9 +1657,9 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane instrumentTable_jScrollPane;
     private javax.swing.JLabel instrument_jLabel;
     private javax.swing.JPanel instrument_jPanel;
+    private javax.swing.JTable instrument_jTable;
     private javax.swing.JTextField instrument_jTextField;
     private javax.swing.JLabel instruments_jLabel;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel loginAdmin_jPanel;
     private javax.swing.JPanel loginMember_jPanel;
     private javax.swing.JPanel main_jPanel;
