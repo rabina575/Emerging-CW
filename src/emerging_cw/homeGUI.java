@@ -27,9 +27,11 @@ public class homeGUI extends javax.swing.JFrame {
         initComponents();
         loginAdmin_jPanel.setVisible(false);
         loginMember_jPanel.setVisible(false);
-        jPanel3.setVisible(false);
-        jPanel4.setVisible(false);
+        registerMember_jPanel.setVisible(false);
+        instrumentMain_jPanel.setVisible(false);
         back_jButton.setVisible(false);
+        adminAddInstruments_jPanel.setVisible(false);
+        adminBack_jButton.setVisible(false);
     }
 
     /**
@@ -43,65 +45,98 @@ public class homeGUI extends javax.swing.JFrame {
 
         searchBy_jButton = new javax.swing.ButtonGroup();
         main_jPanel = new javax.swing.JPanel();
-        academy_jlabel = new javax.swing.JLabel();
+        academyName_jlabel = new javax.swing.JLabel();
         academyAddress_jlabel = new javax.swing.JLabel();
         home_jPanel = new javax.swing.JPanel();
-        academyimage_jLabel = new javax.swing.JLabel();
+        academyImage_jLabel = new javax.swing.JLabel();
         users_jPanel = new javax.swing.JPanel();
         admin_jButton = new javax.swing.JButton();
-        registermember_jButton = new javax.swing.JButton();
         member_jButton = new javax.swing.JButton();
         newAccount_jLabel = new javax.swing.JLabel();
+        registerMember_jButton = new javax.swing.JButton();
         loginAdmin_jPanel = new javax.swing.JPanel();
         adminLogin_jButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        adminName_jLabel = new javax.swing.JLabel();
         adminName_jTextField = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        adminPassword_jLabel = new javax.swing.JLabel();
         admin_jPasswordField = new javax.swing.JPasswordField();
+        backAdmin_jButton = new javax.swing.JButton();
         loginMember_jPanel = new javax.swing.JPanel();
-        memberLogin_jButton2 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        memberNameField = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        memberLogin_jButton = new javax.swing.JButton();
+        memberName_jLabel = new javax.swing.JLabel();
+        memberName_jTextField = new javax.swing.JTextField();
+        memberPassword_jLabel = new javax.swing.JLabel();
         member_jPasswordField = new javax.swing.JPasswordField();
-        jPanel3 = new javax.swing.JPanel();
-        BackButton_Registration = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        backMember_jButton = new javax.swing.JButton();
+        registerMember_jPanel = new javax.swing.JPanel();
+        registration_jLabel = new javax.swing.JLabel();
         name_jLabel = new javax.swing.JLabel();
-        specialization_jLabel = new javax.swing.JLabel();
-        age_jLabel = new javax.swing.JLabel();
-        username_jLabel = new javax.swing.JLabel();
-        password_jLabel = new javax.swing.JLabel();
         name_jTextField = new javax.swing.JTextField();
+        age_jLabel = new javax.swing.JLabel();
         age_jTextField = new javax.swing.JTextField();
+        specialization_jLabel = new javax.swing.JLabel();
         specialization_jTextField = new javax.swing.JTextField();
+        username_jLabel = new javax.swing.JLabel();
         username_jTextField = new javax.swing.JTextField();
-        repassword_jLabel = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        MemberInfo_jTable = new javax.swing.JTable();
+        password_jLabel = new javax.swing.JLabel();
         password_jPasswordField = new javax.swing.JPasswordField();
+        rePassword_jLabel = new javax.swing.JLabel();
         repassword_jPasswordField = new javax.swing.JPasswordField();
-        Submit_jButton = new javax.swing.JButton();
-        backgroundimage_jLabel = new javax.swing.JLabel();
+        submit_jButton = new javax.swing.JButton();
+        registered_jScrollPane = new javax.swing.JScrollPane();
+        memberInfo_jTable = new javax.swing.JTable();
+        clearRegistration_jButton = new javax.swing.JButton();
+        backRegistration_jButton = new javax.swing.JButton();
+        backgroundImage_jLabel = new javax.swing.JLabel();
         instrument_jPanel = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        instrumentMain_jPanel = new javax.swing.JPanel();
+        searchBy_jLabel = new javax.swing.JLabel();
+        instrumentTable_jScrollPane = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        category_jRadioButton = new javax.swing.JRadioButton();
+        categorySearch_jLabel = new javax.swing.JLabel();
+        price_jRadioButton = new javax.swing.JRadioButton();
+        priceSearch_jLabel = new javax.swing.JLabel();
+        price_jComboBox = new javax.swing.JComboBox<>();
+        category_jTextField = new javax.swing.JTextField();
+        instrumentImage_jPanel = new javax.swing.JPanel();
+        guitar_jLabel = new javax.swing.JLabel();
+        drums_jLabel = new javax.swing.JLabel();
+        violin_jLabel = new javax.swing.JLabel();
+        mic_jLabel = new javax.swing.JLabel();
+        piano_jLabel = new javax.swing.JLabel();
+        flute_jLabel = new javax.swing.JLabel();
+        instruments_jLabel = new javax.swing.JLabel();
         back_jButton = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
+        instrumentBgImage_jLabel = new javax.swing.JLabel();
+        adminAddInstruments_jPanel = new javax.swing.JPanel();
+        addInstrument_jPanel = new javax.swing.JPanel();
+        instrumentID_jLabel = new javax.swing.JLabel();
+        instrumentID_jTextField = new javax.swing.JTextField();
+        modelNo_jLabel = new javax.swing.JLabel();
+        modelNo_jTextField = new javax.swing.JTextField();
+        price_jLabel = new javax.swing.JLabel();
+        price_jTextField = new javax.swing.JTextField();
+        instrument_jTextField = new javax.swing.JTextField();
+        brand_jLabel = new javax.swing.JLabel();
+        brand_jTextField = new javax.swing.JTextField();
+        warranty_jLabel = new javax.swing.JLabel();
+        warranty_jTextField = new javax.swing.JTextField();
+        instrument_jLabel = new javax.swing.JLabel();
+        add_jButton = new javax.swing.JButton();
+        add_jScrollPane = new javax.swing.JScrollPane();
+        add_jTable = new javax.swing.JTable();
+        adminInstrument_jLabel = new javax.swing.JLabel();
+        clearAddInstruments_jButton = new javax.swing.JButton();
+        instrumentImage_jPanel1 = new javax.swing.JPanel();
+        addGuitar_jLabel = new javax.swing.JLabel();
+        addDrums_jLabel = new javax.swing.JLabel();
+        addViolin_jLabel = new javax.swing.JLabel();
+        addMic_jLabel = new javax.swing.JLabel();
+        addPiano_jLabel = new javax.swing.JLabel();
+        addFlute_jLabel = new javax.swing.JLabel();
+        adminBack_jButton = new javax.swing.JButton();
+        addBgImage_jLabel = new javax.swing.JLabel();
         fileHelp_jMenuBar = new javax.swing.JMenuBar();
         file_jMenu = new javax.swing.JMenu();
         open_jMenuItem = new javax.swing.JMenuItem();
@@ -121,26 +156,25 @@ public class homeGUI extends javax.swing.JFrame {
         main_jPanel.setBackground(new java.awt.Color(230, 244, 254));
         main_jPanel.setLayout(null);
 
-        academy_jlabel.setFont(new java.awt.Font("Pristina", 1, 36)); // NOI18N
-        academy_jlabel.setForeground(new java.awt.Color(164, 164, 245));
-        academy_jlabel.setText("Symphony Academy of Music.");
-        main_jPanel.add(academy_jlabel);
-        academy_jlabel.setBounds(170, 30, 400, 44);
+        academyName_jlabel.setFont(new java.awt.Font("Pristina", 1, 36)); // NOI18N
+        academyName_jlabel.setForeground(new java.awt.Color(164, 164, 245));
+        academyName_jlabel.setText("Symphony Academy of Music.");
+        main_jPanel.add(academyName_jlabel);
+        academyName_jlabel.setBounds(170, 30, 400, 44);
 
-        academyAddress_jlabel.setFont(new java.awt.Font("Maiandra GD", 0, 14)); // NOI18N
+        academyAddress_jlabel.setFont(new java.awt.Font("Sitka Display", 0, 14)); // NOI18N
         academyAddress_jlabel.setForeground(new java.awt.Color(102, 204, 255));
         academyAddress_jlabel.setText("Kamalpokhari, Kathmandu, Nepal.");
         academyAddress_jlabel.setIconTextGap(0);
         academyAddress_jlabel.setMaximumSize(new java.awt.Dimension(0, 0));
         main_jPanel.add(academyAddress_jlabel);
-        academyAddress_jlabel.setBounds(340, 80, 220, 18);
+        academyAddress_jlabel.setBounds(360, 80, 200, 18);
 
         home_jPanel.setBackground(new java.awt.Color(230, 244, 254));
         home_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
         home_jPanel.setForeground(new java.awt.Color(255, 255, 255));
 
-        academyimage_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/music.png"))); // NOI18N
-        academyimage_jLabel.setText("jLabel2");
+        academyImage_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/music.png"))); // NOI18N
 
         users_jPanel.setBackground(new java.awt.Color(64, 132, 173));
         users_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, new java.awt.Color(17, 102, 153)));
@@ -157,16 +191,6 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
 
-        registermember_jButton.setBackground(new java.awt.Color(190, 190, 253));
-        registermember_jButton.setFont(new java.awt.Font("Book Antiqua", 1, 16)); // NOI18N
-        registermember_jButton.setForeground(new java.awt.Color(51, 120, 156));
-        registermember_jButton.setText("Register");
-        registermember_jButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                registermember_jButtonActionPerformed(evt);
-            }
-        });
-
         member_jButton.setBackground(new java.awt.Color(190, 190, 253));
         member_jButton.setFont(new java.awt.Font("Book Antiqua", 1, 16)); // NOI18N
         member_jButton.setForeground(new java.awt.Color(51, 120, 156));
@@ -177,35 +201,51 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
 
+        newAccount_jLabel.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
         newAccount_jLabel.setText("Create new account?");
+
+        registerMember_jButton.setBackground(new java.awt.Color(190, 190, 253));
+        registerMember_jButton.setFont(new java.awt.Font("Book Antiqua", 1, 16)); // NOI18N
+        registerMember_jButton.setForeground(new java.awt.Color(51, 120, 156));
+        registerMember_jButton.setText("Register");
+        registerMember_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerMember_jButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout users_jPanelLayout = new javax.swing.GroupLayout(users_jPanel);
         users_jPanel.setLayout(users_jPanelLayout);
         users_jPanelLayout.setHorizontalGroup(
             users_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, users_jPanelLayout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
+                .addContainerGap(32, Short.MAX_VALUE)
                 .addGroup(users_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(member_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(registermember_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(admin_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(users_jPanelLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(newAccount_jLabel)))
-                .addGap(29, 29, 29))
+                        .addComponent(registerMember_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, users_jPanelLayout.createSequentialGroup()
+                        .addGroup(users_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(member_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(admin_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29))))
+            .addGroup(users_jPanelLayout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addComponent(newAccount_jLabel)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         users_jPanelLayout.setVerticalGroup(
             users_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, users_jPanelLayout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(26, 26, 26)
                 .addComponent(admin_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(33, 33, 33)
                 .addComponent(member_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
-                .addComponent(newAccount_jLabel)
+                .addGap(18, 18, 18)
+                .addComponent(newAccount_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(registermember_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+                .addComponent(registerMember_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
 
         loginAdmin_jPanel.setBackground(new java.awt.Color(64, 132, 173));
@@ -223,20 +263,30 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Username");
+        adminName_jLabel.setFont(new java.awt.Font("Maiandra GD", 0, 14)); // NOI18N
+        adminName_jLabel.setText("Username");
 
-        jLabel2.setText("Password");
-
-        jButton1.setText("Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        adminName_jTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                adminName_jTextFieldActionPerformed(evt);
             }
         });
+
+        adminPassword_jLabel.setFont(new java.awt.Font("Maiandra GD", 0, 14)); // NOI18N
+        adminPassword_jLabel.setText("Password");
 
         admin_jPasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 admin_jPasswordFieldActionPerformed(evt);
+            }
+        });
+
+        backAdmin_jButton.setBackground(new java.awt.Color(166, 206, 229));
+        backAdmin_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
+        backAdmin_jButton.setText("Back");
+        backAdmin_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backAdmin_jButtonActionPerformed(evt);
             }
         });
 
@@ -245,39 +295,41 @@ public class homeGUI extends javax.swing.JFrame {
         loginAdmin_jPanelLayout.setHorizontalGroup(
             loginAdmin_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginAdmin_jPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(backAdmin_jButton)
+                .addContainerGap())
+            .addGroup(loginAdmin_jPanelLayout.createSequentialGroup()
+                .addGap(0, 30, Short.MAX_VALUE)
                 .addGroup(loginAdmin_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(loginAdmin_jPanelLayout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(jLabel2))
-                    .addGroup(loginAdmin_jPanelLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jLabel1)))
+                    .addComponent(adminName_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adminLogin_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(admin_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 31, Short.MAX_VALUE))
+            .addGroup(loginAdmin_jPanelLayout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(adminPassword_jLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginAdmin_jPanelLayout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
-                .addGroup(loginAdmin_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adminLogin_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(adminName_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(admin_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(loginAdmin_jPanelLayout.createSequentialGroup()
-                        .addGap(141, 141, 141)
-                        .addComponent(jButton1))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(adminName_jLabel)
+                .addGap(85, 85, 85))
         );
         loginAdmin_jPanelLayout.setVerticalGroup(
             loginAdmin_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginAdmin_jPanelLayout.createSequentialGroup()
-                .addComponent(jButton1)
-                .addGap(17, 17, 17)
-                .addComponent(jLabel1)
+                .addGap(28, 28, 28)
+                .addComponent(adminName_jLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(adminName_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(adminPassword_jLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(admin_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(23, 23, 23)
                 .addComponent(adminLogin_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(backAdmin_jButton)
+                .addGap(5, 5, 5))
         );
 
         loginMember_jPanel.setBackground(new java.awt.Color(64, 132, 173));
@@ -285,24 +337,28 @@ public class homeGUI extends javax.swing.JFrame {
         loginMember_jPanel.setToolTipText("");
         loginMember_jPanel.setPreferredSize(new java.awt.Dimension(238, 257));
 
-        memberLogin_jButton2.setBackground(new java.awt.Color(190, 190, 253));
-        memberLogin_jButton2.setFont(new java.awt.Font("Book Antiqua", 1, 16)); // NOI18N
-        memberLogin_jButton2.setForeground(new java.awt.Color(51, 120, 156));
-        memberLogin_jButton2.setText("Login ");
-        memberLogin_jButton2.addActionListener(new java.awt.event.ActionListener() {
+        memberLogin_jButton.setBackground(new java.awt.Color(190, 190, 253));
+        memberLogin_jButton.setFont(new java.awt.Font("Book Antiqua", 1, 16)); // NOI18N
+        memberLogin_jButton.setForeground(new java.awt.Color(51, 120, 156));
+        memberLogin_jButton.setText("Login ");
+        memberLogin_jButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                memberLogin_jButton2ActionPerformed(evt);
+                memberLogin_jButtonActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Username");
+        memberName_jLabel.setFont(new java.awt.Font("Maiandra GD", 0, 14)); // NOI18N
+        memberName_jLabel.setText("Username");
 
-        jLabel4.setText("Password");
+        memberPassword_jLabel.setFont(new java.awt.Font("Maiandra GD", 0, 14)); // NOI18N
+        memberPassword_jLabel.setText("Password");
 
-        jButton2.setText("Back");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        backMember_jButton.setBackground(new java.awt.Color(166, 206, 229));
+        backMember_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
+        backMember_jButton.setText("Back");
+        backMember_jButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                backMember_jButtonActionPerformed(evt);
             }
         });
 
@@ -310,41 +366,41 @@ public class homeGUI extends javax.swing.JFrame {
         loginMember_jPanel.setLayout(loginMember_jPanelLayout);
         loginMember_jPanelLayout.setHorizontalGroup(
             loginMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginMember_jPanelLayout.createSequentialGroup()
-                .addGroup(loginMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(loginMember_jPanelLayout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(jLabel4))
-                    .addGroup(loginMember_jPanelLayout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(jLabel3)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginMember_jPanelLayout.createSequentialGroup()
-                .addGap(0, 38, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(loginMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginMember_jPanelLayout.createSequentialGroup()
-                        .addGroup(loginMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(memberNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(memberLogin_jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(member_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32))))
+                        .addGroup(loginMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(memberName_jTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                            .addComponent(member_jPasswordField)
+                            .addComponent(memberLogin_jButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(32, 32, 32))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginMember_jPanelLayout.createSequentialGroup()
+                        .addComponent(backMember_jButton)
+                        .addContainerGap())))
+            .addGroup(loginMember_jPanelLayout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addGroup(loginMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(memberName_jLabel)
+                    .addComponent(memberPassword_jLabel))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         loginMember_jPanelLayout.setVerticalGroup(
             loginMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginMember_jPanelLayout.createSequentialGroup()
-                .addComponent(jButton2)
-                .addGap(15, 15, 15)
-                .addComponent(jLabel3)
+                .addGap(30, 30, 30)
+                .addComponent(memberName_jLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(memberNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(memberName_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(memberPassword_jLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(member_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(memberLogin_jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addGap(23, 23, 23)
+                .addComponent(memberLogin_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(backMember_jButton)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout home_jPanelLayout = new javax.swing.GroupLayout(home_jPanel);
@@ -353,7 +409,7 @@ public class homeGUI extends javax.swing.JFrame {
             home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, home_jPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(academyimage_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(academyImage_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(users_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -366,52 +422,95 @@ public class homeGUI extends javax.swing.JFrame {
             home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(home_jPanelLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(loginMember_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(users_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(academyimage_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loginAdmin_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20))
+                .addGroup(home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(academyImage_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(loginAdmin_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                    .addComponent(loginMember_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                    .addComponent(users_jPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
         );
 
         main_jPanel.add(home_jPanel);
         home_jPanel.setBounds(27, 137, 680, 300);
 
-        jPanel3.setBackground(new java.awt.Color(230, 244, 254));
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
-        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
+        registerMember_jPanel.setBackground(new java.awt.Color(230, 244, 254));
+        registerMember_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
+        registerMember_jPanel.setForeground(new java.awt.Color(255, 255, 255));
+        registerMember_jPanel.setPreferredSize(new java.awt.Dimension(680, 300));
 
-        BackButton_Registration.setText("Back");
-        BackButton_Registration.addActionListener(new java.awt.event.ActionListener() {
+        registration_jLabel.setFont(new java.awt.Font("Maiandra GD", 1, 20)); // NOI18N
+        registration_jLabel.setForeground(new java.awt.Color(64, 132, 173));
+        registration_jLabel.setText("Registration");
+        registration_jLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        name_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        name_jLabel.setText("Name: ");
+
+        name_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        name_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+        name_jTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackButton_RegistrationActionPerformed(evt);
+                name_jTextFieldActionPerformed(evt);
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel5.setText("Registration");
+        age_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        age_jLabel.setText("Age:");
 
-        name_jLabel.setText("Name ");
+        age_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        age_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
 
-        specialization_jLabel.setText("Specialization");
+        specialization_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        specialization_jLabel.setText("Specialization:");
 
-        age_jLabel.setText(" Age");
-
-        username_jLabel.setText(" Username");
-
-        password_jLabel.setText(" Password");
-
+        specialization_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        specialization_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
         specialization_jTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 specialization_jTextFieldActionPerformed(evt);
             }
         });
 
-        repassword_jLabel.setText("Re-type Password");
+        username_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        username_jLabel.setText("Username:");
 
-        MemberInfo_jTable.setModel(new javax.swing.table.DefaultTableModel(
+        username_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        username_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+        username_jTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                username_jTextFieldActionPerformed(evt);
+            }
+        });
+
+        password_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        password_jLabel.setText("Password:");
+
+        password_jPasswordField.setBackground(new java.awt.Color(233, 233, 254));
+        password_jPasswordField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+        password_jPasswordField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                password_jPasswordFieldActionPerformed(evt);
+            }
+        });
+
+        rePassword_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        rePassword_jLabel.setText("Re-type Password:");
+
+        repassword_jPasswordField.setBackground(new java.awt.Color(233, 233, 254));
+        repassword_jPasswordField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+
+        submit_jButton.setBackground(new java.awt.Color(190, 190, 253));
+        submit_jButton.setFont(new java.awt.Font("Book Antiqua", 1, 16)); // NOI18N
+        submit_jButton.setForeground(new java.awt.Color(51, 120, 156));
+        submit_jButton.setText("Submit");
+        submit_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submit_jButtonActionPerformed(evt);
+            }
+        });
+
+        memberInfo_jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null}
             },
@@ -419,130 +518,136 @@ public class homeGUI extends javax.swing.JFrame {
                 "Name", "Age", "Specialization", "Username", "Password"
             }
         ));
-        jScrollPane1.setViewportView(MemberInfo_jTable);
+        memberInfo_jTable.setGridColor(new java.awt.Color(204, 204, 255));
+        memberInfo_jTable.setSelectionBackground(new java.awt.Color(166, 206, 229));
+        memberInfo_jTable.setShowGrid(false);
+        registered_jScrollPane.setViewportView(memberInfo_jTable);
 
-        password_jPasswordField.addActionListener(new java.awt.event.ActionListener() {
+        clearRegistration_jButton.setBackground(new java.awt.Color(166, 206, 229));
+        clearRegistration_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
+        clearRegistration_jButton.setText("Clear");
+        clearRegistration_jButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                password_jPasswordFieldActionPerformed(evt);
+                clearRegistration_jButtonActionPerformed(evt);
             }
         });
 
-        Submit_jButton.setText("Submit");
-        Submit_jButton.addActionListener(new java.awt.event.ActionListener() {
+        backRegistration_jButton.setBackground(new java.awt.Color(166, 206, 229));
+        backRegistration_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
+        backRegistration_jButton.setText("Back");
+        backRegistration_jButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Submit_jButtonActionPerformed(evt);
+                backRegistration_jButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(290, 290, 290))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(BackButton_Registration)
-                        .addGap(29, 29, 29))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(age_jLabel)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(name_jLabel)
-                                        .addGap(48, 48, 48))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(specialization_jLabel)
-                                        .addGap(18, 18, 18)))
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(specialization_jTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                                        .addComponent(age_jTextField))
-                                    .addComponent(name_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(90, 90, 90)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(password_jLabel)
-                                    .addComponent(repassword_jLabel)
-                                    .addComponent(username_jLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(password_jPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                                    .addComponent(repassword_jPasswordField)
-                                    .addComponent(username_jTextField))))
-                        .addGap(116, 116, 116))))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(274, 274, 274)
-                .addComponent(Submit_jButton)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(username_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(username_jLabel))
+        javax.swing.GroupLayout registerMember_jPanelLayout = new javax.swing.GroupLayout(registerMember_jPanel);
+        registerMember_jPanel.setLayout(registerMember_jPanelLayout);
+        registerMember_jPanelLayout.setHorizontalGroup(
+            registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
+                .addContainerGap(104, Short.MAX_VALUE)
+                .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
+                        .addComponent(backRegistration_jButton)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
+                        .addComponent(registered_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(120, 120, 120))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
+                .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(registerMember_jPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
+                                .addComponent(registration_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(239, 239, 239))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
+                                .addComponent(submit_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(201, 201, 201)
+                                .addComponent(clearRegistration_jButton))))
+                    .addGroup(registerMember_jPanelLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(age_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(specialization_jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(name_jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(password_jLabel)
-                            .addComponent(password_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(repassword_jLabel)
-                            .addComponent(repassword_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(name_jLabel)
-                            .addComponent(name_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(age_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(age_jLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(specialization_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(specialization_jLabel))))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(Submit_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(32, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(specialization_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(age_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(name_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BackButton_Registration)
-                        .addGap(75, 75, 75))))
+                        .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rePassword_jLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(password_jLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(username_jLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(repassword_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(password_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(username_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(22, 22, 22))
+        );
+        registerMember_jPanelLayout.setVerticalGroup(
+            registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
+                .addGap(4, 4, 4)
+                .addComponent(registration_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(username_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(username_jLabel)
+                    .addComponent(name_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(name_jLabel))
+                .addGap(18, 18, 18)
+                .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(password_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(password_jLabel)
+                    .addComponent(age_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(age_jLabel))
+                .addGap(18, 18, 18)
+                .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(specialization_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(specialization_jLabel)
+                    .addComponent(repassword_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rePassword_jLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(submit_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clearRegistration_jButton))
+                .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(registerMember_jPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(registered_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(25, Short.MAX_VALUE))
+                    .addGroup(registerMember_jPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(backRegistration_jButton)
+                        .addContainerGap())))
         );
 
-        main_jPanel.add(jPanel3);
-        jPanel3.setBounds(27, 137, 680, 300);
+        main_jPanel.add(registerMember_jPanel);
+        registerMember_jPanel.setBounds(27, 137, 680, 300);
 
-        backgroundimage_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Music Notes.png"))); // NOI18N
-        backgroundimage_jLabel.setMinimumSize(new java.awt.Dimension(500, 700));
-        backgroundimage_jLabel.setPreferredSize(new java.awt.Dimension(1000, 1080));
-        main_jPanel.add(backgroundimage_jLabel);
-        backgroundimage_jLabel.setBounds(0, 0, 760, 470);
+        backgroundImage_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Music Notes.png"))); // NOI18N
+        backgroundImage_jLabel.setMinimumSize(new java.awt.Dimension(500, 700));
+        backgroundImage_jLabel.setPreferredSize(new java.awt.Dimension(1000, 1080));
+        main_jPanel.add(backgroundImage_jLabel);
+        backgroundImage_jLabel.setBounds(0, 0, 760, 470);
 
         instrument_jPanel.setLayout(null);
 
-        jPanel4.setBackground(new java.awt.Color(166, 206, 229));
-        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
-        jPanel4.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel4.setLayout(null);
+        instrumentMain_jPanel.setBackground(new java.awt.Color(166, 206, 229));
+        instrumentMain_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
+        instrumentMain_jPanel.setForeground(new java.awt.Color(255, 255, 255));
+        instrumentMain_jPanel.setLayout(null);
 
-        jLabel14.setText("Search by:");
-        jPanel4.add(jLabel14);
-        jLabel14.setBounds(30, 20, 60, 14);
+        searchBy_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        searchBy_jLabel.setText("Search by:");
+        instrumentMain_jPanel.add(searchBy_jLabel);
+        searchBy_jLabel.setBounds(30, 20, 70, 18);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -563,86 +668,124 @@ public class homeGUI extends javax.swing.JFrame {
                 "Instrument ID", "Instrument", "Model No.", "Brand", "Price", "Warranty"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jTable1.setSelectionBackground(new java.awt.Color(166, 206, 229));
+        jTable1.setShowGrid(false);
+        jTable1.setShowHorizontalLines(true);
+        jTable1.setShowVerticalLines(true);
+        instrumentTable_jScrollPane.setViewportView(jTable1);
 
-        jPanel4.add(jScrollPane2);
-        jScrollPane2.setBounds(30, 60, 610, 220);
+        instrumentMain_jPanel.add(instrumentTable_jScrollPane);
+        instrumentTable_jScrollPane.setBounds(30, 60, 610, 220);
 
-        jRadioButton1.setBackground(new java.awt.Color(166, 206, 229));
-        searchBy_jButton.add(jRadioButton1);
-        jRadioButton1.setText("Category");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        category_jRadioButton.setBackground(new java.awt.Color(166, 206, 229));
+        searchBy_jButton.add(category_jRadioButton);
+        category_jRadioButton.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        category_jRadioButton.setText("Category");
+        category_jRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                category_jRadioButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(jRadioButton1);
-        jRadioButton1.setBounds(100, 13, 71, 30);
+        instrumentMain_jPanel.add(category_jRadioButton);
+        category_jRadioButton.setBounds(100, 13, 90, 30);
 
-        jRadioButton2.setBackground(new java.awt.Color(166, 206, 229));
-        searchBy_jButton.add(jRadioButton2);
-        jRadioButton2.setText("Price");
-        jPanel4.add(jRadioButton2);
-        jRadioButton2.setBounds(190, 13, 70, 30);
+        categorySearch_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        categorySearch_jLabel.setText(" Category:");
+        instrumentMain_jPanel.add(categorySearch_jLabel);
+        categorySearch_jLabel.setBounds(490, 10, 70, 40);
 
-        instrument_jPanel.add(jPanel4);
-        jPanel4.setBounds(27, 137, 680, 300);
+        price_jRadioButton.setBackground(new java.awt.Color(166, 206, 229));
+        searchBy_jButton.add(price_jRadioButton);
+        price_jRadioButton.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        price_jRadioButton.setText("Price");
+        price_jRadioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                price_jRadioButtonActionPerformed(evt);
+            }
+        });
+        instrumentMain_jPanel.add(price_jRadioButton);
+        price_jRadioButton.setBounds(190, 13, 70, 30);
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        priceSearch_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        priceSearch_jLabel.setText("Price:");
+        instrumentMain_jPanel.add(priceSearch_jLabel);
+        priceSearch_jLabel.setBounds(519, 20, 60, 20);
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Flute.png"))); // NOI18N
+        price_jComboBox.setBackground(new java.awt.Color(204, 204, 255));
+        price_jComboBox.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
+        price_jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3000" }));
+        price_jComboBox.setToolTipText("");
+        price_jComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                price_jComboBoxActionPerformed(evt);
+            }
+        });
+        instrumentMain_jPanel.add(price_jComboBox);
+        price_jComboBox.setBounds(570, 10, 70, 30);
+        instrumentMain_jPanel.add(category_jTextField);
+        category_jTextField.setBounds(570, 10, 70, 30);
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Piano.png"))); // NOI18N
+        instrument_jPanel.add(instrumentMain_jPanel);
+        instrumentMain_jPanel.setBounds(27, 137, 680, 300);
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Mic.png"))); // NOI18N
+        instrumentImage_jPanel.setBackground(new java.awt.Color(204, 204, 255));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Violin.png"))); // NOI18N
+        guitar_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Guitar.png"))); // NOI18N
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Drums.png"))); // NOI18N
+        drums_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Drums.png"))); // NOI18N
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Guitar.png"))); // NOI18N
+        violin_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Violin.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        mic_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Mic.png"))); // NOI18N
+
+        piano_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Piano.png"))); // NOI18N
+
+        flute_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Flute.png"))); // NOI18N
+
+        javax.swing.GroupLayout instrumentImage_jPanelLayout = new javax.swing.GroupLayout(instrumentImage_jPanel);
+        instrumentImage_jPanel.setLayout(instrumentImage_jPanelLayout);
+        instrumentImage_jPanelLayout.setHorizontalGroup(
+            instrumentImage_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, instrumentImage_jPanelLayout.createSequentialGroup()
                 .addGap(9, 9, 9)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(guitar_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addComponent(jLabel9)
+                .addComponent(drums_jLabel)
                 .addGap(9, 9, 9)
-                .addComponent(jLabel8)
+                .addComponent(violin_jLabel)
                 .addGap(9, 9, 9)
-                .addComponent(jLabel11)
+                .addComponent(mic_jLabel)
                 .addGap(9, 9, 9)
-                .addComponent(jLabel12)
+                .addComponent(piano_jLabel)
                 .addGap(9, 9, 9)
-                .addComponent(jLabel13)
+                .addComponent(flute_jLabel)
                 .addGap(9, 9, 9))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        instrumentImage_jPanelLayout.setVerticalGroup(
+            instrumentImage_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, instrumentImage_jPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13))
+                .addGroup(instrumentImage_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(guitar_jLabel)
+                    .addComponent(drums_jLabel)
+                    .addComponent(violin_jLabel)
+                    .addComponent(mic_jLabel)
+                    .addComponent(piano_jLabel)
+                    .addComponent(flute_jLabel))
                 .addGap(9, 9, 9))
         );
 
-        instrument_jPanel.add(jPanel2);
-        jPanel2.setBounds(10, 15, 720, 100);
+        instrument_jPanel.add(instrumentImage_jPanel);
+        instrumentImage_jPanel.setBounds(8, 12, 720, 100);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel6.setText("Instruments");
-        instrument_jPanel.add(jLabel6);
-        jLabel6.setBounds(320, 120, 90, 17);
+        instruments_jLabel.setFont(new java.awt.Font("Maiandra GD", 1, 24)); // NOI18N
+        instruments_jLabel.setForeground(new java.awt.Color(251, 216, 251));
+        instruments_jLabel.setText("Instruments");
+        instrument_jPanel.add(instruments_jLabel);
+        instruments_jLabel.setBounds(302, 109, 140, 30);
 
+        back_jButton.setBackground(new java.awt.Color(166, 206, 229));
+        back_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
         back_jButton.setText("Back");
         back_jButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -652,9 +795,267 @@ public class homeGUI extends javax.swing.JFrame {
         instrument_jPanel.add(back_jButton);
         back_jButton.setBounds(650, 437, 60, 30);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Instrument Wallpaper.png"))); // NOI18N
-        instrument_jPanel.add(jLabel7);
-        jLabel7.setBounds(0, 0, 990, 500);
+        instrumentBgImage_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Instrument Wallpaper.png"))); // NOI18N
+        instrument_jPanel.add(instrumentBgImage_jLabel);
+        instrumentBgImage_jLabel.setBounds(0, 0, 990, 500);
+
+        adminAddInstruments_jPanel.setLayout(null);
+
+        addInstrument_jPanel.setBackground(new java.awt.Color(166, 206, 229));
+        addInstrument_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
+        addInstrument_jPanel.setForeground(new java.awt.Color(255, 255, 255));
+
+        instrumentID_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        instrumentID_jLabel.setText("Instrument ID:");
+
+        instrumentID_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        instrumentID_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+        instrumentID_jTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                instrumentID_jTextFieldActionPerformed(evt);
+            }
+        });
+
+        modelNo_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        modelNo_jLabel.setText("Model No.:");
+
+        modelNo_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        modelNo_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+        modelNo_jTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modelNo_jTextFieldActionPerformed(evt);
+            }
+        });
+
+        price_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        price_jLabel.setText("Price:");
+
+        price_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        price_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+        price_jTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                price_jTextFieldActionPerformed(evt);
+            }
+        });
+
+        instrument_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        instrument_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+        instrument_jTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                instrument_jTextFieldActionPerformed(evt);
+            }
+        });
+
+        brand_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        brand_jLabel.setText("Brand:");
+
+        brand_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        brand_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+        brand_jTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brand_jTextFieldActionPerformed(evt);
+            }
+        });
+
+        warranty_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        warranty_jLabel.setText("Warranty:");
+
+        warranty_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        warranty_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+        warranty_jTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                warranty_jTextFieldActionPerformed(evt);
+            }
+        });
+
+        instrument_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        instrument_jLabel.setText("Instrument:");
+
+        add_jButton.setBackground(new java.awt.Color(190, 190, 253));
+        add_jButton.setFont(new java.awt.Font("Book Antiqua", 1, 16)); // NOI18N
+        add_jButton.setForeground(new java.awt.Color(51, 120, 156));
+        add_jButton.setText("Add");
+        add_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_jButtonActionPerformed(evt);
+            }
+        });
+
+        add_jTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Instrument ID", "Instrument", "Model No.", "Brand", "Price", "Warranty"
+            }
+        ));
+        add_jTable.setGridColor(new java.awt.Color(204, 204, 255));
+        add_jTable.setSelectionBackground(new java.awt.Color(166, 206, 229));
+        add_jTable.setShowGrid(false);
+        add_jScrollPane.setViewportView(add_jTable);
+
+        adminInstrument_jLabel.setFont(new java.awt.Font("Maiandra GD", 1, 24)); // NOI18N
+        adminInstrument_jLabel.setForeground(new java.awt.Color(251, 216, 251));
+        adminInstrument_jLabel.setText("Add Instruments");
+
+        clearAddInstruments_jButton.setBackground(new java.awt.Color(166, 206, 229));
+        clearAddInstruments_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
+        clearAddInstruments_jButton.setText("Clear");
+        clearAddInstruments_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearAddInstruments_jButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout addInstrument_jPanelLayout = new javax.swing.GroupLayout(addInstrument_jPanel);
+        addInstrument_jPanel.setLayout(addInstrument_jPanelLayout);
+        addInstrument_jPanelLayout.setHorizontalGroup(
+            addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addInstrument_jPanelLayout.createSequentialGroup()
+                .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(addInstrument_jPanelLayout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addComponent(add_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(addInstrument_jPanelLayout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addComponent(adminInstrument_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(87, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addInstrument_jPanelLayout.createSequentialGroup()
+                .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(addInstrument_jPanelLayout.createSequentialGroup()
+                        .addGap(278, 278, 278)
+                        .addComponent(add_jButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(clearAddInstruments_jButton))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, addInstrument_jPanelLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(modelNo_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(instrumentID_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(price_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, 0)
+                        .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(price_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(modelNo_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(instrumentID_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(instrument_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(brand_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(warranty_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, 0)
+                        .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(brand_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(instrument_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(warranty_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18))
+        );
+        addInstrument_jPanelLayout.setVerticalGroup(
+            addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addInstrument_jPanelLayout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(adminInstrument_jLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(instrumentID_jLabel)
+                    .addGroup(addInstrument_jPanelLayout.createSequentialGroup()
+                        .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(modelNo_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(instrument_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(instrument_jLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(instrumentID_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(modelNo_jLabel)
+                            .addComponent(brand_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(warranty_jLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(price_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(price_jLabel)
+                            .addComponent(warranty_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(brand_jLabel))))
+                .addGap(0, 10, Short.MAX_VALUE)
+                .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(add_jButton)
+                    .addComponent(clearAddInstruments_jButton))
+                .addGap(18, 18, 18)
+                .addComponent(add_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        adminAddInstruments_jPanel.add(addInstrument_jPanel);
+        addInstrument_jPanel.setBounds(27, 137, 680, 300);
+
+        instrumentImage_jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+
+        addGuitar_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Guitar.png"))); // NOI18N
+
+        addDrums_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Drums.png"))); // NOI18N
+
+        addViolin_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Violin.png"))); // NOI18N
+
+        addMic_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Mic.png"))); // NOI18N
+
+        addPiano_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Piano.png"))); // NOI18N
+
+        addFlute_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Flute.png"))); // NOI18N
+
+        javax.swing.GroupLayout instrumentImage_jPanel1Layout = new javax.swing.GroupLayout(instrumentImage_jPanel1);
+        instrumentImage_jPanel1.setLayout(instrumentImage_jPanel1Layout);
+        instrumentImage_jPanel1Layout.setHorizontalGroup(
+            instrumentImage_jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, instrumentImage_jPanel1Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(addGuitar_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addComponent(addDrums_jLabel)
+                .addGap(9, 9, 9)
+                .addComponent(addViolin_jLabel)
+                .addGap(9, 9, 9)
+                .addComponent(addMic_jLabel)
+                .addGap(9, 9, 9)
+                .addComponent(addPiano_jLabel)
+                .addGap(9, 9, 9)
+                .addComponent(addFlute_jLabel)
+                .addGap(9, 9, 9))
+        );
+        instrumentImage_jPanel1Layout.setVerticalGroup(
+            instrumentImage_jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, instrumentImage_jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(instrumentImage_jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(addGuitar_jLabel)
+                    .addComponent(addDrums_jLabel)
+                    .addComponent(addViolin_jLabel)
+                    .addComponent(addMic_jLabel)
+                    .addComponent(addPiano_jLabel)
+                    .addComponent(addFlute_jLabel))
+                .addGap(9, 9, 9))
+        );
+
+        adminAddInstruments_jPanel.add(instrumentImage_jPanel1);
+        instrumentImage_jPanel1.setBounds(8, 12, 720, 100);
+
+        adminBack_jButton.setBackground(new java.awt.Color(166, 206, 229));
+        adminBack_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
+        adminBack_jButton.setText("Back");
+        adminBack_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminBack_jButtonActionPerformed(evt);
+            }
+        });
+        adminAddInstruments_jPanel.add(adminBack_jButton);
+        adminBack_jButton.setBounds(650, 437, 60, 30);
+
+        addBgImage_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Instrument Wallpaper.png"))); // NOI18N
+        adminAddInstruments_jPanel.add(addBgImage_jLabel);
+        addBgImage_jLabel.setBounds(0, -20, 990, 500);
+
+        fileHelp_jMenuBar.setBackground(new java.awt.Color(216, 216, 254));
+        fileHelp_jMenuBar.setMinimumSize(new java.awt.Dimension(75, 20));
 
         file_jMenu.setText("File");
 
@@ -694,19 +1095,23 @@ public class homeGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(main_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(adminAddInstruments_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(main_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(instrument_jPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(instrument_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 750, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(756, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(main_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(main_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(adminAddInstruments_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(instrument_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 479, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 31, Short.MAX_VALUE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         main_jPanel.getAccessibleContext().setAccessibleName("");
@@ -724,13 +1129,13 @@ public class homeGUI extends javax.swing.JFrame {
         loginMember_jPanel.setVisible(false);
     }//GEN-LAST:event_admin_jButtonActionPerformed
 
-    private void registermember_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registermember_jButtonActionPerformed
+    private void registerMember_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerMember_jButtonActionPerformed
         // TODO add your handling code here:
         main_jPanel.setVisible(true);
         home_jPanel.setVisible(false);
-        jPanel3.setVisible(true);
-        jPanel4.setVisible(false);
-    }//GEN-LAST:event_registermember_jButtonActionPerformed
+        registerMember_jPanel.setVisible(true);
+        instrumentMain_jPanel.setVisible(false);
+    }//GEN-LAST:event_registerMember_jButtonActionPerformed
 
     private void member_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_member_jButtonActionPerformed
         // TODO add your handling code here:
@@ -743,65 +1148,89 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String enteredUserName = adminName_jTextField.getText();
         String enteredPassword = admin_jPasswordField.getText();
-        if(enteredUserName.equals("Admin")){
+        int count = 0;
+        if (enteredUserName.equals("") || enteredPassword.equals(""))
+        {
+            JOptionPane.showMessageDialog(rootPane, "Please ensure that all fields are filled.");
+            count = 1;
+        }
+        if (count == 0){
+            if(enteredUserName.equals("Admin")){
             if(enteredPassword.equals("@admin")){
-                jPanel4.setVisible(true);
-                main_jPanel.setVisible(true);
+                instrumentMain_jPanel.setVisible(false);
+                main_jPanel.setVisible(false);
                 home_jPanel.setVisible(false);
-                jPanel3.setVisible(false);
+                registerMember_jPanel.setVisible(false);
+                instrument_jPanel.setVisible(false);
+                addInstrument_jPanel.setVisible(true);
+                adminAddInstruments_jPanel.setVisible(true);
+                adminBack_jButton.setVisible(true);
             }
             else{
-                JOptionPane.showMessageDialog(this, "Incorrect Password","ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Incorrect Password.","ERROR!",JOptionPane.ERROR_MESSAGE);
             }
         }
         else{
-            JOptionPane.showMessageDialog(this, "Invalid Username","ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
-        }        
+            JOptionPane.showMessageDialog(this, "Invalid Username.","ERROR!",JOptionPane.ERROR_MESSAGE);
+        }  
+        }
+              
     }//GEN-LAST:event_adminLogin_jButtonActionPerformed
 
-    private void memberLogin_jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberLogin_jButton2ActionPerformed
+    private void memberLogin_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberLogin_jButtonActionPerformed
         // TODO add your handling code here:
-        String enteredUserName = memberNameField.getText();
+        String enteredUserName = memberName_jTextField.getText();
         String enteredPassword = member_jPasswordField.getText();
-       
-       if(loginMap.containsKey(enteredUserName)){
-           String storedPassword = loginMap.get(enteredUserName);
-           if(enteredPassword.equals(storedPassword)){
-               instrument_jPanel.setVisible(true);
-               jPanel4.setVisible(true);
-               loginMember_jPanel.setVisible(false);
-               users_jPanel.setVisible(false);
-               main_jPanel.setVisible(false);
-               home_jPanel.setVisible(false);        
-               jPanel3.setVisible(false);
-               back_jButton.setVisible(true);               
-           }
-           else{
-               JOptionPane.showMessageDialog(this, "Invalid Password","ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
-           }        
-       }
-       else{
-           JOptionPane.showMessageDialog(this, "User not found","ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
-       }       
-    }//GEN-LAST:event_memberLogin_jButton2ActionPerformed
+        int count = 0;
+        if (enteredUserName.equals("") || enteredPassword.equals(""))
+        {
+            JOptionPane.showMessageDialog(rootPane, "Please ensure that all fields are filled.");
+            count = 1;
+        }
+        if (count == 0){
+            if(loginMap.containsKey(enteredUserName)){
+               String storedPassword = loginMap.get(enteredUserName);
+                if(enteredPassword.equals(storedPassword)){
+                    instrument_jPanel.setVisible(true);
+                    instrumentMain_jPanel.setVisible(true);
+                    loginMember_jPanel.setVisible(false);
+                    users_jPanel.setVisible(false);
+                    main_jPanel.setVisible(false);
+                    home_jPanel.setVisible(false);        
+                    registerMember_jPanel.setVisible(false);
+                    back_jButton.setVisible(true);       
+                    categorySearch_jLabel.setVisible(false);
+                    category_jTextField.setVisible(false);
+                    priceSearch_jLabel.setVisible(false);
+                    price_jComboBox.setVisible(false);
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "Invalid Password.","ERROR!",JOptionPane.ERROR_MESSAGE);
+               }        
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "User Not Found.","ERROR!",JOptionPane.ERROR_MESSAGE);
+            }  
+        }
+    }//GEN-LAST:event_memberLogin_jButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void backAdmin_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backAdmin_jButtonActionPerformed
         // TODO add your handling code here:
         loginAdmin_jPanel.setVisible(false);
         users_jPanel.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_backAdmin_jButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void backMember_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMember_jButtonActionPerformed
         // TODO add your handling code here:
         loginMember_jPanel.setVisible(false);
         users_jPanel.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_backMember_jButtonActionPerformed
 
-    private void BackButton_RegistrationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButton_RegistrationActionPerformed
+    private void backRegistration_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backRegistration_jButtonActionPerformed
         // TODO add your handling code here:
-        jPanel3.setVisible(false);
+        registerMember_jPanel.setVisible(false);
         home_jPanel.setVisible(true);
-    }//GEN-LAST:event_BackButton_RegistrationActionPerformed
+    }//GEN-LAST:event_backRegistration_jButtonActionPerformed
 
     private void password_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_jPasswordFieldActionPerformed
         // TODO add your handling code here:
@@ -811,7 +1240,11 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_specialization_jTextFieldActionPerformed
 
-    private void Submit_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Submit_jButtonActionPerformed
+    public int getage()
+    {
+        return Integer.parseInt(this.age_jTextField.getText());        
+    }
+    private void submit_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_jButtonActionPerformed
         // TODO add your handling code here:
         String period="";
         String name= name_jTextField.getText();
@@ -820,54 +1253,76 @@ public class homeGUI extends javax.swing.JFrame {
         String username= username_jTextField.getText();
         String password= password_jPasswordField.getText();
         String repassword= repassword_jPasswordField.getText();
-        if (password.equals(repassword))
-        {
-            String[]values= {name,age,specialization,username,password};
-            int rowCount= MemberInfo_jTable.getRowCount();
-            int columnCount= MemberInfo_jTable.getColumnCount();
-            int rowIndex=0;
-            do
+        int count = 0;
+        if (name.equals("") || age.equals("") || specialization.equals("") || username.equals("") || password.equals("") || repassword.equals(""))
             {
-                String s= (String)MemberInfo_jTable.getValueAt(rowIndex,0);
-                if (s!= null && s.length()!=0)
-                {
-                    rowIndex++;
-                }
-                else
-                {
-                    break;
-                }
+                JOptionPane.showMessageDialog(rootPane, "Please ensure that all fields are filled.");
+                count = 1;
             }
-            while (rowIndex<rowCount);
-            for (int i=0; i<columnCount; i++)
+        if (count == 0){
+            try{
+                Integer.parseInt(this.age_jTextField.getText());
+            }
+            catch(NumberFormatException ex){
+                JOptionPane.showMessageDialog(rootPane, "The age must be an integer number.","ATTENTION!", JOptionPane.ERROR_MESSAGE);
+                count = 1;
+            }
+        }
+        if (count == 0 ){
+            if (password.equals(repassword))
             {
-                MemberInfo_jTable.setValueAt(values[i],rowIndex,i);
+                String[]values= {name,age,specialization,username,password};
+                int rowCount= memberInfo_jTable.getRowCount();
+                int columnCount= memberInfo_jTable.getColumnCount();
+                int rowIndex=0;
+                do
+                {
+                    String s= (String)memberInfo_jTable.getValueAt(rowIndex,0);
+                    if (s!= null && s.length()!=0)
+                    {
+                        rowIndex++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                while (rowIndex<rowCount);
+                for (int i=0; i<columnCount; i++)
+                {
+                    memberInfo_jTable.setValueAt(values[i],rowIndex,i);
+                }
+                name_jTextField.setText("");
+                age_jTextField.setText("");
+                specialization_jTextField.setText("");
+                username_jTextField.setText("");
+                password_jPasswordField.setText("");
+                repassword_jPasswordField.setText("");
             }
-            name_jTextField.setText("");
-            age_jTextField.setText("");
-            specialization_jTextField.setText("");
-            username_jTextField.setText("");
-            password_jPasswordField.setText("");
-            repassword_jPasswordField.setText("");
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(rootPane, "Incorrect Password. Please re-check!");
-        }
-    }//GEN-LAST:event_Submit_jButtonActionPerformed
+            else
+            {
+                JOptionPane.showMessageDialog(rootPane, "Incorrect Password. Please re-check!","ATTENTION!", JOptionPane.ERROR_MESSAGE);
+            }}
+    }//GEN-LAST:event_submit_jButtonActionPerformed
 
     private void back_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_jButtonActionPerformed
         // TODO add your handling code here:
-        jPanel4.setVisible(false);
+        instrumentMain_jPanel.setVisible(false);
         main_jPanel.setVisible(true);
         home_jPanel.setVisible(true);
-        users_jPanel.setVisible(true);
+        loginMember_jPanel.setVisible(true);
         instrument_jPanel.setVisible(false);
+        memberName_jTextField.setText("");
+        member_jPasswordField.setText("");
     }//GEN-LAST:event_back_jButtonActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void category_jRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_category_jRadioButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+        categorySearch_jLabel.setVisible(true);
+        category_jTextField.setVisible(true);
+        priceSearch_jLabel.setVisible(false);
+        price_jComboBox.setVisible(false);
+    }//GEN-LAST:event_category_jRadioButtonActionPerformed
 
     private void manual_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manual_jMenuItemActionPerformed
         // TODO add your handling code here:
@@ -894,7 +1349,7 @@ public class homeGUI extends javax.swing.JFrame {
             try {
                 desktop.open(fileToOpen);
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(this, "Error","ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Error.","ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_open_jMenuItemActionPerformed
@@ -903,6 +1358,147 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_admin_jPasswordFieldActionPerformed
 
+    private void name_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_name_jTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_name_jTextFieldActionPerformed
+
+    private void username_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_username_jTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_username_jTextFieldActionPerformed
+
+    private void adminBack_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminBack_jButtonActionPerformed
+        // TODO add your handling code here:
+        adminAddInstruments_jPanel.setVisible(false);
+        main_jPanel.setVisible(true);
+        home_jPanel.setVisible(true);
+        loginAdmin_jPanel.setVisible(true);
+        addInstrument_jPanel.setVisible(false);
+        adminName_jTextField.setText("");
+        admin_jPasswordField.setText("");
+    }//GEN-LAST:event_adminBack_jButtonActionPerformed
+
+    private void instrumentID_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instrumentID_jTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_instrumentID_jTextFieldActionPerformed
+
+    private void modelNo_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modelNo_jTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modelNo_jTextFieldActionPerformed
+
+    private void price_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_price_jTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_price_jTextFieldActionPerformed
+
+    private void instrument_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instrument_jTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_instrument_jTextFieldActionPerformed
+
+    private void brand_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brand_jTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_brand_jTextFieldActionPerformed
+
+    private void warranty_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_warranty_jTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_warranty_jTextFieldActionPerformed
+    
+    public int getprice()
+    {
+        return Integer.parseInt(this.price_jTextField.getText());        
+    }
+    
+    private void add_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_jButtonActionPerformed
+        // TODO add your handling code here:
+        String period="";
+        String id= instrumentID_jTextField.getText();
+        String instrument= instrument_jTextField.getText();
+        String model= modelNo_jTextField.getText();
+        String brand= brand_jTextField.getText();
+        String price= price_jTextField.getText();
+        String warranty= warranty_jTextField.getText();
+        int count = 0;
+        if (id.equals("") || instrument.equals("") || model.equals("") || brand.equals("") || price.equals("") || warranty.equals(""))
+            {
+                JOptionPane.showMessageDialog(rootPane, "Please ensure that all fields are filled.");
+                count = 1;
+            }
+        if (count == 0){
+            try{
+                Integer.parseInt(this.price_jTextField.getText());
+            }
+            catch(NumberFormatException ex){
+                JOptionPane.showMessageDialog(rootPane, "The price must be an integer number.","ATTENTION!", JOptionPane.ERROR_MESSAGE);
+                count = 1;
+            }
+        }
+        if (count == 0){
+            {
+                String[]values= {id,instrument,model,brand,price,warranty};
+                int rowCount= add_jTable.getRowCount();
+                int columnCount= add_jTable.getColumnCount();
+                int rowIndex=0;
+                do
+                {
+                    String s= (String)add_jTable.getValueAt(rowIndex,0);
+                    if (s!= null && s.length()!=0)
+                    {
+                        rowIndex++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                while (rowIndex<rowCount);
+                for (int i=0; i<columnCount; i++)
+                {
+                    add_jTable.setValueAt(values[i],rowIndex,i);
+                }
+                instrumentID_jTextField.setText("");
+                instrument_jTextField.setText("");
+                modelNo_jTextField.setText("");
+                brand_jTextField.setText("");
+                price_jTextField.setText("");
+                warranty_jTextField.setText("");
+            }
+            }
+    }//GEN-LAST:event_add_jButtonActionPerformed
+
+    private void price_jComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_price_jComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_price_jComboBoxActionPerformed
+
+    private void price_jRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_price_jRadioButtonActionPerformed
+        // TODO add your handling code here:
+        priceSearch_jLabel.setVisible(true);
+        price_jComboBox.setVisible(true);
+        categorySearch_jLabel.setVisible(false);
+        category_jTextField.setVisible(false);
+    }//GEN-LAST:event_price_jRadioButtonActionPerformed
+
+    private void adminName_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminName_jTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminName_jTextFieldActionPerformed
+
+    private void clearRegistration_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearRegistration_jButtonActionPerformed
+        // TODO add your handling code here:
+        name_jTextField.setText("");
+        age_jTextField.setText("");
+        specialization_jTextField.setText("");
+        username_jTextField.setText("");
+        password_jPasswordField.setText("");
+        repassword_jPasswordField.setText("");
+    }//GEN-LAST:event_clearRegistration_jButtonActionPerformed
+
+    private void clearAddInstruments_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearAddInstruments_jButtonActionPerformed
+        // TODO add your handling code here:
+        instrumentID_jTextField.setText("");
+        instrument_jTextField.setText("");
+        modelNo_jTextField.setText("");
+        price_jTextField.setText("");
+        brand_jTextField.setText("");
+        warranty_jTextField.setText("");
+    }//GEN-LAST:event_clearAddInstruments_jButtonActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -965,72 +1561,105 @@ public class homeGUI extends javax.swing.JFrame {
     }                                                
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BackButton_Registration;
-    private javax.swing.JTable MemberInfo_jTable;
-    private javax.swing.JButton Submit_jButton;
     private javax.swing.JLabel academyAddress_jlabel;
-    private javax.swing.JLabel academy_jlabel;
-    private javax.swing.JLabel academyimage_jLabel;
+    private javax.swing.JLabel academyImage_jLabel;
+    private javax.swing.JLabel academyName_jlabel;
+    private javax.swing.JLabel addBgImage_jLabel;
+    private javax.swing.JLabel addDrums_jLabel;
+    private javax.swing.JLabel addFlute_jLabel;
+    private javax.swing.JLabel addGuitar_jLabel;
+    private javax.swing.JPanel addInstrument_jPanel;
+    private javax.swing.JLabel addMic_jLabel;
+    private javax.swing.JLabel addPiano_jLabel;
+    private javax.swing.JLabel addViolin_jLabel;
+    private javax.swing.JButton add_jButton;
+    private javax.swing.JScrollPane add_jScrollPane;
+    private javax.swing.JTable add_jTable;
+    private javax.swing.JPanel adminAddInstruments_jPanel;
+    private javax.swing.JButton adminBack_jButton;
+    private javax.swing.JLabel adminInstrument_jLabel;
     private javax.swing.JButton adminLogin_jButton;
+    private javax.swing.JLabel adminName_jLabel;
     private javax.swing.JTextField adminName_jTextField;
+    private javax.swing.JLabel adminPassword_jLabel;
     private javax.swing.JButton admin_jButton;
     private javax.swing.JPasswordField admin_jPasswordField;
     private javax.swing.JLabel age_jLabel;
     private javax.swing.JTextField age_jTextField;
+    private javax.swing.JButton backAdmin_jButton;
+    private javax.swing.JButton backMember_jButton;
+    private javax.swing.JButton backRegistration_jButton;
     private javax.swing.JButton back_jButton;
-    private javax.swing.JLabel backgroundimage_jLabel;
+    private javax.swing.JLabel backgroundImage_jLabel;
+    private javax.swing.JLabel brand_jLabel;
+    private javax.swing.JTextField brand_jTextField;
+    private javax.swing.JLabel categorySearch_jLabel;
+    private javax.swing.JRadioButton category_jRadioButton;
+    private javax.swing.JTextField category_jTextField;
+    private javax.swing.JButton clearAddInstruments_jButton;
+    private javax.swing.JButton clearRegistration_jButton;
+    private javax.swing.JLabel drums_jLabel;
     private javax.swing.JMenuItem exit_jMenuItem;
     private javax.swing.JMenuBar fileHelp_jMenuBar;
     private javax.swing.JMenu file_jMenu;
+    private javax.swing.JLabel flute_jLabel;
+    private javax.swing.JLabel guitar_jLabel;
     private javax.swing.JMenu help_jMenu;
     private javax.swing.JPanel home_jPanel;
+    private javax.swing.JLabel instrumentBgImage_jLabel;
+    private javax.swing.JLabel instrumentID_jLabel;
+    private javax.swing.JTextField instrumentID_jTextField;
+    private javax.swing.JPanel instrumentImage_jPanel;
+    private javax.swing.JPanel instrumentImage_jPanel1;
+    private javax.swing.JPanel instrumentMain_jPanel;
+    private javax.swing.JScrollPane instrumentTable_jScrollPane;
+    private javax.swing.JLabel instrument_jLabel;
     private javax.swing.JPanel instrument_jPanel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField instrument_jTextField;
+    private javax.swing.JLabel instruments_jLabel;
     private javax.swing.JTable jTable1;
     private javax.swing.JPanel loginAdmin_jPanel;
     private javax.swing.JPanel loginMember_jPanel;
     private javax.swing.JPanel main_jPanel;
     private javax.swing.JMenuItem manual_jMenuItem;
-    private javax.swing.JButton memberLogin_jButton2;
-    private javax.swing.JTextField memberNameField;
+    private javax.swing.JTable memberInfo_jTable;
+    private javax.swing.JButton memberLogin_jButton;
+    private javax.swing.JLabel memberName_jLabel;
+    private javax.swing.JTextField memberName_jTextField;
+    private javax.swing.JLabel memberPassword_jLabel;
     private javax.swing.JButton member_jButton;
     private javax.swing.JPasswordField member_jPasswordField;
+    private javax.swing.JLabel mic_jLabel;
+    private javax.swing.JLabel modelNo_jLabel;
+    private javax.swing.JTextField modelNo_jTextField;
     private javax.swing.JLabel name_jLabel;
     private javax.swing.JTextField name_jTextField;
     private javax.swing.JLabel newAccount_jLabel;
     private javax.swing.JMenuItem open_jMenuItem;
     private javax.swing.JLabel password_jLabel;
     private javax.swing.JPasswordField password_jPasswordField;
-    private javax.swing.JButton registermember_jButton;
-    private javax.swing.JLabel repassword_jLabel;
+    private javax.swing.JLabel piano_jLabel;
+    private javax.swing.JLabel priceSearch_jLabel;
+    private javax.swing.JComboBox<String> price_jComboBox;
+    private javax.swing.JLabel price_jLabel;
+    private javax.swing.JRadioButton price_jRadioButton;
+    private javax.swing.JTextField price_jTextField;
+    private javax.swing.JLabel rePassword_jLabel;
+    private javax.swing.JButton registerMember_jButton;
+    private javax.swing.JPanel registerMember_jPanel;
+    private javax.swing.JScrollPane registered_jScrollPane;
+    private javax.swing.JLabel registration_jLabel;
     private javax.swing.JPasswordField repassword_jPasswordField;
     private javax.swing.ButtonGroup searchBy_jButton;
+    private javax.swing.JLabel searchBy_jLabel;
     private javax.swing.JLabel specialization_jLabel;
     private javax.swing.JTextField specialization_jTextField;
+    private javax.swing.JButton submit_jButton;
     private javax.swing.JLabel username_jLabel;
     private javax.swing.JTextField username_jTextField;
     private javax.swing.JPanel users_jPanel;
+    private javax.swing.JLabel violin_jLabel;
+    private javax.swing.JLabel warranty_jLabel;
+    private javax.swing.JTextField warranty_jTextField;
     // End of variables declaration//GEN-END:variables
 }
