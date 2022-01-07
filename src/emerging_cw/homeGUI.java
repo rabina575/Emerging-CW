@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -767,7 +768,7 @@ public class homeGUI extends javax.swing.JFrame {
 
         price_jComboBox.setBackground(new java.awt.Color(204, 204, 255));
         price_jComboBox.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
-        price_jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3000" }));
+        price_jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2000", "3000", "4000", "5000", "8000" }));
         price_jComboBox.setToolTipText("");
         price_jComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -781,6 +782,11 @@ public class homeGUI extends javax.swing.JFrame {
         searchPrice_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
         searchPrice_jButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Price Search.png"))); // NOI18N
         searchPrice_jButton.setText("Search");
+        searchPrice_jButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchPrice_jButtonActionPerformed(evt);
+            }
+        });
         instrumentMain_jPanel.add(searchPrice_jButton);
         searchPrice_jButton.setBounds(550, 50, 90, 30);
 
@@ -1174,7 +1180,62 @@ public class homeGUI extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+    private static ArrayList<MusicalInstrument> inventory = new ArrayList();
 
+    private static void readFile() {
+        try {
+            FileReader fileReader = new FileReader("src/CSV_Files/Instruments.csv");
+            BufferedReader csvReader = new BufferedReader(fileReader);
+            String row;
+
+            boolean isFirstLine = true;
+            while ((row = csvReader.readLine()) != null) {
+                //skip first line
+                if (isFirstLine) {
+                    isFirstLine = false;
+                    continue;
+                }
+                String instrumentList[] = row.split(",");
+                int instrumentId = Integer.parseInt(instrumentList[0]);
+                String instrumentName = instrumentList[1];
+                String modelNum = instrumentList[2];
+                String brand = instrumentList[3];
+                int price = Integer.parseInt(instrumentList[4]);
+                int warranty = Integer.parseInt(instrumentList[5]);
+
+                MusicalInstrument musicalInstrument = new MusicalInstrument(instrumentId, instrumentName, modelNum, brand, price, warranty);
+                inventory.add(musicalInstrument);
+
+            }
+            fileReader.close();
+            csvReader.close();
+        } catch (FileNotFoundException e) {
+        } catch (IOException e2) {
+        }
+    }
+    boolean isDisplayed = false;
+    private void display() {
+        for (MusicalInstrument instrument : inventory) {
+            String[] values = {String.valueOf(instrument.getInstrumentId()), instrument.getInstrumentName(), instrument.getmodelNum(), instrument.getBrand(), String.valueOf(instrument.getPrice()), String.valueOf(instrument.getWarranty())};
+            int columnCount = instrument_jTable.getColumnCount();
+            int rowCount = instrument_jTable.getRowCount();
+            int rowIndex = 0;
+            boolean rowEmptyChecker = false;
+            do {
+                String s = (String) instrument_jTable.getValueAt(rowIndex, 0);
+                if (s != null && s.length() != 0) {
+                    rowIndex++;
+                } else {
+                    rowEmptyChecker = true;
+                }
+
+            } while (rowIndex < rowCount && !rowEmptyChecker);
+            for (int i = 0; i < columnCount; i++) {
+                instrument_jTable.setValueAt(values[i], rowIndex, i);
+            }
+        }
+
+    }
     private void admin_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_jButtonActionPerformed
         // TODO add your handling code here:
         loginAdmin_jPanel.setVisible(true);
@@ -1202,32 +1263,29 @@ public class homeGUI extends javax.swing.JFrame {
         String enteredUserName = adminName_jTextField.getText();
         String enteredPassword = admin_jPasswordField.getText();
         int count = 0;
-        if (enteredUserName.equals("") || enteredPassword.equals(""))
-        {
+        if (enteredUserName.equals("") || enteredPassword.equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Please ensure that all fields are filled.");
             count = 1;
         }
-        if (count == 0){
-            if(enteredUserName.equals("Admin")){
-            if(enteredPassword.equals("@admin")){
-                instrumentMain_jPanel.setVisible(false);
-                main_jPanel.setVisible(false);
-                home_jPanel.setVisible(false);
-                registerMember_jPanel.setVisible(false);
-                instrument_jPanel.setVisible(false);
-                addInstrument_jPanel.setVisible(true);
-                adminAddInstruments_jPanel.setVisible(true);
-                adminBack_jButton.setVisible(true);
-            }
-            else{
-                JOptionPane.showMessageDialog(this, "Incorrect Password.","ERROR!",JOptionPane.ERROR_MESSAGE);
+        if (count == 0) {
+            if (enteredUserName.equals("Admin")) {
+                if (enteredPassword.equals("@admin")) {
+                    instrumentMain_jPanel.setVisible(false);
+                    main_jPanel.setVisible(false);
+                    home_jPanel.setVisible(false);
+                    registerMember_jPanel.setVisible(false);
+                    instrument_jPanel.setVisible(false);
+                    addInstrument_jPanel.setVisible(true);
+                    adminAddInstruments_jPanel.setVisible(true);
+                    adminBack_jButton.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Incorrect Password.", "ERROR!", JOptionPane.ERROR_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Invalid Username.", "ERROR!", JOptionPane.ERROR_MESSAGE);
             }
         }
-        else{
-            JOptionPane.showMessageDialog(this, "Invalid Username.","ERROR!",JOptionPane.ERROR_MESSAGE);
-        }  
-        }
-              
+
     }//GEN-LAST:event_adminLogin_jButtonActionPerformed
 
     private void memberLogin_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberLogin_jButtonActionPerformed
@@ -1235,37 +1293,34 @@ public class homeGUI extends javax.swing.JFrame {
         String enteredUserName = memberName_jTextField.getText();
         String enteredPassword = member_jPasswordField.getText();
         int count = 0;
-        if (enteredUserName.equals("") || enteredPassword.equals(""))
-        {
+        if (enteredUserName.equals("") || enteredPassword.equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Please ensure that all fields are filled.");
             count = 1;
         }
-        if (count == 0){
-            if(loginMap.containsKey(enteredUserName)){
-               String storedPassword = loginMap.get(enteredUserName);
-                if(enteredPassword.equals(storedPassword)){
+        if (count == 0) {
+            if (loginMap.containsKey(enteredUserName)) {
+                String storedPassword = loginMap.get(enteredUserName);
+                if (enteredPassword.equals(storedPassword)) {
                     instrument_jPanel.setVisible(true);
                     instrumentMain_jPanel.setVisible(true);
                     loginMember_jPanel.setVisible(false);
                     users_jPanel.setVisible(false);
                     main_jPanel.setVisible(false);
-                    home_jPanel.setVisible(false);        
+                    home_jPanel.setVisible(false);
                     registerMember_jPanel.setVisible(false);
-                    back_jButton.setVisible(true);       
+                    back_jButton.setVisible(true);
                     categorySearch_jLabel.setVisible(false);
                     category_jTextField.setVisible(false);
                     priceSearch_jLabel.setVisible(false);
                     price_jComboBox.setVisible(false);
                     searchCategory_jButton.setVisible(false);
                     searchPrice_jButton.setVisible(false);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Invalid Password.", "ERROR!", JOptionPane.ERROR_MESSAGE);
                 }
-                else{
-                    JOptionPane.showMessageDialog(this, "Invalid Password.","ERROR!",JOptionPane.ERROR_MESSAGE);
-               }        
+            } else {
+                JOptionPane.showMessageDialog(this, "User Not Found.", "ERROR!", JOptionPane.ERROR_MESSAGE);
             }
-            else{
-                JOptionPane.showMessageDialog(this, "User Not Found.","ERROR!",JOptionPane.ERROR_MESSAGE);
-            }  
         }
     }//GEN-LAST:event_memberLogin_jButtonActionPerformed
 
@@ -1295,57 +1350,47 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_specialization_jTextFieldActionPerformed
 
-    public int getage()
-    {
-        return Integer.parseInt(this.age_jTextField.getText());        
+    public int getage() {
+        return Integer.parseInt(this.age_jTextField.getText());
     }
     private void submit_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_jButtonActionPerformed
         // TODO add your handling code here:
-        String period="";
-        String name= name_jTextField.getText();
-        String age= age_jTextField.getText();
-        String specialization= specialization_jTextField.getText();
-        String username= username_jTextField.getText();
-        String password= password_jPasswordField.getText();
-        String repassword= repassword_jPasswordField.getText();
+        String period = "";
+        String name = name_jTextField.getText();
+        String age = age_jTextField.getText();
+        String specialization = specialization_jTextField.getText();
+        String username = username_jTextField.getText();
+        String password = password_jPasswordField.getText();
+        String repassword = repassword_jPasswordField.getText();
         int count = 0;
-        if (name.equals("") || age.equals("") || specialization.equals("") || username.equals("") || password.equals("") || repassword.equals(""))
-            {
-                JOptionPane.showMessageDialog(rootPane, "Please ensure that all fields are filled.");
-                count = 1;
-            }
-        if (count == 0){
-            try{
+        if (name.equals("") || age.equals("") || specialization.equals("") || username.equals("") || password.equals("") || repassword.equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Please ensure that all fields are filled.");
+            count = 1;
+        }
+        if (count == 0) {
+            try {
                 Integer.parseInt(this.age_jTextField.getText());
-            }
-            catch(NumberFormatException ex){
-                JOptionPane.showMessageDialog(rootPane, "The age must be an integer number.","ATTENTION!", JOptionPane.ERROR_MESSAGE);
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(rootPane, "The age must be an integer number.", "ATTENTION!", JOptionPane.ERROR_MESSAGE);
                 count = 1;
             }
         }
-        if (count == 0 ){
-            if (password.equals(repassword))
-            {
-                String[]values= {name,age,specialization,username,password};
-                int rowCount= memberInfo_jTable.getRowCount();
-                int columnCount= memberInfo_jTable.getColumnCount();
-                int rowIndex=0;
-                do
-                {
-                    String s= (String)memberInfo_jTable.getValueAt(rowIndex,0);
-                    if (s!= null && s.length()!=0)
-                    {
+        if (count == 0) {
+            if (password.equals(repassword)) {
+                String[] values = {name, age, specialization, username, password};
+                int rowCount = memberInfo_jTable.getRowCount();
+                int columnCount = memberInfo_jTable.getColumnCount();
+                int rowIndex = 0;
+                do {
+                    String s = (String) memberInfo_jTable.getValueAt(rowIndex, 0);
+                    if (s != null && s.length() != 0) {
                         rowIndex++;
-                    }
-                    else
-                    {
+                    } else {
                         break;
                     }
-                }
-                while (rowIndex<rowCount);
-                for (int i=0; i<columnCount; i++)
-                {
-                    memberInfo_jTable.setValueAt(values[i],rowIndex,i);
+                } while (rowIndex < rowCount);
+                for (int i = 0; i < columnCount; i++) {
+                    memberInfo_jTable.setValueAt(values[i], rowIndex, i);
                 }
                 name_jTextField.setText("");
                 age_jTextField.setText("");
@@ -1353,24 +1398,22 @@ public class homeGUI extends javax.swing.JFrame {
                 username_jTextField.setText("");
                 password_jPasswordField.setText("");
                 repassword_jPasswordField.setText("");
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(rootPane, "Incorrect Password. Please re-check!","ATTENTION!", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Incorrect Password. Please re-check!", "ATTENTION!", JOptionPane.ERROR_MESSAGE);
             }
         }
-        
+
         String csvFilename = "src/CSV_Files/Members.csv";
         try {
-            FileWriter fw= new FileWriter(csvFilename, true);
+            FileWriter fw = new FileWriter(csvFilename, true);
             CSVWriter writer = new CSVWriter(fw);
             List<String[]> csvData = new ArrayList<String[]>();
-            String[]values= {name,age,specialization,username,password};
+            String[] values = {name, age, specialization, username, password};
             csvData.add(values);
-            
+
             writer.writeAll(csvData);
             writer.close();
-            
+
         } catch (Exception e) {
             System.out.println("exception :" + e.getMessage());
         }
@@ -1395,6 +1438,11 @@ public class homeGUI extends javax.swing.JFrame {
         price_jComboBox.setVisible(false);
         searchCategory_jButton.setVisible(true);
         searchPrice_jButton.setVisible(false);
+        ArrayList<MusicalInstrument> tempList = new ArrayList();
+        readFile();
+        tempList = MergeSort.mergeSort(inventory, SortBy.CATEGORY);
+        display();
+
     }//GEN-LAST:event_category_jRadioButtonActionPerformed
 
     private void manual_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manual_jMenuItemActionPerformed
@@ -1458,58 +1506,49 @@ public class homeGUI extends javax.swing.JFrame {
     private void warranty_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_warranty_jTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_warranty_jTextFieldActionPerformed
-    
-    public int getprice()
-    {
-        return Integer.parseInt(this.price_jTextField.getText());        
+
+    public int getprice() {
+        return Integer.parseInt(this.price_jTextField.getText());
     }
-    
+
     private void add_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_jButtonActionPerformed
         // TODO add your handling code here:
-        String period="";
-        String id= instrumentID_jTextField.getText();
-        String instrument= instrument_jTextField.getText();
-        String model= modelNo_jTextField.getText();
-        String brand= brand_jTextField.getText();
-        String price= price_jTextField.getText();
-        String warranty= warranty_jTextField.getText();
+        String period = "";
+        String id = instrumentID_jTextField.getText();
+        String instrument = instrument_jTextField.getText();
+        String model = modelNo_jTextField.getText();
+        String brand = brand_jTextField.getText();
+        String price = price_jTextField.getText();
+        String warranty = warranty_jTextField.getText();
         int count = 0;
-        if (id.equals("") || instrument.equals("") || model.equals("") || brand.equals("") || price.equals("") || warranty.equals(""))
-            {
-                JOptionPane.showMessageDialog(rootPane, "Please ensure that all fields are filled.");
-                count = 1;
-            }
-        if (count == 0){
-            try{
+        if (id.equals("") || instrument.equals("") || model.equals("") || brand.equals("") || price.equals("") || warranty.equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Please ensure that all fields are filled.");
+            count = 1;
+        }
+        if (count == 0) {
+            try {
                 Integer.parseInt(this.price_jTextField.getText());
-            }
-            catch(NumberFormatException ex){
-                JOptionPane.showMessageDialog(rootPane, "The price must be an integer number.","ATTENTION!", JOptionPane.ERROR_MESSAGE);
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(rootPane, "The price must be an integer number.", "ATTENTION!", JOptionPane.ERROR_MESSAGE);
                 count = 1;
             }
         }
-        if (count == 0){
+        if (count == 0) {
             {
-                String[]values= {id,instrument,model,brand,price,warranty};
-                int rowCount= add_jTable.getRowCount();
-                int columnCount= add_jTable.getColumnCount();
-                int rowIndex=0;
-                do
-                {
-                    String s= (String)add_jTable.getValueAt(rowIndex,0);
-                    if (s!= null && s.length()!=0)
-                    {
+                String[] values = {id, instrument, model, brand, price, warranty};
+                int rowCount = add_jTable.getRowCount();
+                int columnCount = add_jTable.getColumnCount();
+                int rowIndex = 0;
+                do {
+                    String s = (String) add_jTable.getValueAt(rowIndex, 0);
+                    if (s != null && s.length() != 0) {
                         rowIndex++;
-                    }
-                    else
-                    {
+                    } else {
                         break;
                     }
-                }
-                while (rowIndex<rowCount);
-                for (int i=0; i<columnCount; i++)
-                {
-                    add_jTable.setValueAt(values[i],rowIndex,i);
+                } while (rowIndex < rowCount);
+                for (int i = 0; i < columnCount; i++) {
+                    add_jTable.setValueAt(values[i], rowIndex, i);
                 }
                 instrumentID_jTextField.setText("");
                 instrument_jTextField.setText("");
@@ -1518,7 +1557,7 @@ public class homeGUI extends javax.swing.JFrame {
                 price_jTextField.setText("");
                 warranty_jTextField.setText("");
             }
-            }
+        }
     }//GEN-LAST:event_add_jButtonActionPerformed
 
     private void price_jComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_price_jComboBoxActionPerformed
@@ -1533,6 +1572,10 @@ public class homeGUI extends javax.swing.JFrame {
         category_jTextField.setVisible(false);
         searchCategory_jButton.setVisible(false);
         searchPrice_jButton.setVisible(true);
+        ArrayList<MusicalInstrument> tempList = new ArrayList();
+        readFile();
+        tempList = MergeSort.mergeSort(inventory, SortBy.PRICE);
+        display();
     }//GEN-LAST:event_price_jRadioButtonActionPerformed
 
     private void adminName_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminName_jTextFieldActionPerformed
@@ -1563,17 +1606,28 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String category = category_jTextField.getText();
         int count = 0;
-        if (category.equals(""))
-            {
-                JOptionPane.showMessageDialog(rootPane, "Please ensure that the search category is not void.");
-                count = 1;
-            }
+        if (category.equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Please ensure that the search category is not void.");
+            count = 1;
+        } else {
+            String searchElement = category_jTextField.getText();
+            MusicalInstrument musicalInstrument = BinarySearch.binarySearch(inventory, searchElement, SortBy.CATEGORY);
+            JOptionPane.showMessageDialog(rootPane, "Instrument ID: " + musicalInstrument.getInstrumentId());
+        }
     }//GEN-LAST:event_searchCategory_jButtonActionPerformed
-    
+
+    private void searchPrice_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchPrice_jButtonActionPerformed
+        // TODO add your handling code here:
+        String searchElement = price_jComboBox.getSelectedItem().toString();
+        MusicalInstrument musicalInstrument = BinarySearch.binarySearch(inventory, searchElement, SortBy.PRICE);
+        JOptionPane.showMessageDialog(rootPane, "Instrument ID: " + musicalInstrument.getInstrumentId());
+    }//GEN-LAST:event_searchPrice_jButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
     static HashMap<String, String> loginMap;
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1599,16 +1653,16 @@ public class homeGUI extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         loginMap = new HashMap<>();
-        try{
+        try {
             FileReader fileReader = new FileReader("src/CSV_Files/Members.csv");
             BufferedReader csvReader = new BufferedReader(fileReader);
-            
+
             String row;
-           
+
             boolean isFirstLine = true;
-            while ((row = csvReader.readLine())!=null){
+            while ((row = csvReader.readLine()) != null) {
                 //skip first line
-                if(isFirstLine){
+                if (isFirstLine) {
                     isFirstLine = false;
                     continue;
                 }
@@ -1619,9 +1673,11 @@ public class homeGUI extends javax.swing.JFrame {
             }
             fileReader.close();
             csvReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        } catch (IOException ioe) {
+            System.out.println("IO Exception");
         }
-        catch(FileNotFoundException e){System.out.println("File not found");}
-        catch(IOException ioe) {System.out.println("IO Exception");}
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1629,20 +1685,19 @@ public class homeGUI extends javax.swing.JFrame {
                 new homeGUI().setVisible(true);
             }
         });
-    }   
-    
-    public void JFileChooser()
-    {
+    }
+
+    public void JFileChooser() {
         JFileChooser fileChooser = new JFileChooser("src/CSV_Files");
         fileChooser.setDialogTitle("Choose a file to open");
         int userSelection = fileChooser.showOpenDialog(this);
-        if(userSelection == JFileChooser.APPROVE_OPTION){
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
             File fileToOpen = fileChooser.getSelectedFile();
             Desktop desktop = Desktop.getDesktop();
             try {
                 desktop.open(fileToOpen);
             } catch (IOException ex) {
-                JOptionPane.showMessageDialog(this, "Error.","ERROR MESSAGE",JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Error.", "ERROR MESSAGE", JOptionPane.ERROR_MESSAGE);
             }
         }
     }
