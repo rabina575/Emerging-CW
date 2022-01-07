@@ -1355,22 +1355,13 @@ public class homeGUI extends javax.swing.JFrame {
     }
     private void submit_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_jButtonActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
         String name= name_jTextField.getText();
         String age= age_jTextField.getText();
         String specialization= specialization_jTextField.getText();
         String username= username_jTextField.getText();
         String password= password_jPasswordField.getText();
         String repassword= repassword_jPasswordField.getText();
-=======
-        String period = "";
-        String name = name_jTextField.getText();
-        String age = age_jTextField.getText();
-        String specialization = specialization_jTextField.getText();
-        String username = username_jTextField.getText();
-        String password = password_jPasswordField.getText();
-        String repassword = repassword_jPasswordField.getText();
->>>>>>> 223b268fa88c2a2249dda3ccc30591fa72f169da
+        
         int count = 0;
         if (name.equals("") || age.equals("") || specialization.equals("") || username.equals("") || password.equals("") || repassword.equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Please ensure that all fields are filled.");
