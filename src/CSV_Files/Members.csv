@@ -1,13 +1,16 @@
-Name,Specialization,Age,Username,Password
-Aadesh Shrestha,Piano,20,Aadesh,hsedaa
-Aditya Amatya,Violin,23,Aditya,aytida
-Ameesha Thapa,Vocal,19,Ameesha,ahseema
-Ramesh Basnet,Guitar,32,Ramesh,hsemar
-Abhinav Sharma,Flute,28,Abhinav,vanihba
-Rabin Acharya,Piano,16,Rabin,nibar
-Namrata Sitaula,Guitar,27,Namrata,atarman
-Ishani Karki,Violin,18,Ishani,inahsi
-Ankur Tamang,Violin,29,Ankur,rukna
-Ujwal Khadka,Flute,21,Ujwal,lawju
-Anish Shah,Vocal,30,Anish,hsina
-Presha Bhattarai,Piano,22,Presha,ahserp
+Name,Age,Specialization,Username,Password
+Aadesh Shrestha,20,Piano,Aadesh,hsedaa
+Aditya Amatya,23,Violin,Aditya,aytida
+Ameesha Thapa,19,Vocal,Ameesha,ahseema
+Ramesh Basnet,32,Guitar,Ramesh,hsemar
+Abhinav Sharma,28,Flute,Abhinav,vanihba
+Rabin Acharya,16,Piano,Rabin,nibar
+Namrata Sitaula,27,Guitar,Namrata,atarman
+Ishani Karki,18,Violin,Ishani,inahsi
+Ankur Tamang,29,Violin,Ankur,rukna
+Ujwal Khadka,21,Flute,Ujwal,lawju
+Anish Shah,30,Vocal,Anish,hsina
+Presha Bhattarai,22,Piano,Presha,ahserp
+Mubson Karki,20,Vocal,Mubson,nosbum
+Shreesu Thapa,20,Guitar,Shreesu,useerhs
+Aakash Shrestha,20,Violin,Aakash,hsakaa
