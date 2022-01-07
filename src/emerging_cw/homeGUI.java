@@ -90,15 +90,18 @@ public class homeGUI extends javax.swing.JFrame {
         backgroundImage_jLabel = new javax.swing.JLabel();
         instrument_jPanel = new javax.swing.JPanel();
         instrumentMain_jPanel = new javax.swing.JPanel();
+        instruments_jLabel = new javax.swing.JLabel();
         searchBy_jLabel = new javax.swing.JLabel();
         instrumentTable_jScrollPane = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         category_jRadioButton = new javax.swing.JRadioButton();
         categorySearch_jLabel = new javax.swing.JLabel();
+        category_jTextField = new javax.swing.JTextField();
+        searchCategory_jButton = new javax.swing.JButton();
         price_jRadioButton = new javax.swing.JRadioButton();
         priceSearch_jLabel = new javax.swing.JLabel();
         price_jComboBox = new javax.swing.JComboBox<>();
-        category_jTextField = new javax.swing.JTextField();
+        searchPrice_jButton = new javax.swing.JButton();
         instrumentImage_jPanel = new javax.swing.JPanel();
         guitar_jLabel = new javax.swing.JLabel();
         drums_jLabel = new javax.swing.JLabel();
@@ -106,27 +109,26 @@ public class homeGUI extends javax.swing.JFrame {
         mic_jLabel = new javax.swing.JLabel();
         piano_jLabel = new javax.swing.JLabel();
         flute_jLabel = new javax.swing.JLabel();
-        instruments_jLabel = new javax.swing.JLabel();
         back_jButton = new javax.swing.JButton();
         instrumentBgImage_jLabel = new javax.swing.JLabel();
         adminAddInstruments_jPanel = new javax.swing.JPanel();
         addInstrument_jPanel = new javax.swing.JPanel();
+        adminInstrument_jLabel = new javax.swing.JLabel();
         instrumentID_jLabel = new javax.swing.JLabel();
         instrumentID_jTextField = new javax.swing.JTextField();
+        instrument_jLabel = new javax.swing.JLabel();
+        instrument_jTextField = new javax.swing.JTextField();
         modelNo_jLabel = new javax.swing.JLabel();
         modelNo_jTextField = new javax.swing.JTextField();
-        price_jLabel = new javax.swing.JLabel();
-        price_jTextField = new javax.swing.JTextField();
-        instrument_jTextField = new javax.swing.JTextField();
         brand_jLabel = new javax.swing.JLabel();
         brand_jTextField = new javax.swing.JTextField();
+        price_jLabel = new javax.swing.JLabel();
+        price_jTextField = new javax.swing.JTextField();
         warranty_jLabel = new javax.swing.JLabel();
         warranty_jTextField = new javax.swing.JTextField();
-        instrument_jLabel = new javax.swing.JLabel();
         add_jButton = new javax.swing.JButton();
         add_jScrollPane = new javax.swing.JScrollPane();
         add_jTable = new javax.swing.JTable();
-        adminInstrument_jLabel = new javax.swing.JLabel();
         clearAddInstruments_jButton = new javax.swing.JButton();
         instrumentImage_jPanel1 = new javax.swing.JPanel();
         addGuitar_jLabel = new javax.swing.JLabel();
@@ -644,10 +646,16 @@ public class homeGUI extends javax.swing.JFrame {
         instrumentMain_jPanel.setForeground(new java.awt.Color(255, 255, 255));
         instrumentMain_jPanel.setLayout(null);
 
+        instruments_jLabel.setFont(new java.awt.Font("Maiandra GD", 1, 24)); // NOI18N
+        instruments_jLabel.setForeground(new java.awt.Color(251, 216, 251));
+        instruments_jLabel.setText("Instruments");
+        instrumentMain_jPanel.add(instruments_jLabel);
+        instruments_jLabel.setBounds(272, 9, 170, 30);
+
         searchBy_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         searchBy_jLabel.setText("Search by:");
         instrumentMain_jPanel.add(searchBy_jLabel);
-        searchBy_jLabel.setBounds(30, 20, 70, 18);
+        searchBy_jLabel.setBounds(30, 60, 70, 18);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -675,7 +683,7 @@ public class homeGUI extends javax.swing.JFrame {
         instrumentTable_jScrollPane.setViewportView(jTable1);
 
         instrumentMain_jPanel.add(instrumentTable_jScrollPane);
-        instrumentTable_jScrollPane.setBounds(30, 60, 610, 220);
+        instrumentTable_jScrollPane.setBounds(30, 130, 610, 150);
 
         category_jRadioButton.setBackground(new java.awt.Color(166, 206, 229));
         searchBy_jButton.add(category_jRadioButton);
@@ -687,12 +695,21 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
         instrumentMain_jPanel.add(category_jRadioButton);
-        category_jRadioButton.setBounds(100, 13, 90, 30);
+        category_jRadioButton.setBounds(100, 50, 90, 30);
 
         categorySearch_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         categorySearch_jLabel.setText(" Category:");
         instrumentMain_jPanel.add(categorySearch_jLabel);
-        categorySearch_jLabel.setBounds(490, 10, 70, 40);
+        categorySearch_jLabel.setBounds(480, 50, 70, 40);
+        instrumentMain_jPanel.add(category_jTextField);
+        category_jTextField.setBounds(550, 50, 90, 30);
+
+        searchCategory_jButton.setBackground(new java.awt.Color(190, 190, 253));
+        searchCategory_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
+        searchCategory_jButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Category Search.png"))); // NOI18N
+        searchCategory_jButton.setText("Search");
+        instrumentMain_jPanel.add(searchCategory_jButton);
+        searchCategory_jButton.setBounds(549, 90, 90, 30);
 
         price_jRadioButton.setBackground(new java.awt.Color(166, 206, 229));
         searchBy_jButton.add(price_jRadioButton);
@@ -704,12 +721,12 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
         instrumentMain_jPanel.add(price_jRadioButton);
-        price_jRadioButton.setBounds(190, 13, 70, 30);
+        price_jRadioButton.setBounds(190, 50, 70, 30);
 
         priceSearch_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         priceSearch_jLabel.setText("Price:");
         instrumentMain_jPanel.add(priceSearch_jLabel);
-        priceSearch_jLabel.setBounds(519, 20, 60, 20);
+        priceSearch_jLabel.setBounds(510, 60, 60, 20);
 
         price_jComboBox.setBackground(new java.awt.Color(204, 204, 255));
         price_jComboBox.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
@@ -721,9 +738,14 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
         instrumentMain_jPanel.add(price_jComboBox);
-        price_jComboBox.setBounds(570, 10, 70, 30);
-        instrumentMain_jPanel.add(category_jTextField);
-        category_jTextField.setBounds(570, 10, 70, 30);
+        price_jComboBox.setBounds(550, 50, 90, 30);
+
+        searchPrice_jButton.setBackground(new java.awt.Color(190, 190, 253));
+        searchPrice_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
+        searchPrice_jButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Price Search.png"))); // NOI18N
+        searchPrice_jButton.setText("Search");
+        instrumentMain_jPanel.add(searchPrice_jButton);
+        searchPrice_jButton.setBounds(549, 90, 90, 30);
 
         instrument_jPanel.add(instrumentMain_jPanel);
         instrumentMain_jPanel.setBounds(27, 137, 680, 300);
@@ -778,12 +800,6 @@ public class homeGUI extends javax.swing.JFrame {
         instrument_jPanel.add(instrumentImage_jPanel);
         instrumentImage_jPanel.setBounds(8, 12, 720, 100);
 
-        instruments_jLabel.setFont(new java.awt.Font("Maiandra GD", 1, 24)); // NOI18N
-        instruments_jLabel.setForeground(new java.awt.Color(251, 216, 251));
-        instruments_jLabel.setText("Instruments");
-        instrument_jPanel.add(instruments_jLabel);
-        instruments_jLabel.setBounds(302, 109, 140, 30);
-
         back_jButton.setBackground(new java.awt.Color(166, 206, 229));
         back_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
         back_jButton.setText("Back");
@@ -805,6 +821,10 @@ public class homeGUI extends javax.swing.JFrame {
         addInstrument_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
         addInstrument_jPanel.setForeground(new java.awt.Color(255, 255, 255));
 
+        adminInstrument_jLabel.setFont(new java.awt.Font("Maiandra GD", 1, 24)); // NOI18N
+        adminInstrument_jLabel.setForeground(new java.awt.Color(251, 216, 251));
+        adminInstrument_jLabel.setText("Add Instruments");
+
         instrumentID_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         instrumentID_jLabel.setText("Instrument ID:");
 
@@ -813,6 +833,17 @@ public class homeGUI extends javax.swing.JFrame {
         instrumentID_jTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 instrumentID_jTextFieldActionPerformed(evt);
+            }
+        });
+
+        instrument_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        instrument_jLabel.setText("Instrument:");
+
+        instrument_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        instrument_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+        instrument_jTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                instrument_jTextFieldActionPerformed(evt);
             }
         });
 
@@ -827,25 +858,6 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
 
-        price_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
-        price_jLabel.setText("Price:");
-
-        price_jTextField.setBackground(new java.awt.Color(233, 233, 254));
-        price_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
-        price_jTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                price_jTextFieldActionPerformed(evt);
-            }
-        });
-
-        instrument_jTextField.setBackground(new java.awt.Color(233, 233, 254));
-        instrument_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
-        instrument_jTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                instrument_jTextFieldActionPerformed(evt);
-            }
-        });
-
         brand_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         brand_jLabel.setText("Brand:");
 
@@ -854,6 +866,17 @@ public class homeGUI extends javax.swing.JFrame {
         brand_jTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 brand_jTextFieldActionPerformed(evt);
+            }
+        });
+
+        price_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        price_jLabel.setText("Price:");
+
+        price_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        price_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+        price_jTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                price_jTextFieldActionPerformed(evt);
             }
         });
 
@@ -867,9 +890,6 @@ public class homeGUI extends javax.swing.JFrame {
                 warranty_jTextFieldActionPerformed(evt);
             }
         });
-
-        instrument_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
-        instrument_jLabel.setText("Instrument:");
 
         add_jButton.setBackground(new java.awt.Color(190, 190, 253));
         add_jButton.setFont(new java.awt.Font("Book Antiqua", 1, 16)); // NOI18N
@@ -894,10 +914,6 @@ public class homeGUI extends javax.swing.JFrame {
         add_jTable.setSelectionBackground(new java.awt.Color(166, 206, 229));
         add_jTable.setShowGrid(false);
         add_jScrollPane.setViewportView(add_jTable);
-
-        adminInstrument_jLabel.setFont(new java.awt.Font("Maiandra GD", 1, 24)); // NOI18N
-        adminInstrument_jLabel.setForeground(new java.awt.Color(251, 216, 251));
-        adminInstrument_jLabel.setText("Add Instruments");
 
         clearAddInstruments_jButton.setBackground(new java.awt.Color(166, 206, 229));
         clearAddInstruments_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
@@ -1203,6 +1219,8 @@ public class homeGUI extends javax.swing.JFrame {
                     category_jTextField.setVisible(false);
                     priceSearch_jLabel.setVisible(false);
                     price_jComboBox.setVisible(false);
+                    searchCategory_jButton.setVisible(false);
+                    searchPrice_jButton.setVisible(false);
                 }
                 else{
                     JOptionPane.showMessageDialog(this, "Invalid Password.","ERROR!",JOptionPane.ERROR_MESSAGE);
@@ -1322,6 +1340,8 @@ public class homeGUI extends javax.swing.JFrame {
         category_jTextField.setVisible(true);
         priceSearch_jLabel.setVisible(false);
         price_jComboBox.setVisible(false);
+        searchCategory_jButton.setVisible(true);
+        searchPrice_jButton.setVisible(false);
     }//GEN-LAST:event_category_jRadioButtonActionPerformed
 
     private void manual_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manual_jMenuItemActionPerformed
@@ -1473,6 +1493,8 @@ public class homeGUI extends javax.swing.JFrame {
         price_jComboBox.setVisible(true);
         categorySearch_jLabel.setVisible(false);
         category_jTextField.setVisible(false);
+        searchCategory_jButton.setVisible(false);
+        searchPrice_jButton.setVisible(true);
     }//GEN-LAST:event_price_jRadioButtonActionPerformed
 
     private void adminName_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminName_jTextFieldActionPerformed
@@ -1652,6 +1674,8 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JPasswordField repassword_jPasswordField;
     private javax.swing.ButtonGroup searchBy_jButton;
     private javax.swing.JLabel searchBy_jLabel;
+    private javax.swing.JButton searchCategory_jButton;
+    private javax.swing.JButton searchPrice_jButton;
     private javax.swing.JLabel specialization_jLabel;
     private javax.swing.JTextField specialization_jTextField;
     private javax.swing.JButton submit_jButton;
