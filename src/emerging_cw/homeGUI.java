@@ -72,6 +72,7 @@ public class homeGUI extends javax.swing.JFrame {
         memberPassword_jLabel = new javax.swing.JLabel();
         member_jPasswordField = new javax.swing.JPasswordField();
         backMember_jButton = new javax.swing.JButton();
+        description_jLabel = new javax.swing.JLabel();
         registerMember_jPanel = new javax.swing.JPanel();
         registration_jLabel = new javax.swing.JLabel();
         name_jLabel = new javax.swing.JLabel();
@@ -409,13 +410,18 @@ public class homeGUI extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
         );
 
+        description_jLabel.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
+        description_jLabel.setText("jLabel1");
+
         javax.swing.GroupLayout home_jPanelLayout = new javax.swing.GroupLayout(home_jPanel);
         home_jPanel.setLayout(home_jPanelLayout);
         home_jPanelLayout.setHorizontalGroup(
             home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, home_jPanelLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(academyImage_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(academyImage_jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(description_jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(users_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -429,11 +435,14 @@ public class homeGUI extends javax.swing.JFrame {
             .addGroup(home_jPanelLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(academyImage_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(home_jPanelLayout.createSequentialGroup()
+                        .addComponent(academyImage_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(description_jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(users_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(loginAdmin_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(loginMember_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         main_jPanel.add(home_jPanel);
@@ -703,8 +712,6 @@ public class homeGUI extends javax.swing.JFrame {
         instrument_jTable.setGridColor(new java.awt.Color(203, 228, 255));
         instrument_jTable.setSelectionBackground(new java.awt.Color(166, 206, 229));
         instrument_jTable.setShowGrid(true);
-        instrument_jTable.setShowHorizontalLines(true);
-        instrument_jTable.setShowVerticalLines(true);
         instrumentTable_jScrollPane.setViewportView(instrument_jTable);
 
         instrumentMain_jPanel.add(instrumentTable_jScrollPane);
@@ -1678,6 +1685,7 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JTextField category_jTextField;
     private javax.swing.JButton clearAddInstruments_jButton;
     private javax.swing.JButton clearRegistration_jButton;
+    private javax.swing.JLabel description_jLabel;
     private javax.swing.JLabel drums_jLabel;
     private javax.swing.JMenuItem exit_jMenuItem;
     private javax.swing.JMenuBar fileHelp_jMenuBar;
