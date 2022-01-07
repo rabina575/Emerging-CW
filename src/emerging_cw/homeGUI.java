@@ -1301,7 +1301,6 @@ public class homeGUI extends javax.swing.JFrame {
     }
     private void submit_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_jButtonActionPerformed
         // TODO add your handling code here:
-        String period="";
         String name= name_jTextField.getText();
         String age= age_jTextField.getText();
         String specialization= specialization_jTextField.getText();
