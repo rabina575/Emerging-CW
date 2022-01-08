@@ -79,10 +79,10 @@ public class homeGUI extends javax.swing.JFrame {
         registration_jLabel = new javax.swing.JLabel();
         name_jLabel = new javax.swing.JLabel();
         name_jTextField = new javax.swing.JTextField();
-        age_jLabel = new javax.swing.JLabel();
-        age_jTextField = new javax.swing.JTextField();
         specialization_jLabel = new javax.swing.JLabel();
         specialization_jTextField = new javax.swing.JTextField();
+        age_jLabel = new javax.swing.JLabel();
+        age_jTextField = new javax.swing.JTextField();
         username_jLabel = new javax.swing.JLabel();
         username_jTextField = new javax.swing.JTextField();
         password_jLabel = new javax.swing.JLabel();
@@ -103,12 +103,12 @@ public class homeGUI extends javax.swing.JFrame {
         instrument_jTable = new javax.swing.JTable();
         category_jRadioButton = new javax.swing.JRadioButton();
         categorySearch_jLabel = new javax.swing.JLabel();
-        category_jTextField = new javax.swing.JTextField();
+        category_jComboBox = new javax.swing.JComboBox<>();
         searchCategory_jButton = new javax.swing.JButton();
         price_jRadioButton = new javax.swing.JRadioButton();
         priceSearch_jLabel = new javax.swing.JLabel();
-        searchPrice_jButton = new javax.swing.JButton();
         searchPrice_jTextField = new javax.swing.JTextField();
+        searchPrice_jButton = new javax.swing.JButton();
         instrumentImage_jPanel = new javax.swing.JPanel();
         guitar_jLabel = new javax.swing.JLabel();
         drums_jLabel = new javax.swing.JLabel();
@@ -127,12 +127,12 @@ public class homeGUI extends javax.swing.JFrame {
         instrument_jTextField = new javax.swing.JTextField();
         modelNo_jLabel = new javax.swing.JLabel();
         modelNo_jTextField = new javax.swing.JTextField();
-        brand_jLabel = new javax.swing.JLabel();
-        brand_jTextField = new javax.swing.JTextField();
-        price_jLabel = new javax.swing.JLabel();
-        price_jTextField = new javax.swing.JTextField();
         warranty_jLabel = new javax.swing.JLabel();
         warranty_jTextField = new javax.swing.JTextField();
+        price_jLabel = new javax.swing.JLabel();
+        price_jTextField = new javax.swing.JTextField();
+        brand_jLabel = new javax.swing.JLabel();
+        brand_jTextField = new javax.swing.JTextField();
         add_jButton = new javax.swing.JButton();
         add_jScrollPane = new javax.swing.JScrollPane();
         add_jTable = new javax.swing.JTable();
@@ -177,7 +177,7 @@ public class homeGUI extends javax.swing.JFrame {
         academyAddress_jlabel.setIconTextGap(0);
         academyAddress_jlabel.setMaximumSize(new java.awt.Dimension(0, 0));
         main_jPanel.add(academyAddress_jlabel);
-        academyAddress_jlabel.setBounds(250, 80, 310, 19);
+        academyAddress_jlabel.setBounds(250, 80, 310, 18);
 
         home_jPanel.setBackground(new java.awt.Color(230, 244, 254));
         home_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
@@ -471,20 +471,20 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
 
-        age_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
-        age_jLabel.setText("Age:");
-
-        age_jTextField.setBackground(new java.awt.Color(233, 233, 254));
-        age_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
-
         specialization_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         specialization_jLabel.setText("Specialization:");
 
         specialization_jTextField.setBackground(new java.awt.Color(233, 233, 254));
         specialization_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
-        specialization_jTextField.addActionListener(new java.awt.event.ActionListener() {
+
+        age_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        age_jLabel.setText("Age:");
+
+        age_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        age_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+        age_jTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                specialization_jTextFieldActionPerformed(evt);
+                age_jTextFieldActionPerformed(evt);
             }
         });
 
@@ -529,21 +529,6 @@ public class homeGUI extends javax.swing.JFrame {
         memberInfo_jTable.setBackground(new java.awt.Color(234, 234, 253));
         memberInfo_jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -605,14 +590,14 @@ public class homeGUI extends javax.swing.JFrame {
                     .addGroup(registerMember_jPanelLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(age_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(specialization_jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(specialization_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(age_jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(name_jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(specialization_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(age_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(age_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(specialization_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(name_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                         .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -641,12 +626,12 @@ public class homeGUI extends javax.swing.JFrame {
                 .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(password_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(password_jLabel)
-                    .addComponent(age_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(age_jLabel))
+                    .addComponent(specialization_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(specialization_jLabel))
                 .addGap(18, 18, 18)
                 .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(specialization_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(specialization_jLabel)
+                    .addComponent(age_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(age_jLabel)
                     .addComponent(repassword_jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(rePassword_jLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -655,13 +640,13 @@ public class homeGUI extends javax.swing.JFrame {
                     .addComponent(clearRegistration_jButton))
                 .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(registerMember_jPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                        .addComponent(backRegistration_jButton)
+                        .addContainerGap())
+                    .addGroup(registerMember_jPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(registered_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(25, Short.MAX_VALUE))
-                    .addGroup(registerMember_jPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(backRegistration_jButton)
-                        .addContainerGap())))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         main_jPanel.add(registerMember_jPanel);
@@ -689,7 +674,7 @@ public class homeGUI extends javax.swing.JFrame {
         searchBy_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         searchBy_jLabel.setText("Sort by:");
         instrumentMain_jPanel.add(searchBy_jLabel);
-        searchBy_jLabel.setBounds(30, 20, 70, 19);
+        searchBy_jLabel.setBounds(30, 20, 70, 18);
 
         instrument_jTable.setBackground(new java.awt.Color(234, 234, 253));
         instrument_jTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -735,8 +720,12 @@ public class homeGUI extends javax.swing.JFrame {
         categorySearch_jLabel.setText(" Category:");
         instrumentMain_jPanel.add(categorySearch_jLabel);
         categorySearch_jLabel.setBounds(480, 10, 70, 40);
-        instrumentMain_jPanel.add(category_jTextField);
-        category_jTextField.setBounds(550, 10, 90, 30);
+
+        category_jComboBox.setBackground(new java.awt.Color(166, 206, 229));
+        category_jComboBox.setFont(new java.awt.Font("Maiandra GD", 0, 11)); // NOI18N
+        category_jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Drums", "Flute", "Guitar", "Mic", "Piano", "Violin" }));
+        instrumentMain_jPanel.add(category_jComboBox);
+        category_jComboBox.setBounds(550, 10, 90, 30);
 
         searchCategory_jButton.setBackground(new java.awt.Color(190, 190, 253));
         searchCategory_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
@@ -766,6 +755,8 @@ public class homeGUI extends javax.swing.JFrame {
         priceSearch_jLabel.setText("Price:");
         instrumentMain_jPanel.add(priceSearch_jLabel);
         priceSearch_jLabel.setBounds(510, 20, 60, 20);
+        instrumentMain_jPanel.add(searchPrice_jTextField);
+        searchPrice_jTextField.setBounds(550, 10, 90, 30);
 
         searchPrice_jButton.setBackground(new java.awt.Color(190, 190, 253));
         searchPrice_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
@@ -778,8 +769,6 @@ public class homeGUI extends javax.swing.JFrame {
         });
         instrumentMain_jPanel.add(searchPrice_jButton);
         searchPrice_jButton.setBounds(550, 50, 90, 30);
-        instrumentMain_jPanel.add(searchPrice_jTextField);
-        searchPrice_jTextField.setBounds(550, 10, 90, 30);
 
         instrument_jPanel.add(instrumentMain_jPanel);
         instrumentMain_jPanel.setBounds(27, 137, 680, 300);
@@ -892,14 +881,14 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
 
-        brand_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
-        brand_jLabel.setText("Brand:");
+        warranty_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        warranty_jLabel.setText("Warranty:");
 
-        brand_jTextField.setBackground(new java.awt.Color(233, 233, 254));
-        brand_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
-        brand_jTextField.addActionListener(new java.awt.event.ActionListener() {
+        warranty_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        warranty_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+        warranty_jTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                brand_jTextFieldActionPerformed(evt);
+                warranty_jTextFieldActionPerformed(evt);
             }
         });
 
@@ -914,14 +903,14 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
 
-        warranty_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
-        warranty_jLabel.setText("Warranty:");
+        brand_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
+        brand_jLabel.setText("Brand:");
 
-        warranty_jTextField.setBackground(new java.awt.Color(233, 233, 254));
-        warranty_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
-        warranty_jTextField.addActionListener(new java.awt.event.ActionListener() {
+        brand_jTextField.setBackground(new java.awt.Color(233, 233, 254));
+        brand_jTextField.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(64, 132, 173)));
+        brand_jTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                warranty_jTextFieldActionPerformed(evt);
+                brand_jTextFieldActionPerformed(evt);
             }
         });
 
@@ -982,7 +971,7 @@ public class homeGUI extends javax.swing.JFrame {
                         .addGap(15, 15, 15)
                         .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(modelNo_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(instrumentID_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(instrumentID_jLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(price_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, 0)
                         .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -997,12 +986,12 @@ public class homeGUI extends javax.swing.JFrame {
                         .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(instrument_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(brand_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(warranty_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(warranty_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(brand_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(instrument_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(warranty_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(brand_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(brand_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(warranty_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18))
         );
         addInstrument_jPanelLayout.setVerticalGroup(
@@ -1011,25 +1000,23 @@ public class homeGUI extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addComponent(adminInstrument_jLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(instrumentID_jLabel)
-                    .addGroup(addInstrument_jPanelLayout.createSequentialGroup()
-                        .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(instrument_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(instrument_jLabel)
-                            .addComponent(instrumentID_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(modelNo_jLabel)
-                            .addComponent(warranty_jLabel)
-                            .addComponent(modelNo_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(warranty_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(price_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(price_jLabel)
-                            .addComponent(brand_jLabel)
-                            .addComponent(brand_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(instrument_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(instrument_jLabel)
+                    .addComponent(instrumentID_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(instrumentID_jLabel))
+                .addGap(18, 18, 18)
+                .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(modelNo_jLabel)
+                    .addComponent(brand_jLabel)
+                    .addComponent(modelNo_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(brand_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(price_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(price_jLabel)
+                    .addComponent(warranty_jLabel)
+                    .addComponent(warranty_jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 10, Short.MAX_VALUE)
                 .addGroup(addInstrument_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(add_jButton)
@@ -1314,7 +1301,7 @@ public class homeGUI extends javax.swing.JFrame {
                     registerMember_jPanel.setVisible(false);
                     back_jButton.setVisible(true);
                     categorySearch_jLabel.setVisible(false);
-                    category_jTextField.setVisible(false);
+                    category_jComboBox.setVisible(false);
                     priceSearch_jLabel.setVisible(false);
                     searchPrice_jTextField.setVisible(false);
                     searchCategory_jButton.setVisible(false);
@@ -1334,34 +1321,48 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         loginAdmin_jPanel.setVisible(false);
         users_jPanel.setVisible(true);
+        adminName_jTextField.setText("");
+        admin_jPasswordField.setText("");
     }//GEN-LAST:event_backAdmin_jButtonActionPerformed
 
     private void backMember_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMember_jButtonActionPerformed
         // TODO add your handling code here:
         loginMember_jPanel.setVisible(false);
         users_jPanel.setVisible(true);
+        memberName_jTextField.setText("");
+        member_jPasswordField.setText("");
     }//GEN-LAST:event_backMember_jButtonActionPerformed
 
     private void backRegistration_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backRegistration_jButtonActionPerformed
         // TODO add your handling code here:
         registerMember_jPanel.setVisible(false);
         home_jPanel.setVisible(true);
+        clearTable(memberInfo_jTable);
     }//GEN-LAST:event_backRegistration_jButtonActionPerformed
-
+    
+    public static void clearTable(final JTable table) {
+        for (int i = 0; i < table.getRowCount(); i++) {
+            for(int j = 0; j < table.getColumnCount(); j++) {
+            table.setValueAt("", i, j);
+            }
+        }
+    }
+    
     private void password_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_jPasswordFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_password_jPasswordFieldActionPerformed
 
-    private void specialization_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_specialization_jTextFieldActionPerformed
+    private void age_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_age_jTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_specialization_jTextFieldActionPerformed
+    }//GEN-LAST:event_age_jTextFieldActionPerformed
 
     public int getage() {
-        return Integer.parseInt(this.age_jTextField.getText());
+        return Integer.parseInt(this.specialization_jTextField.getText());
     }
     private void submit_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_jButtonActionPerformed
         // TODO add your handling code here:
         String period = "";
+<<<<<<< HEAD
         String name = name_jTextField.getText();
         String age = age_jTextField.getText();
         String specialization = specialization_jTextField.getText();
@@ -1369,8 +1370,17 @@ public class homeGUI extends javax.swing.JFrame {
         String password = password_jPasswordField.getText();
         String repassword = repassword_jPasswordField.getText();
 
+=======
+        String name= name_jTextField.getText();
+        String specialization= specialization_jTextField.getText();
+        String age= age_jTextField.getText();
+        String username= username_jTextField.getText();
+        String password= password_jPasswordField.getText();
+        String repassword= repassword_jPasswordField.getText();
+        
+>>>>>>> 3eae259455f714c55d3c88c910bb9eeecd98ccdd
         int count = 0;
-        if (name.equals("") || age.equals("") || specialization.equals("") || username.equals("") || password.equals("") || repassword.equals("")) {
+        if (name.equals("") || specialization.equals("") || age.equals("")|| username.equals("") || password.equals("") || repassword.equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Please ensure that all fields are filled.");
             count = 1;
         }
@@ -1384,7 +1394,7 @@ public class homeGUI extends javax.swing.JFrame {
         }
         if (count == 0) {
             if (password.equals(repassword)) {
-                String[] values = {name, age, specialization, username, password};
+                String[] values = {name, specialization, age,  username, password};
                 int rowCount = memberInfo_jTable.getRowCount();
                 int columnCount = memberInfo_jTable.getColumnCount();
                 int rowIndex = 0;
@@ -1415,7 +1425,7 @@ public class homeGUI extends javax.swing.JFrame {
             FileWriter fw = new FileWriter(csvFilename, true);
             CSVWriter writer = new CSVWriter(fw);
             List<String[]> csvData = new ArrayList<String[]>();
-            String[] values = {name, age, specialization, username, password};
+            String[] values = {name, specialization, age, username, password};
             csvData.add(values);
 
             writer.writeAll(csvData);
@@ -1440,7 +1450,7 @@ public class homeGUI extends javax.swing.JFrame {
     private void category_jRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_category_jRadioButtonActionPerformed
         // TODO add your handling code here:
         categorySearch_jLabel.setVisible(true);
-        category_jTextField.setVisible(true);
+        category_jComboBox.setVisible(true);
         priceSearch_jLabel.setVisible(false);
         searchPrice_jTextField.setVisible(false);
         searchCategory_jButton.setVisible(true);
@@ -1507,13 +1517,13 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_instrument_jTextFieldActionPerformed
 
-    private void brand_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brand_jTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_brand_jTextFieldActionPerformed
-
     private void warranty_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_warranty_jTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_warranty_jTextFieldActionPerformed
+
+    private void brand_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brand_jTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_brand_jTextFieldActionPerformed
 
     public int getprice() {
         return Integer.parseInt(this.price_jTextField.getText());
@@ -1561,8 +1571,8 @@ public class homeGUI extends javax.swing.JFrame {
                 instrumentID_jTextField.setText("");
                 instrument_jTextField.setText("");
                 modelNo_jTextField.setText("");
-                brand_jTextField.setText("");
-                price_jTextField.setText("");
+                brand_jTextField.setText("");   
+                price_jTextField.setText("");             
                 warranty_jTextField.setText("");
             }
             String csvFilename = "src/CSV_Files/Instruments.csv";
@@ -1587,7 +1597,7 @@ public class homeGUI extends javax.swing.JFrame {
         priceSearch_jLabel.setVisible(true);
         searchPrice_jTextField.setVisible(true);
         categorySearch_jLabel.setVisible(false);
-        category_jTextField.setVisible(false);
+        category_jComboBox.setVisible(false);
         searchCategory_jButton.setVisible(false);
         searchPrice_jButton.setVisible(true);
         ArrayList<MusicalInstrument> tempList = new ArrayList();
@@ -1604,8 +1614,8 @@ public class homeGUI extends javax.swing.JFrame {
     private void clearRegistration_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearRegistration_jButtonActionPerformed
         // TODO add your handling code here:
         name_jTextField.setText("");
-        age_jTextField.setText("");
         specialization_jTextField.setText("");
+        age_jTextField.setText("");
         username_jTextField.setText("");
         password_jPasswordField.setText("");
         repassword_jPasswordField.setText("");
@@ -1617,13 +1627,13 @@ public class homeGUI extends javax.swing.JFrame {
         instrument_jTextField.setText("");
         modelNo_jTextField.setText("");
         price_jTextField.setText("");
-        brand_jTextField.setText("");
         warranty_jTextField.setText("");
+        brand_jTextField.setText("");
     }//GEN-LAST:event_clearAddInstruments_jButtonActionPerformed
 
     private void searchCategory_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCategory_jButtonActionPerformed
-        // TODO add your handling code here:
-        String category = category_jTextField.getText();
+        // TODO add your handling code here:  
+        String category = (String) category_jComboBox.getSelectedItem();
         int count = 0;
         if (category.equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Please ensure that the search category is not void.");
@@ -1708,10 +1718,8 @@ public class homeGUI extends javax.swing.JFrame {
         }
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new homeGUI().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new homeGUI().setVisible(true);
         });
     }
 
@@ -1764,8 +1772,8 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JLabel brand_jLabel;
     private javax.swing.JTextField brand_jTextField;
     private javax.swing.JLabel categorySearch_jLabel;
+    private javax.swing.JComboBox<String> category_jComboBox;
     private javax.swing.JRadioButton category_jRadioButton;
-    private javax.swing.JTextField category_jTextField;
     private javax.swing.JButton clearAddInstruments_jButton;
     private javax.swing.JButton clearRegistration_jButton;
     private javax.swing.JLabel description_jLabel;
