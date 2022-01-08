@@ -5,6 +5,7 @@
 package emerging_cw;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,6 +17,7 @@ public class BinarySearch {
      * The target value is search in a sorted arrayList.
      * If the target is found it is returned with the type MusicalInstrument.
     */
+
     public static MusicalInstrument binarySearch(ArrayList<MusicalInstrument> list, String target, SortBy sortBy) {
         int right = list.size() - 1;
         int left = 0;
@@ -40,7 +42,6 @@ public class BinarySearch {
                     left = mid + 1;
                 }
             }
-
         }
         return null;
     }
