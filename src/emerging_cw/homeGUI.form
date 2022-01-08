@@ -627,10 +627,10 @@
                 </Property>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Maiandra GD" size="10" style="0"/>
+                  <Font name="Maiandra GD" size="12" style="0"/>
                 </Property>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value=" Music has been transcending language, races and colors for years now. It has been &#xa; one of the languages that could easily break barriers of the society into pieces just &#xa; by its mere existence. It can easily make people feel a certain way in minutes and &#xa; has a great impact on people&apos;s well being  creativity and discipline. Symphony &#xa; Academy of Music has created a platform for artists since 1990&#x2019;s. Being an institution&#xa; with a long history, it ensures that everyone follows their passion and become &#xa; the greatest of them all."/>
+                <Property name="text" type="java.lang.String" value=" Music has been transcending language, races and colors for years now. It &#xa; has been one of the languages that could easily break barriers of the &#xa; society into pieces just by its mere existence. Symphony Academy of &#xa; Music has created a platform for artists since 1990&#x2019;s. Being an institution&#xa; with a long history, it ensures that everyone follows their passion and &#xa; become the greatest of them all."/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
                     <EtchetBorder>

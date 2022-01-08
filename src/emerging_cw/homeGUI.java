@@ -413,9 +413,9 @@ public class homeGUI extends javax.swing.JFrame {
 
         description_jTextArea.setBackground(new java.awt.Color(230, 244, 254));
         description_jTextArea.setColumns(20);
-        description_jTextArea.setFont(new java.awt.Font("Maiandra GD", 0, 10)); // NOI18N
+        description_jTextArea.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
         description_jTextArea.setRows(5);
-        description_jTextArea.setText(" Music has been transcending language, races and colors for years now. It has been \n one of the languages that could easily break barriers of the society into pieces just \n by its mere existence. It can easily make people feel a certain way in minutes and \n has a great impact on people's well being  creativity and discipline. Symphony \n Academy of Music has created a platform for artists since 1990’s. Being an institution\n with a long history, it ensures that everyone follows their passion and become \n the greatest of them all.");
+        description_jTextArea.setText(" Music has been transcending language, races and colors for years now. It \n has been one of the languages that could easily break barriers of the \n society into pieces just by its mere existence. Symphony Academy of \n Music has created a platform for artists since 1990’s. Being an institution\n with a long history, it ensures that everyone follows their passion and \n become the greatest of them all.");
         description_jTextArea.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, new java.awt.Color(164, 164, 245)));
         description_jTextArea.setFocusable(false);
 
