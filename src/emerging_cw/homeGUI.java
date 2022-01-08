@@ -1204,20 +1204,20 @@ public class homeGUI extends javax.swing.JFrame {
             csvReader.close();
         } catch (FileNotFoundException e) {
         } catch (IOException e2) {
+        } catch (NumberFormatException e3){
+            
         }
     }
 
     private void display() {
-        DefaultTableModel model = (DefaultTableModel) instrument_jTable.getModel();
-        model.setRowCount(0);
         for (MusicalInstrument instrument : inventory) {
             String[] values = {String.valueOf(instrument.getInstrumentId()), instrument.getInstrumentName(), instrument.getmodelNum(), instrument.getBrand(), String.valueOf(instrument.getPrice()), String.valueOf(instrument.getWarranty())};
             int columnCount = instrument_jTable.getColumnCount();
             int rowCount = instrument_jTable.getRowCount();
             int rowIndex = 0;
             boolean rowEmptyChecker = false;
-            model.addRow(new Object[] {});
             do {
+                
                 String s = (String) instrument_jTable.getValueAt(rowIndex, 0);
                 if (s != null && s.length() != 0) {
                     rowIndex++;
@@ -1226,11 +1226,20 @@ public class homeGUI extends javax.swing.JFrame {
                 }
 
             } while (rowIndex < rowCount && !rowEmptyChecker);
+
             for (int i = 0; i < columnCount; i++) {
                 instrument_jTable.setValueAt(values[i], rowIndex, i);
             }
         }
 
+    }
+
+    public static void clearTable(final JTable table) {
+        for (int i = 0; i < table.getRowCount(); i++) {
+            for (int j = 0; j < table.getColumnCount(); j++) {
+                table.setValueAt("", i, j);
+            }
+        }
     }
     private void admin_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_jButtonActionPerformed
         // TODO add your handling code here:
@@ -1311,6 +1320,8 @@ public class homeGUI extends javax.swing.JFrame {
                     searchPrice_jTextField.setVisible(false);
                     searchCategory_jButton.setVisible(false);
                     searchPrice_jButton.setVisible(false);
+                    readFile();
+                    display();
                 } else {
                     JOptionPane.showMessageDialog(this, "Invalid Password.", "ERROR!", JOptionPane.ERROR_MESSAGE);
                 }
@@ -1342,14 +1353,7 @@ public class homeGUI extends javax.swing.JFrame {
         home_jPanel.setVisible(true);
         clearTable(memberInfo_jTable);
     }//GEN-LAST:event_backRegistration_jButtonActionPerformed
-    
-    public static void clearTable(final JTable table) {
-        for (int i = 0; i < table.getRowCount(); i++) {
-            for(int j = 0; j < table.getColumnCount(); j++) {
-            table.setValueAt("", i, j);
-            }
-        }
-    }
+
     
     private void password_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_jPasswordFieldActionPerformed
         // TODO add your handling code here:
@@ -1365,12 +1369,12 @@ public class homeGUI extends javax.swing.JFrame {
     private void submit_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_jButtonActionPerformed
         // TODO add your handling code here:
         String period = "";
-        String name= name_jTextField.getText();
-        String specialization= specialization_jTextField.getText();
-        String age= age_jTextField.getText();
-        String username= username_jTextField.getText();
-        String password= password_jPasswordField.getText();
-        String repassword= repassword_jPasswordField.getText();
+        String name = name_jTextField.getText();
+        String age = age_jTextField.getText();
+        String specialization = specialization_jTextField.getText();
+        String username = username_jTextField.getText();
+        String password = password_jPasswordField.getText();
+        String repassword = repassword_jPasswordField.getText();
         
         int count = 0;
         if (name.equals("") || specialization.equals("") || age.equals("")|| username.equals("") || password.equals("") || repassword.equals("")) {
@@ -1448,6 +1452,7 @@ public class homeGUI extends javax.swing.JFrame {
         searchPrice_jTextField.setVisible(false);
         searchCategory_jButton.setVisible(true);
         searchPrice_jButton.setVisible(false);
+        clearTable(instrument_jTable);
         ArrayList<MusicalInstrument> tempList = new ArrayList();
         readFile();
         tempList = MergeSort.mergeSort(inventory, SortBy.CATEGORY);
@@ -1567,20 +1572,20 @@ public class homeGUI extends javax.swing.JFrame {
                 price_jTextField.setText("");             
                 warranty_jTextField.setText("");
             }
-           String csvFilename = "src/CSV_Files/Instruments.csv";
-        try {
-            FileWriter fw = new FileWriter(csvFilename, true);
-            CSVWriter writer = new CSVWriter(fw);
-            List<String[]> csvData = new ArrayList<String[]>();
-            String[] values = {id, instrument, model, brand, price, warranty};
-            csvData.add(values);
+            String csvFilename = "src/CSV_Files/Instruments.csv";
+            try {
+                FileWriter fw = new FileWriter(csvFilename, true);
+                CSVWriter writer = new CSVWriter(fw);
+                List<String[]> csvData = new ArrayList<String[]>();
+                String[] values = {id, instrument, model, brand, price, warranty};
+                csvData.add(values);
 
-            writer.writeAll(csvData);
-            writer.close();
+                writer.writeAll(csvData);
+                writer.close();
 
-        } catch (Exception e) {
-            System.out.println("exception :" + e.getMessage());
-        } 
+            } catch (Exception e) {
+                System.out.println("exception :" + e.getMessage());
+            }
         }
     }//GEN-LAST:event_add_jButtonActionPerformed
 
@@ -1595,6 +1600,7 @@ public class homeGUI extends javax.swing.JFrame {
         ArrayList<MusicalInstrument> tempList = new ArrayList();
         readFile();
         tempList = MergeSort.mergeSort(inventory, SortBy.PRICE);
+        clearTable(instrument_jTable);
         display();
     }//GEN-LAST:event_price_jRadioButtonActionPerformed
 
@@ -1647,7 +1653,7 @@ public class homeGUI extends javax.swing.JFrame {
             if (musicalInstrument != null) {
                 JOptionPane.showMessageDialog(rootPane, "Instrument ID: " + musicalInstrument.getInstrumentId());
             } else {
-                JOptionPane.showMessageDialog(rootPane, "No such instruments found");
+                JOptionPane.showMessageDialog(rootPane, "No such instruments found.");
             }
         }
     }//GEN-LAST:event_searchPrice_jButtonActionPerformed
