@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -150,9 +151,13 @@ public class homeGUI extends javax.swing.JFrame {
         addBgImage_jLabel = new javax.swing.JLabel();
         fileHelp_jMenuBar = new javax.swing.JMenuBar();
         file_jMenu = new javax.swing.JMenu();
-        open_jMenuItem = new javax.swing.JMenuItem();
+        Open_jMenu = new javax.swing.JMenu();
+        Instruments_jMenuItem = new javax.swing.JMenuItem();
+        External_jMenuItem = new javax.swing.JMenuItem();
         exit_jMenuItem = new javax.swing.JMenuItem();
         help_jMenu = new javax.swing.JMenu();
+        User_jMenuItem = new javax.swing.JMenuItem();
+        Teacher_jMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("main_Frame");
@@ -1152,13 +1157,25 @@ public class homeGUI extends javax.swing.JFrame {
 
         file_jMenu.setText("File");
 
-        open_jMenuItem.setText("Open");
-        open_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        Open_jMenu.setText("Open");
+
+        Instruments_jMenuItem.setText("Import Instruments");
+        Instruments_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                open_jMenuItemActionPerformed(evt);
+                Instruments_jMenuItemActionPerformed(evt);
             }
         });
-        file_jMenu.add(open_jMenuItem);
+        Open_jMenu.add(Instruments_jMenuItem);
+
+        External_jMenuItem.setText("Open External Files");
+        External_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                External_jMenuItemActionPerformed(evt);
+            }
+        });
+        Open_jMenu.add(External_jMenuItem);
+
+        file_jMenu.add(Open_jMenu);
 
         exit_jMenuItem.setText("Exit");
         exit_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -1176,6 +1193,23 @@ public class homeGUI extends javax.swing.JFrame {
                 help_jMenuActionPerformed(evt);
             }
         });
+
+        User_jMenuItem.setText("User Manual");
+        User_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                User_jMenuItemActionPerformed(evt);
+            }
+        });
+        help_jMenu.add(User_jMenuItem);
+
+        Teacher_jMenuItem.setText("Teacher Manual");
+        Teacher_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Teacher_jMenuItemActionPerformed(evt);
+            }
+        });
+        help_jMenu.add(Teacher_jMenuItem);
+
         fileHelp_jMenuBar.add(help_jMenu);
 
         setJMenuBar(fileHelp_jMenuBar);
@@ -1210,7 +1244,7 @@ public class homeGUI extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    private static ArrayList<MemberInfo> memberinfo = new ArrayList();
+   
     private static ArrayList<MusicalInstrument> inventory = new ArrayList();
 
     private static void readFile() {
@@ -1269,7 +1303,6 @@ public class homeGUI extends javax.swing.JFrame {
                 instrument_jTable.setValueAt(values[i], rowIndex, i);
             }
         }
-
     }
 
     public static void clearTable(final JTable table) {
@@ -1359,7 +1392,7 @@ public class homeGUI extends javax.swing.JFrame {
                     searchCategory_jButton.setVisible(false);
                     searchPrice_jButton.setVisible(false);
                     readFile();
-                    display();
+                    //display();
                 } else {
                     JOptionPane.showMessageDialog(this, "Invalid Password.", "ERROR!", JOptionPane.ERROR_MESSAGE);
                 }
@@ -1401,12 +1434,9 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_age_jTextFieldActionPerformed
 
-<<<<<<< HEAD
-=======
     public int getage() {
         return Integer.parseInt(this.age_jTextField.getText());
     }
->>>>>>> 3ea7aeeb31e8ccbbeca022ac68c9d7130eb833f4
     private void submit_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_jButtonActionPerformed
         // TODO add your handling code here:
         String period = "";
@@ -1507,62 +1537,6 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_exit_jMenuItemActionPerformed
-
-    private void open_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_open_jMenuItemActionPerformed
-        // TODO add your handling code here:
-        JFileChooser();
-        try {
-            FileReader fileReader = new FileReader("src/CSV_Files/Members.csv");
-            BufferedReader csvReader = new BufferedReader(fileReader);
-            String row;
-
-            boolean isFirstLine = true;
-            while ((row = csvReader.readLine()) != null) {
-                //skip first line
-                if (isFirstLine) {
-                    isFirstLine = false;
-                    continue;
-                }
-                String memberList[] = row.split(",");
-                String name = memberList[0];
-                int age = Integer.parseInt(memberList[1]);
-                String specialization = memberList[2];
-                String username = memberList[3];
-                String password = memberList[4];
-
-                MemberInfo member = new MemberInfo(name, age, specialization, username, password);
-                memberinfo.add(member);
-                
-                for (MemberInfo i : memberinfo) {
-                 // String[] value = {name.getName(), String.valueOf(age.getAge()), specialization.getSpecialization(), username.getUsername(), password.getPassword()};
-                 String[] value = {name,String.valueOf(age),specialization,username,password};
-                 int columnCount = memberInfo_jTable.getColumnCount();
-                int rowCount = memberInfo_jTable.getRowCount();
-                int rowIndex = 0;
-                boolean rowEmptyChecker = false;
-                do {
-
-                    String s = (String) memberInfo_jTable.getValueAt(rowIndex, 0);
-                    if (s != null && s.length() != 0) {
-                        rowIndex++;
-                    } else {
-                        rowEmptyChecker = true;
-                    }
-
-                } while (rowIndex < rowCount && !rowEmptyChecker);
-
-                for (int j = 0; j < columnCount; j++) {
-                    memberInfo_jTable.setValueAt(value[j], rowIndex, j);
-                }
-            }
-            }
-            fileReader.close();
-            csvReader.close();
-        } catch (FileNotFoundException e) {
-        } catch (IOException | NumberFormatException e2) {  
-        }
-        
-    }//GEN-LAST:event_open_jMenuItemActionPerformed
 
     private void admin_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_jPasswordFieldActionPerformed
         // TODO add your handling code here:
@@ -1742,7 +1716,6 @@ public class homeGUI extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(rootPane, "There is " + count + " " + category + " with the following model number: \n" + modelList);
         }
-        
     }//GEN-LAST:event_searchCategory_jButtonActionPerformed
 
     private void searchPrice_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchPrice_jButtonActionPerformed
@@ -1765,6 +1738,42 @@ public class homeGUI extends javax.swing.JFrame {
     private void help_jMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_help_jMenuActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_help_jMenuActionPerformed
+
+    private void Instruments_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Instruments_jMenuItemActionPerformed
+        // TODO add your handling code here:
+        display();
+    }//GEN-LAST:event_Instruments_jMenuItemActionPerformed
+
+    private void User_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_User_jMenuItemActionPerformed
+        // TODO add your handling code here:
+        try{
+            URI link= new URI ("");
+            Desktop desktop= Desktop.getDesktop();
+            desktop.browse(link);
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this, "The link is unavailable");
+        }
+    }//GEN-LAST:event_User_jMenuItemActionPerformed
+
+    private void External_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_External_jMenuItemActionPerformed
+        // TODO add your handling code here:
+        JFileChooser();
+    }//GEN-LAST:event_External_jMenuItemActionPerformed
+
+    private void Teacher_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Teacher_jMenuItemActionPerformed
+        // TODO add your handling code here:
+        try{
+            URI link= new URI ("");
+            Desktop desktop= Desktop.getDesktop();
+            desktop.browse(link);
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this, "The link is unavailable");
+        }
+    }//GEN-LAST:event_Teacher_jMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1844,6 +1853,11 @@ public class homeGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem External_jMenuItem;
+    private javax.swing.JMenuItem Instruments_jMenuItem;
+    private javax.swing.JMenu Open_jMenu;
+    private javax.swing.JMenuItem Teacher_jMenuItem;
+    private javax.swing.JMenuItem User_jMenuItem;
     private javax.swing.JLabel academyAddress_jlabel;
     private javax.swing.JLabel academyImage_jLabel;
     private javax.swing.JLabel academyName_jlabel;
@@ -1918,7 +1932,6 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JLabel name_jLabel;
     private javax.swing.JTextField name_jTextField;
     private javax.swing.JLabel newAccount_jLabel;
-    private javax.swing.JMenuItem open_jMenuItem;
     private javax.swing.JLabel password_jLabel;
     private javax.swing.JPasswordField password_jPasswordField;
     private javax.swing.JLabel piano_jLabel;

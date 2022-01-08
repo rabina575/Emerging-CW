@@ -19,14 +19,29 @@
             <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="open_jMenuItem">
+            <Menu class="javax.swing.JMenu" name="Open_jMenu">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Open"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="open_jMenuItemActionPerformed"/>
-              </Events>
-            </MenuItem>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="Instruments_jMenuItem">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Import Instruments"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Instruments_jMenuItemActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="External_jMenuItem">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Open External Files"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="External_jMenuItemActionPerformed"/>
+                  </Events>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
             <MenuItem class="javax.swing.JMenuItem" name="exit_jMenuItem">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Exit"/>
@@ -44,6 +59,24 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="help_jMenuActionPerformed"/>
           </Events>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="User_jMenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="User Manual"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="User_jMenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="Teacher_jMenuItem">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Teacher Manual"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Teacher_jMenuItemActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>

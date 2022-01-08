@@ -1,26 +1,6 @@
 Instrument ID,Instrument,Model Number,Brand,Price,Warranty
 1,Piano,MX10,Allison,3000,4
 2,Guitar,PS01,Gibson,4000,5
-<<<<<<< HEAD
-3,Flute,FP24,ABC,2000,3
-4,Piano,MX22,PQR,5000,4
-5,Violin,V45Y,fyg,8000,2
-6,Piano,P4HE,jfasdoi,4000,1
-<<<<<<< HEAD
-12,Mic,MX30,Panasonic,1000,1
-10,drums,hk100,9,9000,700
-101,drum,model,brand,9000,2
-7,Mic,MX12,Samsung,500,1
-19,hfhj,hjfj,fhjf,1000,1
-=======
-"12","Mic","MX30","Panasonic","1000","1"
-"M101","gjf","gd","hg","9000","fhj"
-"10","drums","hk100","9","9000","700"
-"dgfd","dgfdgd","444444","8","67","6666666j"
-"101","drum","model","brand","9000","2"
-"gfdg","chg","fgd","chc","900","hcgn"
-"sdfs","sdfds","fdsf","fsfs","777","df"
-=======
 3,Flute,FP24,Powell,2000,3
 4,Piano,MX22,Branston,5000,4
 5,Violin,V45Y,Knilling,8000,2
@@ -31,5 +11,3 @@ Instrument ID,Instrument,Model Number,Brand,Price,Warranty
 10,Violin,QRV5,Cecilio,5500,2
 11,Mic,2A8R,Panasonic,2500,5
 12,Piano,5WTR,Bishop,7500,4
->>>>>>> 745c6163b68ec2d84d5fa06d957782444a313906
->>>>>>> 3ea7aeeb31e8ccbbeca022ac68c9d7130eb833f4
