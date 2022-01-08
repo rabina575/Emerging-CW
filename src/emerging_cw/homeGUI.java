@@ -1496,6 +1496,7 @@ public class homeGUI extends javax.swing.JFrame {
         addInstrument_jPanel.setVisible(false);
         adminName_jTextField.setText("");
         admin_jPasswordField.setText("");
+        clearTable(add_jTable);
     }//GEN-LAST:event_adminBack_jButtonActionPerformed
 
     private void instrumentID_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instrumentID_jTextFieldActionPerformed
