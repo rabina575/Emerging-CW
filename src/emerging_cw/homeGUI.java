@@ -583,7 +583,7 @@ public class homeGUI extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Name", "Age", "Specialization", "Username", "Password"
+                "Name", "Specialization", "Age", "Username", "Password"
             }
         ));
         memberInfo_jTable.setGridColor(new java.awt.Color(203, 228, 255));
@@ -1205,7 +1205,7 @@ public class homeGUI extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    
+    private static ArrayList<MemberInfo> memberinfo = new ArrayList();
     private static ArrayList<MusicalInstrument> inventory = new ArrayList();
 
     private static void readFile() {
@@ -1502,7 +1502,58 @@ public class homeGUI extends javax.swing.JFrame {
 
     private void open_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_open_jMenuItemActionPerformed
         // TODO add your handling code here:
-        JFileChooser();   
+        JFileChooser();
+        try {
+            FileReader fileReader = new FileReader("src/CSV_Files/Members.csv");
+            BufferedReader csvReader = new BufferedReader(fileReader);
+            String row;
+
+            boolean isFirstLine = true;
+            while ((row = csvReader.readLine()) != null) {
+                //skip first line
+                if (isFirstLine) {
+                    isFirstLine = false;
+                    continue;
+                }
+                String memberList[] = row.split(",");
+                String name = memberList[0];
+                int age = Integer.parseInt(memberList[1]);
+                String specialization = memberList[2];
+                String username = memberList[3];
+                String password = memberList[4];
+
+                MemberInfo member = new MemberInfo(name, age, specialization, username, password);
+                memberinfo.add(member);
+                
+                for (MemberInfo i : memberinfo) {
+                 // String[] value = {name.getName(), String.valueOf(age.getAge()), specialization.getSpecialization(), username.getUsername(), password.getPassword()};
+                 String[] value = {name,String.valueOf(age),specialization,username,password};
+                 int columnCount = memberInfo_jTable.getColumnCount();
+                int rowCount = memberInfo_jTable.getRowCount();
+                int rowIndex = 0;
+                boolean rowEmptyChecker = false;
+                do {
+
+                    String s = (String) memberInfo_jTable.getValueAt(rowIndex, 0);
+                    if (s != null && s.length() != 0) {
+                        rowIndex++;
+                    } else {
+                        rowEmptyChecker = true;
+                    }
+
+                } while (rowIndex < rowCount && !rowEmptyChecker);
+
+                for (int j = 0; j < columnCount; j++) {
+                    memberInfo_jTable.setValueAt(value[j], rowIndex, j);
+                }
+            }
+            }
+            fileReader.close();
+            csvReader.close();
+        } catch (FileNotFoundException e) {
+        } catch (IOException | NumberFormatException e2) {  
+        }
+        
     }//GEN-LAST:event_open_jMenuItemActionPerformed
 
     private void admin_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_jPasswordFieldActionPerformed
