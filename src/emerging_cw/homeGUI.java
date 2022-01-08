@@ -17,7 +17,9 @@ import java.util.HashMap;
 import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -548,10 +550,40 @@ public class homeGUI extends javax.swing.JFrame {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
-                "Name", "Specialization", "Age", "Username", "Password"
+                "Name", "Age", "Specialization", "Username", "Password"
             }
         ));
         memberInfo_jTable.setGridColor(new java.awt.Color(203, 228, 255));
@@ -1173,6 +1205,7 @@ public class homeGUI extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+    
     private static ArrayList<MusicalInstrument> inventory = new ArrayList();
 
     private static void readFile() {
@@ -1363,9 +1396,6 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_age_jTextFieldActionPerformed
 
-    public int getage() {
-        return Integer.parseInt(this.specialization_jTextField.getText());
-    }
     private void submit_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_jButtonActionPerformed
         // TODO add your handling code here:
         String period = "";
@@ -1472,7 +1502,7 @@ public class homeGUI extends javax.swing.JFrame {
 
     private void open_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_open_jMenuItemActionPerformed
         // TODO add your handling code here:
-        JFileChooser();
+        JFileChooser();   
     }//GEN-LAST:event_open_jMenuItemActionPerformed
 
     private void admin_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_jPasswordFieldActionPerformed
