@@ -74,7 +74,7 @@ public class homeGUI extends javax.swing.JFrame {
         memberPassword_jLabel = new javax.swing.JLabel();
         member_jPasswordField = new javax.swing.JPasswordField();
         backMember_jButton = new javax.swing.JButton();
-        description_jLabel = new javax.swing.JLabel();
+        description_jTextArea = new javax.swing.JTextArea();
         registerMember_jPanel = new javax.swing.JPanel();
         registration_jLabel = new javax.swing.JLabel();
         name_jLabel = new javax.swing.JLabel();
@@ -151,7 +151,6 @@ public class homeGUI extends javax.swing.JFrame {
         open_jMenuItem = new javax.swing.JMenuItem();
         exit_jMenuItem = new javax.swing.JMenuItem();
         help_jMenu = new javax.swing.JMenu();
-        manual_jMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("main_Frame");
@@ -412,19 +411,28 @@ public class homeGUI extends javax.swing.JFrame {
                 .addGap(30, 30, 30))
         );
 
-        description_jLabel.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
-        description_jLabel.setText("jLabel1");
+        description_jTextArea.setBackground(new java.awt.Color(230, 244, 254));
+        description_jTextArea.setColumns(20);
+        description_jTextArea.setFont(new java.awt.Font("Maiandra GD", 0, 10)); // NOI18N
+        description_jTextArea.setRows(5);
+        description_jTextArea.setText(" Music has been transcending language, races and colors for years now. It has been \n one of the languages that could easily break barriers of the society into pieces just \n by its mere existence. It can easily make people feel a certain way in minutes and \n has a great impact on people's well being  creativity and discipline. Symphony \n Academy of Music has created a platform for artists since 1990’s. Being an institution\n with a long history, it ensures that everyone follows their passion and become \n the greatest of them all.");
+        description_jTextArea.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, new java.awt.Color(164, 164, 245)));
+        description_jTextArea.setFocusable(false);
 
         javax.swing.GroupLayout home_jPanelLayout = new javax.swing.GroupLayout(home_jPanel);
         home_jPanel.setLayout(home_jPanelLayout);
         home_jPanelLayout.setHorizontalGroup(
             home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, home_jPanelLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(academyImage_jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(description_jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                .addGroup(home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(home_jPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(academyImage_jLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, home_jPanelLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(description_jTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(users_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginAdmin_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -439,12 +447,12 @@ public class homeGUI extends javax.swing.JFrame {
                 .addGroup(home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(home_jPanelLayout.createSequentialGroup()
                         .addComponent(academyImage_jLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(description_jLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(users_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(loginAdmin_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(description_jTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(users_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
+                    .addComponent(loginAdmin_jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
                     .addComponent(loginMember_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         main_jPanel.add(home_jPanel);
@@ -924,6 +932,7 @@ public class homeGUI extends javax.swing.JFrame {
             }
         });
 
+        add_jTable.setBackground(new java.awt.Color(234, 234, 253));
         add_jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -933,9 +942,9 @@ public class homeGUI extends javax.swing.JFrame {
                 "Instrument ID", "Instrument", "Model No.", "Brand", "Price", "Warranty"
             }
         ));
-        add_jTable.setGridColor(new java.awt.Color(204, 204, 255));
+        add_jTable.setGridColor(new java.awt.Color(203, 228, 255));
         add_jTable.setSelectionBackground(new java.awt.Color(166, 206, 229));
-        add_jTable.setShowGrid(false);
+        add_jTable.setShowGrid(true);
         add_jScrollPane.setViewportView(add_jTable);
 
         clearAddInstruments_jButton.setBackground(new java.awt.Color(166, 206, 229));
@@ -1118,15 +1127,11 @@ public class homeGUI extends javax.swing.JFrame {
         fileHelp_jMenuBar.add(file_jMenu);
 
         help_jMenu.setText("Help");
-
-        manual_jMenuItem.setText("User Manual");
-        manual_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        help_jMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                manual_jMenuItemActionPerformed(evt);
+                help_jMenuActionPerformed(evt);
             }
         });
-        help_jMenu.add(manual_jMenuItem);
-
         fileHelp_jMenuBar.add(help_jMenu);
 
         setJMenuBar(fileHelp_jMenuBar);
@@ -1352,7 +1357,7 @@ public class homeGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_age_jTextFieldActionPerformed
 
     public int getage() {
-        return Integer.parseInt(this.specialization_jTextField.getText());
+        return Integer.parseInt(this.age_jTextField.getText());
     }
     private void submit_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_jButtonActionPerformed
         // TODO add your handling code here:
@@ -1404,6 +1409,9 @@ public class homeGUI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Incorrect Password. Please re-check!", "ATTENTION!", JOptionPane.ERROR_MESSAGE);
             }
         }
+        if (count == 0){
+            JOptionPane.showMessageDialog(rootPane, "Registeration is complete.");
+        }
 
         String csvFilename = "src/CSV_Files/Members.csv";
         try {
@@ -1447,11 +1455,6 @@ public class homeGUI extends javax.swing.JFrame {
         display();
 
     }//GEN-LAST:event_category_jRadioButtonActionPerformed
-
-    private void manual_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manual_jMenuItemActionPerformed
-        // TODO add your handling code here:
-        JFileChooser();
-    }//GEN-LAST:event_manual_jMenuItemActionPerformed
 
     private void exit_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_jMenuItemActionPerformed
         // TODO add your handling code here:
@@ -1575,6 +1578,9 @@ public class homeGUI extends javax.swing.JFrame {
             } catch (Exception e) {
                 System.out.println("exception :" + e.getMessage());
             }
+            if (count == 0){
+            JOptionPane.showMessageDialog(rootPane, "The instrument has been added.");
+            }
         }
     }//GEN-LAST:event_add_jButtonActionPerformed
 
@@ -1646,6 +1652,10 @@ public class homeGUI extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_searchPrice_jButtonActionPerformed
+
+    private void help_jMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_help_jMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_help_jMenuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1762,7 +1772,7 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JRadioButton category_jRadioButton;
     private javax.swing.JButton clearAddInstruments_jButton;
     private javax.swing.JButton clearRegistration_jButton;
-    private javax.swing.JLabel description_jLabel;
+    private javax.swing.JTextArea description_jTextArea;
     private javax.swing.JLabel drums_jLabel;
     private javax.swing.JMenuItem exit_jMenuItem;
     private javax.swing.JMenuBar fileHelp_jMenuBar;
@@ -1786,7 +1796,6 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JPanel loginAdmin_jPanel;
     private javax.swing.JPanel loginMember_jPanel;
     private javax.swing.JPanel main_jPanel;
-    private javax.swing.JMenuItem manual_jMenuItem;
     private javax.swing.JTable memberInfo_jTable;
     private javax.swing.JButton memberLogin_jButton;
     private javax.swing.JLabel memberName_jLabel;
