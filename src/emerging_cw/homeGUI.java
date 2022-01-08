@@ -1454,7 +1454,49 @@ public class homeGUI extends javax.swing.JFrame {
 
     private void open_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_open_jMenuItemActionPerformed
         // TODO add your handling code here:
-        JFileChooser();
+        //JFileChooser();
+        JFileChooser fileChooser = new JFileChooser("src/CSV_Files");
+        fileChooser.setDialogTitle("Choose a file to open");
+        int userSelection = fileChooser.showOpenDialog(this);
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File fileToOpen = fileChooser.getSelectedFile();
+            /*Desktop desktop = Desktop.getDesktop();
+            try {
+                desktop.open(fileToOpen);
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(this, "Error.", "ERROR MESSAGE", JOptionPane.ERROR_MESSAGE);
+            } */
+        
+        try {
+            FileReader fileReader = new FileReader("src/CSV_Files/Instruments.csv");
+            BufferedReader csvReader = new BufferedReader(fileReader);
+            String row;
+
+            boolean isFirstLine = true;
+            while ((row = csvReader.readLine()) != null) {
+                //skip first line
+                if (isFirstLine) {
+                    isFirstLine = false;
+                    continue;
+                }
+                String instrumentList[] = row.split(",");
+                int instrumentId = Integer.parseInt(instrumentList[0]);
+                String instrumentName = instrumentList[1];
+                String modelNum = instrumentList[2];
+                String brand = instrumentList[3];
+                int price = Integer.parseInt(instrumentList[4]);
+                int warranty = Integer.parseInt(instrumentList[5]);
+
+                MusicalInstrument musicalInstrument = new MusicalInstrument(instrumentId, instrumentName, modelNum, brand, price, warranty);
+                inventory.add(musicalInstrument);
+
+            }
+            fileReader.close();
+            csvReader.close();
+        } catch (FileNotFoundException e) {
+        } catch (IOException e2) {
+        }
+        }
     }//GEN-LAST:event_open_jMenuItemActionPerformed
 
     private void admin_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_jPasswordFieldActionPerformed
