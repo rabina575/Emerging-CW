@@ -12,12 +12,15 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -148,9 +151,13 @@ public class homeGUI extends javax.swing.JFrame {
         addBgImage_jLabel = new javax.swing.JLabel();
         fileHelp_jMenuBar = new javax.swing.JMenuBar();
         file_jMenu = new javax.swing.JMenu();
-        open_jMenuItem = new javax.swing.JMenuItem();
+        Open_jMenu = new javax.swing.JMenu();
+        Instruments_jMenuItem = new javax.swing.JMenuItem();
+        External_jMenuItem = new javax.swing.JMenuItem();
         exit_jMenuItem = new javax.swing.JMenuItem();
         help_jMenu = new javax.swing.JMenu();
+        User_jMenuItem = new javax.swing.JMenuItem();
+        Teacher_jMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("main_Frame");
@@ -176,7 +183,7 @@ public class homeGUI extends javax.swing.JFrame {
         academyAddress_jlabel.setIconTextGap(0);
         academyAddress_jlabel.setMaximumSize(new java.awt.Dimension(0, 0));
         main_jPanel.add(academyAddress_jlabel);
-        academyAddress_jlabel.setBounds(250, 80, 310, 18);
+        academyAddress_jlabel.setBounds(250, 80, 310, 19);
 
         home_jPanel.setBackground(new java.awt.Color(230, 244, 254));
         home_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
@@ -541,6 +548,51 @@ public class homeGUI extends javax.swing.JFrame {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
@@ -575,14 +627,11 @@ public class homeGUI extends javax.swing.JFrame {
         registerMember_jPanelLayout.setHorizontalGroup(
             registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
-                .addContainerGap(104, Short.MAX_VALUE)
-                .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
-                        .addComponent(backRegistration_jButton)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
-                        .addComponent(registered_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(120, 120, 120))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(registered_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
+                .addComponent(backRegistration_jButton)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
                 .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(registerMember_jPanelLayout.createSequentialGroup()
@@ -648,13 +697,13 @@ public class homeGUI extends javax.swing.JFrame {
                     .addComponent(clearRegistration_jButton))
                 .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(registerMember_jPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(backRegistration_jButton)
                         .addContainerGap())
                     .addGroup(registerMember_jPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(registered_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(25, Short.MAX_VALUE))))
         );
 
         main_jPanel.add(registerMember_jPanel);
@@ -682,7 +731,7 @@ public class homeGUI extends javax.swing.JFrame {
         searchBy_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         searchBy_jLabel.setText("Sort by:");
         instrumentMain_jPanel.add(searchBy_jLabel);
-        searchBy_jLabel.setBounds(30, 20, 70, 18);
+        searchBy_jLabel.setBounds(30, 20, 70, 19);
 
         instrument_jTable.setBackground(new java.awt.Color(234, 234, 253));
         instrument_jTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -1108,13 +1157,25 @@ public class homeGUI extends javax.swing.JFrame {
 
         file_jMenu.setText("File");
 
-        open_jMenuItem.setText("Open");
-        open_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        Open_jMenu.setText("Open");
+
+        Instruments_jMenuItem.setText("Import Instruments");
+        Instruments_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                open_jMenuItemActionPerformed(evt);
+                Instruments_jMenuItemActionPerformed(evt);
             }
         });
-        file_jMenu.add(open_jMenuItem);
+        Open_jMenu.add(Instruments_jMenuItem);
+
+        External_jMenuItem.setText("Open External Files");
+        External_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                External_jMenuItemActionPerformed(evt);
+            }
+        });
+        Open_jMenu.add(External_jMenuItem);
+
+        file_jMenu.add(Open_jMenu);
 
         exit_jMenuItem.setText("Exit");
         exit_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -1132,6 +1193,23 @@ public class homeGUI extends javax.swing.JFrame {
                 help_jMenuActionPerformed(evt);
             }
         });
+
+        User_jMenuItem.setText("User Manual");
+        User_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                User_jMenuItemActionPerformed(evt);
+            }
+        });
+        help_jMenu.add(User_jMenuItem);
+
+        Teacher_jMenuItem.setText("Teacher Manual");
+        Teacher_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Teacher_jMenuItemActionPerformed(evt);
+            }
+        });
+        help_jMenu.add(Teacher_jMenuItem);
+
         fileHelp_jMenuBar.add(help_jMenu);
 
         setJMenuBar(fileHelp_jMenuBar);
@@ -1166,6 +1244,7 @@ public class homeGUI extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+   
     private static ArrayList<MusicalInstrument> inventory = new ArrayList();
 
     private static void readFile() {
@@ -1224,7 +1303,6 @@ public class homeGUI extends javax.swing.JFrame {
                 instrument_jTable.setValueAt(values[i], rowIndex, i);
             }
         }
-
     }
 
     public static void clearTable(final JTable table) {
@@ -1314,7 +1392,7 @@ public class homeGUI extends javax.swing.JFrame {
                     searchCategory_jButton.setVisible(false);
                     searchPrice_jButton.setVisible(false);
                     readFile();
-                    display();
+                    //display();
                 } else {
                     JOptionPane.showMessageDialog(this, "Invalid Password.", "ERROR!", JOptionPane.ERROR_MESSAGE);
                 }
@@ -1459,11 +1537,6 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_exit_jMenuItemActionPerformed
-
-    private void open_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_open_jMenuItemActionPerformed
-        // TODO add your handling code here:
-        JFileChooser();
-    }//GEN-LAST:event_open_jMenuItemActionPerformed
 
     private void admin_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_jPasswordFieldActionPerformed
         // TODO add your handling code here:
@@ -1643,7 +1716,6 @@ public class homeGUI extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(rootPane, "There is " + count + " " + category + " with the following model number: \n" + modelList);
         }
-        
     }//GEN-LAST:event_searchCategory_jButtonActionPerformed
 
     private void searchPrice_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchPrice_jButtonActionPerformed
@@ -1666,6 +1738,42 @@ public class homeGUI extends javax.swing.JFrame {
     private void help_jMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_help_jMenuActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_help_jMenuActionPerformed
+
+    private void Instruments_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Instruments_jMenuItemActionPerformed
+        // TODO add your handling code here:
+        display();
+    }//GEN-LAST:event_Instruments_jMenuItemActionPerformed
+
+    private void User_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_User_jMenuItemActionPerformed
+        // TODO add your handling code here:
+        try{
+            URI link= new URI ("");
+            Desktop desktop= Desktop.getDesktop();
+            desktop.browse(link);
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this, "The link is unavailable");
+        }
+    }//GEN-LAST:event_User_jMenuItemActionPerformed
+
+    private void External_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_External_jMenuItemActionPerformed
+        // TODO add your handling code here:
+        JFileChooser();
+    }//GEN-LAST:event_External_jMenuItemActionPerformed
+
+    private void Teacher_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Teacher_jMenuItemActionPerformed
+        // TODO add your handling code here:
+        try{
+            URI link= new URI ("");
+            Desktop desktop= Desktop.getDesktop();
+            desktop.browse(link);
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this, "The link is unavailable");
+        }
+    }//GEN-LAST:event_Teacher_jMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1745,6 +1853,11 @@ public class homeGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem External_jMenuItem;
+    private javax.swing.JMenuItem Instruments_jMenuItem;
+    private javax.swing.JMenu Open_jMenu;
+    private javax.swing.JMenuItem Teacher_jMenuItem;
+    private javax.swing.JMenuItem User_jMenuItem;
     private javax.swing.JLabel academyAddress_jlabel;
     private javax.swing.JLabel academyImage_jLabel;
     private javax.swing.JLabel academyName_jlabel;
@@ -1819,7 +1932,6 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JLabel name_jLabel;
     private javax.swing.JTextField name_jTextField;
     private javax.swing.JLabel newAccount_jLabel;
-    private javax.swing.JMenuItem open_jMenuItem;
     private javax.swing.JLabel password_jLabel;
     private javax.swing.JPasswordField password_jPasswordField;
     private javax.swing.JLabel piano_jLabel;
