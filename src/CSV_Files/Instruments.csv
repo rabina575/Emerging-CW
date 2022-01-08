@@ -1,13 +1,13 @@
 Instrument ID,Instrument,Model Number,Brand,Price,Warranty
-1,Piano,MX10,Samsung,3000,4
+1,Piano,MX10,Allison,3000,4
 2,Guitar,PS01,Gibson,4000,5
-3,Flute,FP24,ABC,2000,3
-4,Piano,MX22,PQR,5000,4
-5,Violin,V45Y,fyg,8000,2
-6,Piano,P4HE,jfasdoi,4000,1
-"12","Mic","MX30","Panasonic","1000","1"
-"M101","gjf","gd","hg","9000","fhj"
-"10","drums","hk100","9","9000","700"
-"dgfd","dgfdgd","444444","8","67","6666666j"
-"101","drum","model","brand","9000","2"
-"gfdg","chg","fgd","chc","900","hcgn"
+3,Flute,FP24,Powell,2000,3
+4,Piano,MX22,Branston,5000,4
+5,Violin,V45Y,Knilling,8000,2
+6,Drum,P4HE,Pearl,4000,1
+7,Mic,MX30,Panasonic,1000,1
+8,Guitar,E329,Gibson,9000,3
+9,Flute,54L2,Azumi,3000,4
+10,Violin,QRV5,Cecilio,5500,2
+11,Mic,2A8R,Panasonic,2500,5
+12,Piano,5WTR,Bishop,7500,4
