@@ -1518,10 +1518,10 @@
                               <Component id="adminInstrument_jLabel" min="-2" pref="190" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="278" max="-2" attributes="0"/>
                               <Component id="add_jButton" min="-2" pref="117" max="-2" attributes="0"/>
@@ -1537,11 +1537,18 @@
                               </Group>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="price_jTextField" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
-                                  <Component id="modelNo_jTextField" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
-                                  <Component id="instrumentID_jTextField" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="price_jTextField" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
+                                          <Component id="instrumentID_jTextField" alignment="0" min="-2" pref="138" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="144" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="modelNo_jTextField" min="-2" pref="138" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="instrument_jLabel" min="-2" pref="115" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
@@ -1549,15 +1556,14 @@
                                       <Component id="warranty_jLabel" min="-2" pref="115" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="brand_jTextField" min="-2" pref="138" max="-2" attributes="0"/>
                                   <Component id="instrument_jTextField" min="-2" pref="138" max="-2" attributes="0"/>
                                   <Component id="warranty_jTextField" min="-2" pref="138" max="-2" attributes="0"/>
+                                  <Component id="brand_jTextField" min="-2" pref="138" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1571,23 +1577,23 @@
                           <Component id="instrumentID_jLabel" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="modelNo_jTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="instrument_jTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="instrument_jLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="instrumentID_jTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="instrumentID_jTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="modelNo_jLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="brand_jTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="warranty_jLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="modelNo_jTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="warranty_jTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="price_jTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="price_jLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="warranty_jTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="brand_jLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="brand_jTextField" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
