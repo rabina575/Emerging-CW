@@ -731,7 +731,7 @@ public class homeGUI extends javax.swing.JFrame {
 
         category_jComboBox.setBackground(new java.awt.Color(166, 206, 229));
         category_jComboBox.setFont(new java.awt.Font("Maiandra GD", 0, 11)); // NOI18N
-        category_jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Drums", "Flute", "Guitar", "Mic", "Piano", "Violin" }));
+        category_jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Drum", "Flute", "Guitar", "Mic", "Piano", "Violin" }));
         instrumentMain_jPanel.add(category_jComboBox);
         category_jComboBox.setBounds(550, 10, 90, 30);
 
@@ -1197,8 +1197,8 @@ public class homeGUI extends javax.swing.JFrame {
             csvReader.close();
         } catch (FileNotFoundException e) {
         } catch (IOException e2) {
-        } catch (NumberFormatException e3){
-            
+        } catch (NumberFormatException e3) {
+        } catch (ArrayIndexOutOfBoundsException e4) {
         }
     }
 
@@ -1210,7 +1210,7 @@ public class homeGUI extends javax.swing.JFrame {
             int rowIndex = 0;
             boolean rowEmptyChecker = false;
             do {
-                
+
                 String s = (String) instrument_jTable.getValueAt(rowIndex, 0);
                 if (s != null && s.length() != 0) {
                     rowIndex++;
@@ -1347,7 +1347,7 @@ public class homeGUI extends javax.swing.JFrame {
         clearTable(memberInfo_jTable);
     }//GEN-LAST:event_backRegistration_jButtonActionPerformed
 
-    
+
     private void password_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_jPasswordFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_password_jPasswordFieldActionPerformed
@@ -1368,9 +1368,9 @@ public class homeGUI extends javax.swing.JFrame {
         String username = username_jTextField.getText();
         String password = password_jPasswordField.getText();
         String repassword = repassword_jPasswordField.getText();
-        
+
         int count = 0;
-        if (name.equals("") || specialization.equals("") || age.equals("")|| username.equals("") || password.equals("") || repassword.equals("")) {
+        if (name.equals("") || specialization.equals("") || age.equals("") || username.equals("") || password.equals("") || repassword.equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Please ensure that all fields are filled.");
             count = 1;
         }
@@ -1384,7 +1384,7 @@ public class homeGUI extends javax.swing.JFrame {
         }
         if (count == 0) {
             if (password.equals(repassword)) {
-                String[] values = {name, specialization, age,  username, password};
+                String[] values = {name, specialization, age, username, password};
                 int rowCount = memberInfo_jTable.getRowCount();
                 int columnCount = memberInfo_jTable.getColumnCount();
                 int rowIndex = 0;
@@ -1449,11 +1449,10 @@ public class homeGUI extends javax.swing.JFrame {
         searchCategory_jButton.setVisible(true);
         searchPrice_jButton.setVisible(false);
         clearTable(instrument_jTable);
-        ArrayList<MusicalInstrument> tempList = new ArrayList();
+        inventory.clear();
         readFile();
-        tempList = MergeSort.mergeSort(inventory, SortBy.CATEGORY);
+        MergeSort.mergeSort(inventory, SortBy.CATEGORY);
         display();
-
     }//GEN-LAST:event_category_jRadioButtonActionPerformed
 
     private void exit_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_jMenuItemActionPerformed
@@ -1560,8 +1559,8 @@ public class homeGUI extends javax.swing.JFrame {
                 instrumentID_jTextField.setText("");
                 instrument_jTextField.setText("");
                 modelNo_jTextField.setText("");
-                brand_jTextField.setText("");   
-                price_jTextField.setText("");             
+                brand_jTextField.setText("");
+                price_jTextField.setText("");
                 warranty_jTextField.setText("");
             }
             String csvFilename = "src/CSV_Files/Instruments.csv";
@@ -1592,10 +1591,10 @@ public class homeGUI extends javax.swing.JFrame {
         category_jComboBox.setVisible(false);
         searchCategory_jButton.setVisible(false);
         searchPrice_jButton.setVisible(true);
-        ArrayList<MusicalInstrument> tempList = new ArrayList();
-        readFile();
-        tempList = MergeSort.mergeSort(inventory, SortBy.PRICE);
         clearTable(instrument_jTable);
+        inventory.clear();
+        readFile();
+        MergeSort.mergeSort(inventory, SortBy.PRICE);
         display();
     }//GEN-LAST:event_price_jRadioButtonActionPerformed
 
@@ -1627,13 +1626,24 @@ public class homeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:  
         String category = (String) category_jComboBox.getSelectedItem();
         int count = 0;
-        if (category.equals("")) {
-            JOptionPane.showMessageDialog(rootPane, "Please ensure that the search category is not void.");
-            count = 1;
-        } else {
-            MusicalInstrument musicalInstrument = BinarySearch.binarySearch(inventory, category, SortBy.CATEGORY);
-            JOptionPane.showMessageDialog(rootPane, "Instrument ID: " + musicalInstrument.getInstrumentId());
+        ArrayList<String> modelNum = new ArrayList();
+        for (int i = 0; i <= inventory.size() - 1; i++) {
+            if (inventory.get(i).getInstrumentName().equals(category)) {
+                modelNum.add(inventory.get(i).getmodelNum());
+                count++;
+            }
         }
+        String modelList = "";
+        for (String element : modelNum) {
+            modelList = modelList + "\n" + element;
+        }
+        if(count > 1){
+            JOptionPane.showMessageDialog(rootPane, "There are " + count + " " + category + "s with the following model numbers:" + modelList);
+        }
+        else{
+            JOptionPane.showMessageDialog(rootPane, "There is " + count + " " + category + " with the following model number: \n" + modelList);
+        }
+        
     }//GEN-LAST:event_searchCategory_jButtonActionPerformed
 
     private void searchPrice_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchPrice_jButtonActionPerformed
@@ -1644,9 +1654,9 @@ public class homeGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Please ensure that the search category is not void.");
             count = 1;
         } else {
-            MusicalInstrument musicalInstrument = BinarySearch.binarySearch(inventory, price, SortBy.PRICE);
+            MusicalInstrument musicalInstrument = BinarySearch.binarySearch(inventory, price);
             if (musicalInstrument != null) {
-                JOptionPane.showMessageDialog(rootPane, "Instrument ID: " + musicalInstrument.getInstrumentId());
+                JOptionPane.showMessageDialog(rootPane, "Instrument ID: " + musicalInstrument.getInstrumentId() + "\n Instrument Name: " + musicalInstrument.getInstrumentName() + "\n Model Number: " + musicalInstrument.getmodelNum() + "\n Brand: " + musicalInstrument.getBrand() + "\n Price: " + musicalInstrument.getPrice() + "\n Warranty: " + musicalInstrument.getWarranty());
             } else {
                 JOptionPane.showMessageDialog(rootPane, "No such instruments found.");
             }

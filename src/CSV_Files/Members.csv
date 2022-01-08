@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Name,Age,Specialization,Username,Password
 Aadesh Shrestha,20,Piano,Aadesh,hsedaa
 Aditya Amatya,23,Violin,Aditya,aytida
@@ -22,3 +23,24 @@ Aakash Shrestha,20,Violin,Aakash,hsakaa
 "edf","sdf","ds","sfdf","hiii"
 "edf","sdf","9","sfdf","hiii"
 "Rabina","drums","19","Rize","hihihi"
+=======
+Name,Specialization,Age,Username,Password
+Aadesh Shrestha,Piano,20,Aadesh,hsedaa
+Aditya Amatya,Violin,23,Aditya,aytida
+Ameesha Thapa,Vocal,19,Ameesha,ahseema
+Ramesh Basnet,Guitar,32,Ramesh,hsemar
+Abhinav Sharma,Flute,28,Abhinav,vanihba
+Rabin Acharya,Piano,16,Rabin,nibar
+Namrata Sitaula,Guitar,27,Namrata,atarman
+Ishani Karki,Drum,18,Ishani,inahsi
+Ankur Tamang,Violin,29,Ankur,rukna
+Ujwal Khadka,Flute,21,Ujwal,lawju
+Anish Shah,Vocal,30,Anish,hsina
+Presha Bhattarai,Piano,22,Presha,ahserp
+Mubson Karki,Vocal,20,Mubson,nosbum
+Shreesu Thapa,Guitar,20,Shreesu,useerhs
+Aakash Shrestha,Violin,20,Aakash,hsakaa
+Subriti Aryal,Guitar,20,Subriti,itirbus
+Rabina Shrestha,Drum,20,Rabina,anibar
+Aashna Shrestha,Piano,20,Aashna,anhsaa
+>>>>>>> 745c6163b68ec2d84d5fa06d957782444a313906

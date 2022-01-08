@@ -18,21 +18,11 @@ public class BinarySearch {
      * If the target is found it is returned with the type MusicalInstrument.
     */
 
-    public static MusicalInstrument binarySearch(ArrayList<MusicalInstrument> list, String target, SortBy sortBy) {
+    public static MusicalInstrument binarySearch(ArrayList<MusicalInstrument> list, String target) {
         int right = list.size() - 1;
         int left = 0;
         while (left <= right) {
             int mid = (left + right) / 2;
-            if (sortBy == sortBy.CATEGORY) {
-                if (list.get(mid).getInstrumentName().equals(target)) {
-                    return list.get(mid);
-                } else if (list.get(mid).getInstrumentName().compareTo(target) > 0) {
-                    right = mid - 1;
-
-                } else {
-                    left = mid + 1;
-                }
-            } else {
                 if (String.valueOf(list.get(mid).getPrice()).equals(target)) {
                     return list.get(mid);
                 } else if (String.valueOf(list.get(mid).getPrice()).compareTo(target) > 0) {
@@ -42,7 +32,6 @@ public class BinarySearch {
                     left = mid + 1;
                 }
             }
-        }
         return null;
     }
 }
