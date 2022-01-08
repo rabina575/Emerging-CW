@@ -17,6 +17,9 @@
         <Menu class="javax.swing.JMenu" name="file_jMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="File"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[40, 19]"/>
+            </Property>
           </Properties>
           <SubComponents>
             <Menu class="javax.swing.JMenu" name="Open_jMenu">
@@ -55,6 +58,9 @@
         <Menu class="javax.swing.JMenu" name="help_jMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Help"/>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[40, 19]"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="help_jMenuActionPerformed"/>

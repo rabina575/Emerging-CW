@@ -183,7 +183,7 @@ public class GUI extends javax.swing.JFrame {
         academyAddress_jlabel.setIconTextGap(0);
         academyAddress_jlabel.setMaximumSize(new java.awt.Dimension(0, 0));
         main_jPanel.add(academyAddress_jlabel);
-        academyAddress_jlabel.setBounds(250, 80, 310, 19);
+        academyAddress_jlabel.setBounds(250, 80, 310, 18);
 
         home_jPanel.setBackground(new java.awt.Color(230, 244, 254));
         home_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
@@ -731,7 +731,7 @@ public class GUI extends javax.swing.JFrame {
         searchBy_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         searchBy_jLabel.setText("Sort by:");
         instrumentMain_jPanel.add(searchBy_jLabel);
-        searchBy_jLabel.setBounds(30, 20, 70, 19);
+        searchBy_jLabel.setBounds(30, 20, 70, 18);
 
         instrument_jTable.setBackground(new java.awt.Color(234, 234, 253));
         instrument_jTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -1156,6 +1156,7 @@ public class GUI extends javax.swing.JFrame {
         fileHelp_jMenuBar.setMinimumSize(new java.awt.Dimension(75, 20));
 
         file_jMenu.setText("File");
+        file_jMenu.setPreferredSize(new java.awt.Dimension(40, 19));
 
         Open_jMenu.setText("Open");
 
@@ -1188,6 +1189,7 @@ public class GUI extends javax.swing.JFrame {
         fileHelp_jMenuBar.add(file_jMenu);
 
         help_jMenu.setText("Help");
+        help_jMenu.setPreferredSize(new java.awt.Dimension(40, 19));
         help_jMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 help_jMenuActionPerformed(evt);
@@ -1516,6 +1518,8 @@ public class GUI extends javax.swing.JFrame {
         instrument_jPanel.setVisible(false);
         memberName_jTextField.setText("");
         member_jPasswordField.setText("");
+        clearTable(instrument_jTable);
+        searchBy_jButton.clearSelection();
     }//GEN-LAST:event_back_jButtonActionPerformed
 
     private void category_jRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_category_jRadioButtonActionPerformed
