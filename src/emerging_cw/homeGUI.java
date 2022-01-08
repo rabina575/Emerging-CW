@@ -1192,6 +1192,8 @@ public class homeGUI extends javax.swing.JFrame {
             csvReader.close();
         } catch (FileNotFoundException e) {
         } catch (IOException e2) {
+        } catch (NumberFormatException e3){
+            
         }
     }
 
@@ -1306,8 +1308,8 @@ public class homeGUI extends javax.swing.JFrame {
                     searchPrice_jTextField.setVisible(false);
                     searchCategory_jButton.setVisible(false);
                     searchPrice_jButton.setVisible(false);
-//                    readFile();
-//                    display();
+                    readFile();
+                    display();
                 } else {
                     JOptionPane.showMessageDialog(this, "Invalid Password.", "ERROR!", JOptionPane.ERROR_MESSAGE);
                 }
@@ -1339,14 +1341,7 @@ public class homeGUI extends javax.swing.JFrame {
         home_jPanel.setVisible(true);
         clearTable(memberInfo_jTable);
     }//GEN-LAST:event_backRegistration_jButtonActionPerformed
-    
-    public static void clearTable(final JTable table) {
-        for (int i = 0; i < table.getRowCount(); i++) {
-            for(int j = 0; j < table.getColumnCount(); j++) {
-            table.setValueAt("", i, j);
-            }
-        }
-    }
+
     
     private void password_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_password_jPasswordFieldActionPerformed
         // TODO add your handling code here:
@@ -1362,23 +1357,13 @@ public class homeGUI extends javax.swing.JFrame {
     private void submit_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_jButtonActionPerformed
         // TODO add your handling code here:
         String period = "";
-<<<<<<< HEAD
         String name = name_jTextField.getText();
         String age = age_jTextField.getText();
         String specialization = specialization_jTextField.getText();
         String username = username_jTextField.getText();
         String password = password_jPasswordField.getText();
         String repassword = repassword_jPasswordField.getText();
-
-=======
-        String name= name_jTextField.getText();
-        String specialization= specialization_jTextField.getText();
-        String age= age_jTextField.getText();
-        String username= username_jTextField.getText();
-        String password= password_jPasswordField.getText();
-        String repassword= repassword_jPasswordField.getText();
         
->>>>>>> 3eae259455f714c55d3c88c910bb9eeecd98ccdd
         int count = 0;
         if (name.equals("") || specialization.equals("") || age.equals("")|| username.equals("") || password.equals("") || repassword.equals("")) {
             JOptionPane.showMessageDialog(rootPane, "Please ensure that all fields are filled.");
@@ -1455,10 +1440,10 @@ public class homeGUI extends javax.swing.JFrame {
         searchPrice_jTextField.setVisible(false);
         searchCategory_jButton.setVisible(true);
         searchPrice_jButton.setVisible(false);
+        clearTable(instrument_jTable);
         ArrayList<MusicalInstrument> tempList = new ArrayList();
         readFile();
         tempList = MergeSort.mergeSort(inventory, SortBy.CATEGORY);
-        //clearTable(instrument_jTable);
         display();
 
     }//GEN-LAST:event_category_jRadioButtonActionPerformed
@@ -1603,7 +1588,7 @@ public class homeGUI extends javax.swing.JFrame {
         ArrayList<MusicalInstrument> tempList = new ArrayList();
         readFile();
         tempList = MergeSort.mergeSort(inventory, SortBy.PRICE);
-        //clearTable(instrument_jTable);
+        clearTable(instrument_jTable);
         display();
     }//GEN-LAST:event_price_jRadioButtonActionPerformed
 
