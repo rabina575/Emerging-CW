@@ -177,7 +177,7 @@ public class homeGUI extends javax.swing.JFrame {
         academyAddress_jlabel.setIconTextGap(0);
         academyAddress_jlabel.setMaximumSize(new java.awt.Dimension(0, 0));
         main_jPanel.add(academyAddress_jlabel);
-        academyAddress_jlabel.setBounds(250, 80, 310, 18);
+        academyAddress_jlabel.setBounds(250, 80, 310, 19);
 
         home_jPanel.setBackground(new java.awt.Color(230, 244, 254));
         home_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
@@ -533,6 +533,21 @@ public class homeGUI extends javax.swing.JFrame {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
@@ -567,14 +582,11 @@ public class homeGUI extends javax.swing.JFrame {
         registerMember_jPanelLayout.setHorizontalGroup(
             registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
-                .addContainerGap(104, Short.MAX_VALUE)
-                .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
-                        .addComponent(backRegistration_jButton)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
-                        .addComponent(registered_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(120, 120, 120))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(registered_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
+                .addComponent(backRegistration_jButton)
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, registerMember_jPanelLayout.createSequentialGroup()
                 .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(registerMember_jPanelLayout.createSequentialGroup()
@@ -640,13 +652,13 @@ public class homeGUI extends javax.swing.JFrame {
                     .addComponent(clearRegistration_jButton))
                 .addGroup(registerMember_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(registerMember_jPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(backRegistration_jButton)
                         .addContainerGap())
                     .addGroup(registerMember_jPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(registered_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(25, Short.MAX_VALUE))))
         );
 
         main_jPanel.add(registerMember_jPanel);
@@ -674,7 +686,7 @@ public class homeGUI extends javax.swing.JFrame {
         searchBy_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         searchBy_jLabel.setText("Sort by:");
         instrumentMain_jPanel.add(searchBy_jLabel);
-        searchBy_jLabel.setBounds(30, 20, 70, 18);
+        searchBy_jLabel.setBounds(30, 20, 70, 19);
 
         instrument_jTable.setBackground(new java.awt.Color(234, 234, 253));
         instrument_jTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -1455,49 +1467,7 @@ public class homeGUI extends javax.swing.JFrame {
 
     private void open_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_open_jMenuItemActionPerformed
         // TODO add your handling code here:
-        //JFileChooser();
-        JFileChooser fileChooser = new JFileChooser("src/CSV_Files");
-        fileChooser.setDialogTitle("Choose a file to open");
-        int userSelection = fileChooser.showOpenDialog(this);
-        if (userSelection == JFileChooser.APPROVE_OPTION) {
-            File fileToOpen = fileChooser.getSelectedFile();
-            /*Desktop desktop = Desktop.getDesktop();
-            try {
-                desktop.open(fileToOpen);
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(this, "Error.", "ERROR MESSAGE", JOptionPane.ERROR_MESSAGE);
-            } */
-        
-        try {
-            FileReader fileReader = new FileReader("src/CSV_Files/Instruments.csv");
-            BufferedReader csvReader = new BufferedReader(fileReader);
-            String row;
-
-            boolean isFirstLine = true;
-            while ((row = csvReader.readLine()) != null) {
-                //skip first line
-                if (isFirstLine) {
-                    isFirstLine = false;
-                    continue;
-                }
-                String instrumentList[] = row.split(",");
-                int instrumentId = Integer.parseInt(instrumentList[0]);
-                String instrumentName = instrumentList[1];
-                String modelNum = instrumentList[2];
-                String brand = instrumentList[3];
-                int price = Integer.parseInt(instrumentList[4]);
-                int warranty = Integer.parseInt(instrumentList[5]);
-
-                MusicalInstrument musicalInstrument = new MusicalInstrument(instrumentId, instrumentName, modelNum, brand, price, warranty);
-                inventory.add(musicalInstrument);
-
-            }
-            fileReader.close();
-            csvReader.close();
-        } catch (FileNotFoundException e) {
-        } catch (IOException e2) {
-        }
-        }
+        JFileChooser();
     }//GEN-LAST:event_open_jMenuItemActionPerformed
 
     private void admin_jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_jPasswordFieldActionPerformed
