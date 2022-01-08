@@ -106,8 +106,8 @@ public class homeGUI extends javax.swing.JFrame {
         searchCategory_jButton = new javax.swing.JButton();
         price_jRadioButton = new javax.swing.JRadioButton();
         priceSearch_jLabel = new javax.swing.JLabel();
-        price_jComboBox = new javax.swing.JComboBox<>();
         searchPrice_jButton = new javax.swing.JButton();
+        searchPrice_jTextField = new javax.swing.JTextField();
         instrumentImage_jPanel = new javax.swing.JPanel();
         guitar_jLabel = new javax.swing.JLabel();
         drums_jLabel = new javax.swing.JLabel();
@@ -686,7 +686,7 @@ public class homeGUI extends javax.swing.JFrame {
         instruments_jLabel.setBounds(272, 39, 170, 60);
 
         searchBy_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
-        searchBy_jLabel.setText("Search by:");
+        searchBy_jLabel.setText("Sort by:");
         instrumentMain_jPanel.add(searchBy_jLabel);
         searchBy_jLabel.setBounds(30, 20, 70, 18);
 
@@ -766,18 +766,6 @@ public class homeGUI extends javax.swing.JFrame {
         instrumentMain_jPanel.add(priceSearch_jLabel);
         priceSearch_jLabel.setBounds(510, 20, 60, 20);
 
-        price_jComboBox.setBackground(new java.awt.Color(204, 204, 255));
-        price_jComboBox.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
-        price_jComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2000", "3000", "4000", "5000", "8000" }));
-        price_jComboBox.setToolTipText("");
-        price_jComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                price_jComboBoxActionPerformed(evt);
-            }
-        });
-        instrumentMain_jPanel.add(price_jComboBox);
-        price_jComboBox.setBounds(550, 10, 90, 30);
-
         searchPrice_jButton.setBackground(new java.awt.Color(190, 190, 253));
         searchPrice_jButton.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
         searchPrice_jButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Price Search.png"))); // NOI18N
@@ -789,6 +777,8 @@ public class homeGUI extends javax.swing.JFrame {
         });
         instrumentMain_jPanel.add(searchPrice_jButton);
         searchPrice_jButton.setBounds(550, 50, 90, 30);
+        instrumentMain_jPanel.add(searchPrice_jTextField);
+        searchPrice_jTextField.setBounds(550, 10, 90, 30);
 
         instrument_jPanel.add(instrumentMain_jPanel);
         instrumentMain_jPanel.setBounds(27, 137, 680, 300);
@@ -1213,14 +1203,17 @@ public class homeGUI extends javax.swing.JFrame {
         } catch (IOException e2) {
         }
     }
-    boolean isDisplayed = false;
+
     private void display() {
+        DefaultTableModel model = (DefaultTableModel) instrument_jTable.getModel();
+        model.setRowCount(0);
         for (MusicalInstrument instrument : inventory) {
             String[] values = {String.valueOf(instrument.getInstrumentId()), instrument.getInstrumentName(), instrument.getmodelNum(), instrument.getBrand(), String.valueOf(instrument.getPrice()), String.valueOf(instrument.getWarranty())};
             int columnCount = instrument_jTable.getColumnCount();
             int rowCount = instrument_jTable.getRowCount();
             int rowIndex = 0;
             boolean rowEmptyChecker = false;
+            model.addRow(new Object[] {});
             do {
                 String s = (String) instrument_jTable.getValueAt(rowIndex, 0);
                 if (s != null && s.length() != 0) {
@@ -1312,7 +1305,7 @@ public class homeGUI extends javax.swing.JFrame {
                     categorySearch_jLabel.setVisible(false);
                     category_jTextField.setVisible(false);
                     priceSearch_jLabel.setVisible(false);
-                    price_jComboBox.setVisible(false);
+                    searchPrice_jTextField.setVisible(false);
                     searchCategory_jButton.setVisible(false);
                     searchPrice_jButton.setVisible(false);
                 } else {
@@ -1435,7 +1428,7 @@ public class homeGUI extends javax.swing.JFrame {
         categorySearch_jLabel.setVisible(true);
         category_jTextField.setVisible(true);
         priceSearch_jLabel.setVisible(false);
-        price_jComboBox.setVisible(false);
+        searchPrice_jTextField.setVisible(false);
         searchCategory_jButton.setVisible(true);
         searchPrice_jButton.setVisible(false);
         ArrayList<MusicalInstrument> tempList = new ArrayList();
@@ -1560,14 +1553,10 @@ public class homeGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_add_jButtonActionPerformed
 
-    private void price_jComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_price_jComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_price_jComboBoxActionPerformed
-
     private void price_jRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_price_jRadioButtonActionPerformed
         // TODO add your handling code here:
         priceSearch_jLabel.setVisible(true);
-        price_jComboBox.setVisible(true);
+        searchPrice_jTextField.setVisible(true);
         categorySearch_jLabel.setVisible(false);
         category_jTextField.setVisible(false);
         searchCategory_jButton.setVisible(false);
@@ -1610,17 +1599,26 @@ public class homeGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Please ensure that the search category is not void.");
             count = 1;
         } else {
-            String searchElement = category_jTextField.getText();
-            MusicalInstrument musicalInstrument = BinarySearch.binarySearch(inventory, searchElement, SortBy.CATEGORY);
+            MusicalInstrument musicalInstrument = BinarySearch.binarySearch(inventory, category, SortBy.CATEGORY);
             JOptionPane.showMessageDialog(rootPane, "Instrument ID: " + musicalInstrument.getInstrumentId());
         }
     }//GEN-LAST:event_searchCategory_jButtonActionPerformed
 
     private void searchPrice_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchPrice_jButtonActionPerformed
         // TODO add your handling code here:
-        String searchElement = price_jComboBox.getSelectedItem().toString();
-        MusicalInstrument musicalInstrument = BinarySearch.binarySearch(inventory, searchElement, SortBy.PRICE);
-        JOptionPane.showMessageDialog(rootPane, "Instrument ID: " + musicalInstrument.getInstrumentId());
+        String price = searchPrice_jTextField.getText();
+        int count = 0;
+        if (price.equals("")) {
+            JOptionPane.showMessageDialog(rootPane, "Please ensure that the search category is not void.");
+            count = 1;
+        } else {
+            MusicalInstrument musicalInstrument = BinarySearch.binarySearch(inventory, price, SortBy.PRICE);
+            if (musicalInstrument != null) {
+                JOptionPane.showMessageDialog(rootPane, "Instrument ID: " + musicalInstrument.getInstrumentId());
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "No such instruments found");
+            }
+        }
     }//GEN-LAST:event_searchPrice_jButtonActionPerformed
 
     /**
@@ -1783,7 +1781,6 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JPasswordField password_jPasswordField;
     private javax.swing.JLabel piano_jLabel;
     private javax.swing.JLabel priceSearch_jLabel;
-    private javax.swing.JComboBox<String> price_jComboBox;
     private javax.swing.JLabel price_jLabel;
     private javax.swing.JRadioButton price_jRadioButton;
     private javax.swing.JTextField price_jTextField;
@@ -1797,6 +1794,7 @@ public class homeGUI extends javax.swing.JFrame {
     private javax.swing.JLabel searchBy_jLabel;
     private javax.swing.JButton searchCategory_jButton;
     private javax.swing.JButton searchPrice_jButton;
+    private javax.swing.JTextField searchPrice_jTextField;
     private javax.swing.JLabel specialization_jLabel;
     private javax.swing.JTextField specialization_jTextField;
     private javax.swing.JButton submit_jButton;
