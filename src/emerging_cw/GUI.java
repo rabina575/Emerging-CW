@@ -151,13 +151,12 @@ public class GUI extends javax.swing.JFrame {
         addBgImage_jLabel = new javax.swing.JLabel();
         fileHelp_jMenuBar = new javax.swing.JMenuBar();
         file_jMenu = new javax.swing.JMenu();
-        Open_jMenu = new javax.swing.JMenu();
-        Instruments_jMenuItem = new javax.swing.JMenuItem();
-        External_jMenuItem = new javax.swing.JMenuItem();
+        open_jMenu = new javax.swing.JMenu();
+        instruments_jMenuItem = new javax.swing.JMenuItem();
+        external_jMenuItem = new javax.swing.JMenuItem();
         exit_jMenuItem = new javax.swing.JMenuItem();
         help_jMenu = new javax.swing.JMenu();
-        User_jMenuItem = new javax.swing.JMenuItem();
-        Teacher_jMenuItem = new javax.swing.JMenuItem();
+        user_jMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Symphony Academy of Music.");
@@ -183,7 +182,7 @@ public class GUI extends javax.swing.JFrame {
         academyAddress_jlabel.setIconTextGap(0);
         academyAddress_jlabel.setMaximumSize(new java.awt.Dimension(0, 0));
         main_jPanel.add(academyAddress_jlabel);
-        academyAddress_jlabel.setBounds(250, 80, 310, 19);
+        academyAddress_jlabel.setBounds(270, 80, 290, 18);
 
         home_jPanel.setBackground(new java.awt.Color(230, 244, 254));
         home_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
@@ -438,7 +437,7 @@ public class GUI extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, home_jPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(description_jTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(users_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginAdmin_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -730,7 +729,7 @@ public class GUI extends javax.swing.JFrame {
         searchBy_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         searchBy_jLabel.setText("Sort by:");
         instrumentMain_jPanel.add(searchBy_jLabel);
-        searchBy_jLabel.setBounds(30, 20, 70, 19);
+        searchBy_jLabel.setBounds(30, 20, 70, 18);
 
         instrument_jTable.setBackground(new java.awt.Color(234, 234, 253));
         instrument_jTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -758,7 +757,7 @@ public class GUI extends javax.swing.JFrame {
         instrumentTable_jScrollPane.setViewportView(instrument_jTable);
 
         instrumentMain_jPanel.add(instrumentTable_jScrollPane);
-        instrumentTable_jScrollPane.setBounds(30, 110, 610, 170);
+        instrumentTable_jScrollPane.setBounds(30, 110, 620, 170);
 
         category_jRadioButton.setBackground(new java.awt.Color(166, 206, 229));
         searchBy_jButton.add(category_jRadioButton);
@@ -888,7 +887,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         instrument_jPanel.add(back_jButton);
-        back_jButton.setBounds(650, 437, 60, 30);
+        back_jButton.setBounds(650, 437, 60, 27);
 
         instrumentBgImage_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Instrument Wallpaper.png"))); // NOI18N
         instrument_jPanel.add(instrumentBgImage_jLabel);
@@ -1145,38 +1144,45 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         adminAddInstruments_jPanel.add(adminBack_jButton);
-        adminBack_jButton.setBounds(650, 437, 60, 30);
+        adminBack_jButton.setBounds(650, 437, 60, 25);
 
         addBgImage_jLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Instrument Wallpaper.png"))); // NOI18N
         adminAddInstruments_jPanel.add(addBgImage_jLabel);
         addBgImage_jLabel.setBounds(0, -20, 990, 500);
 
         fileHelp_jMenuBar.setBackground(new java.awt.Color(216, 216, 254));
-        fileHelp_jMenuBar.setMinimumSize(new java.awt.Dimension(75, 20));
+        fileHelp_jMenuBar.setMinimumSize(new java.awt.Dimension(100, 25));
+        fileHelp_jMenuBar.setPreferredSize(new java.awt.Dimension(100, 27));
 
+        file_jMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/File.png"))); // NOI18N
         file_jMenu.setText("File");
-        file_jMenu.setPreferredSize(new java.awt.Dimension(40, 19));
+        file_jMenu.setMinimumSize(new java.awt.Dimension(50, 19));
+        file_jMenu.setPreferredSize(new java.awt.Dimension(50, 19));
 
-        Open_jMenu.setText("Open");
+        open_jMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Open Folder.png"))); // NOI18N
+        open_jMenu.setText("Open");
 
-        Instruments_jMenuItem.setText("Import Instruments");
-        Instruments_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        instruments_jMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Open Instruments.png"))); // NOI18N
+        instruments_jMenuItem.setText("Import Instruments");
+        instruments_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Instruments_jMenuItemActionPerformed(evt);
+                instruments_jMenuItemActionPerformed(evt);
             }
         });
-        Open_jMenu.add(Instruments_jMenuItem);
+        open_jMenu.add(instruments_jMenuItem);
 
-        External_jMenuItem.setText("Open External Files");
-        External_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        external_jMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Import External.png"))); // NOI18N
+        external_jMenuItem.setText("Open External Files");
+        external_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                External_jMenuItemActionPerformed(evt);
+                external_jMenuItemActionPerformed(evt);
             }
         });
-        Open_jMenu.add(External_jMenuItem);
+        open_jMenu.add(external_jMenuItem);
 
-        file_jMenu.add(Open_jMenu);
+        file_jMenu.add(open_jMenu);
 
+        exit_jMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Exit.png"))); // NOI18N
         exit_jMenuItem.setText("Exit");
         exit_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1187,29 +1193,24 @@ public class GUI extends javax.swing.JFrame {
 
         fileHelp_jMenuBar.add(file_jMenu);
 
+        help_jMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Help.png"))); // NOI18N
         help_jMenu.setText("Help");
-        help_jMenu.setPreferredSize(new java.awt.Dimension(40, 19));
+        help_jMenu.setMinimumSize(new java.awt.Dimension(60, 19));
+        help_jMenu.setPreferredSize(new java.awt.Dimension(69, 19));
         help_jMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 help_jMenuActionPerformed(evt);
             }
         });
 
-        User_jMenuItem.setText("User Manual");
-        User_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        user_jMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/User Manual.png"))); // NOI18N
+        user_jMenuItem.setText("User Manual");
+        user_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                User_jMenuItemActionPerformed(evt);
+                user_jMenuItemActionPerformed(evt);
             }
         });
-        help_jMenu.add(User_jMenuItem);
-
-        Teacher_jMenuItem.setText("Teacher Manual");
-        Teacher_jMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Teacher_jMenuItemActionPerformed(evt);
-            }
-        });
-        help_jMenu.add(Teacher_jMenuItem);
+        help_jMenu.add(user_jMenuItem);
 
         fileHelp_jMenuBar.add(help_jMenu);
 
@@ -1823,35 +1824,35 @@ public class GUI extends javax.swing.JFrame {
     /*
      * Displays the data from Instuments.csv in the JTable
     */
-    private void Instruments_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Instruments_jMenuItemActionPerformed
+    private void instruments_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instruments_jMenuItemActionPerformed
         // Clear the JTable and the arraylist.
         // Read the file Instruments.csv and display the data.
         inventory.clear();
         clearTable(instrument_jTable);
         readFile();
         displayInstruments();
-    }//GEN-LAST:event_Instruments_jMenuItemActionPerformed
+    }//GEN-LAST:event_instruments_jMenuItemActionPerformed
 
     /*
      * Displays a user manual.
     */
-    private void User_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_User_jMenuItemActionPerformed
-        // Link a file to display the manual.
+    private void user_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_jMenuItemActionPerformed
+        // Path to display the manual.
         try{
-            URI link= new URI ("https://drive.google.com/file/d/1lB_yEgBD0_DEbHO-_xId4eslUPxtIST5/view?usp=sharing");
+            File f = new File("src/User_Manual/User Manual.pdf");
             Desktop desktop= Desktop.getDesktop();
-            desktop.browse(link);
+            desktop.open(f);
         }
         catch(Exception e)
         {
-            JOptionPane.showMessageDialog(this, "The link is unavailable");
+            JOptionPane.showMessageDialog(this, "The pdf is unavailable");
         }
-    }//GEN-LAST:event_User_jMenuItemActionPerformed
+    }//GEN-LAST:event_user_jMenuItemActionPerformed
 
     /*
      * Opens any file in the system.
     */
-    private void External_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_External_jMenuItemActionPerformed
+    private void external_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_external_jMenuItemActionPerformed
         // Call JFileChooser()
         JFileChooser fileChooser = new JFileChooser("src/CSV_Files");
         fileChooser.setDialogTitle("Choose a file to open");
@@ -1866,23 +1867,7 @@ public class GUI extends javax.swing.JFrame {
             }
         }
         
-    }//GEN-LAST:event_External_jMenuItemActionPerformed
-
-    /*
-     * Displays a manual for the teachers.
-    */
-    private void Teacher_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Teacher_jMenuItemActionPerformed
-        // Link a file to display the manual.
-        try{
-            URI link= new URI ("");
-            Desktop desktop= Desktop.getDesktop();
-            desktop.browse(link);
-        }
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(this, "The link is unavailable");
-        }
-    }//GEN-LAST:event_Teacher_jMenuItemActionPerformed
+    }//GEN-LAST:event_external_jMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1952,11 +1937,6 @@ public class GUI extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem External_jMenuItem;
-    private javax.swing.JMenuItem Instruments_jMenuItem;
-    private javax.swing.JMenu Open_jMenu;
-    private javax.swing.JMenuItem Teacher_jMenuItem;
-    private javax.swing.JMenuItem User_jMenuItem;
     private javax.swing.JLabel academyAddress_jlabel;
     private javax.swing.JLabel academyImage_jLabel;
     private javax.swing.JLabel academyName_jlabel;
@@ -1997,6 +1977,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTextArea description_jTextArea;
     private javax.swing.JLabel drums_jLabel;
     private javax.swing.JMenuItem exit_jMenuItem;
+    private javax.swing.JMenuItem external_jMenuItem;
     private javax.swing.JMenuBar fileHelp_jMenuBar;
     private javax.swing.JMenu file_jMenu;
     private javax.swing.JLabel flute_jLabel;
@@ -2015,6 +1996,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTable instrument_jTable;
     private javax.swing.JTextField instrument_jTextField;
     private javax.swing.JLabel instruments_jLabel;
+    private javax.swing.JMenuItem instruments_jMenuItem;
     private javax.swing.JPanel loginAdmin_jPanel;
     private javax.swing.JPanel loginMember_jPanel;
     private javax.swing.JPanel main_jPanel;
@@ -2031,6 +2013,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel name_jLabel;
     private javax.swing.JTextField name_jTextField;
     private javax.swing.JLabel newAccount_jLabel;
+    private javax.swing.JMenu open_jMenu;
     private javax.swing.JLabel password_jLabel;
     private javax.swing.JPasswordField password_jPasswordField;
     private javax.swing.JLabel piano_jLabel;
@@ -2052,6 +2035,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel specialization_jLabel;
     private javax.swing.JTextField specialization_jTextField;
     private javax.swing.JButton submit_jButton;
+    private javax.swing.JMenuItem user_jMenuItem;
     private javax.swing.JLabel username_jLabel;
     private javax.swing.JTextField username_jTextField;
     private javax.swing.JPanel users_jPanel;
