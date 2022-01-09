@@ -1428,7 +1428,6 @@ public class GUI extends javax.swing.JFrame {
                     searchPrice_jTextField.setVisible(false);
                     searchCategory_jButton.setVisible(false);
                     searchPrice_jButton.setVisible(false);
-                    readFile();
                 } else {
                     JOptionPane.showMessageDialog(this, "Invalid Password.", "ERROR!", JOptionPane.ERROR_MESSAGE);
                 }
