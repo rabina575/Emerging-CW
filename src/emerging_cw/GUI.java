@@ -1429,7 +1429,6 @@ public class GUI extends javax.swing.JFrame {
                     searchPrice_jTextField.setVisible(false);
                     searchCategory_jButton.setVisible(false);
                     searchPrice_jButton.setVisible(false);
-                    readFile();
                 } else {
                     JOptionPane.showMessageDialog(this, "Invalid Password.", "ERROR!", JOptionPane.ERROR_MESSAGE);
                 }
@@ -1829,7 +1828,7 @@ public class GUI extends javax.swing.JFrame {
         } else {
             MusicalInstrument musicalInstrument = BinarySearch.binarySearch(inventory, price);
             if (musicalInstrument != null) {
-                JOptionPane.showMessageDialog(rootPane, "Instrument ID: " + musicalInstrument.getInstrumentId() + "\n Instrument Name: " + musicalInstrument.getInstrumentName() + "\n Model Number: " + musicalInstrument.getmodelNum() + "\n Brand: " + musicalInstrument.getBrand() + "\n Price: " + musicalInstrument.getPrice() + "\n Warranty: " + musicalInstrument.getWarranty());
+                JOptionPane.showMessageDialog(rootPane, "Instrument ID: " + musicalInstrument.getInstrumentId() + "\n Instrument Name: " + musicalInstrument.getInstrumentName() + "\n Model Number: " + musicalInstrument.getmodelNum() + "\n Brand: " + musicalInstrument.getBrand() + "\n Price: Rs " + musicalInstrument.getPrice() + "\n Warranty: " + musicalInstrument.getWarranty());
             } else {
                 JOptionPane.showMessageDialog(rootPane, "No such instruments found.");
             }
