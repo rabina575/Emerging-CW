@@ -1479,20 +1479,11 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_age_jTextFieldActionPerformed
 
     /*
-     * Accessor method for age.
-     * Returns the integer value of age entered by the user.
-    */
-    public int getage() {
-        return Integer.parseInt(this.age_jTextField.getText());
-    }
-    
-    /*
      * Validates the data entered by the user.
      * Adds the member details entered by the user to the JTable and the file Members.csv
     */
     private void submit_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_jButtonActionPerformed
         // Get the data entered by the user, add to JTable and write to the file Members.csv
-        String period = "";
         String name = name_jTextField.getText();
         String age = age_jTextField.getText();
         String specialization = specialization_jTextField.getText();
@@ -1541,7 +1532,7 @@ public class GUI extends javax.swing.JFrame {
             }
         }
         if (count == 0){
-            JOptionPane.showMessageDialog(rootPane, "Registeration is complete.");
+            JOptionPane.showMessageDialog(rootPane, "Registration is complete.");
         }
 
         String csvFilename = "src/CSV_Files/Members.csv";
@@ -1657,20 +1648,11 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_brand_jTextFieldActionPerformed
 
     /*
-     * Accessor method for price.
-     * Returns the integer value of price entered by the user.
-    */
-    public int getprice() {
-        return Integer.parseInt(this.price_jTextField.getText());
-    }
-
-    /*
      * Validates the data entered by the admin.
      * Add insrument details to the file Instruments.csv
     */
     private void add_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_jButtonActionPerformed
         // Get data entered by the admin and add it to the file Instruments.csv
-        String period = "";
         String id = instrumentID_jTextField.getText();
         String instrument = instrument_jTextField.getText();
         String model = modelNo_jTextField.getText();
@@ -1871,7 +1853,19 @@ public class GUI extends javax.swing.JFrame {
     */
     private void External_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_External_jMenuItemActionPerformed
         // Call JFileChooser()
-        JFileChooser();
+        JFileChooser fileChooser = new JFileChooser("src/CSV_Files");
+        fileChooser.setDialogTitle("Choose a file to open");
+        int userSelection = fileChooser.showOpenDialog(this);
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File fileToOpen = fileChooser.getSelectedFile();
+            Desktop desktop = Desktop.getDesktop();
+            try {
+                desktop.open(fileToOpen);
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(this, "Error.", "ERROR MESSAGE", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
     }//GEN-LAST:event_External_jMenuItemActionPerformed
 
     /*
@@ -1956,22 +1950,7 @@ public class GUI extends javax.swing.JFrame {
             new GUI().setVisible(true);
         });
     }
-
-    public void JFileChooser() {
-        JFileChooser fileChooser = new JFileChooser("src/CSV_Files");
-        fileChooser.setDialogTitle("Choose a file to open");
-        int userSelection = fileChooser.showOpenDialog(this);
-        if (userSelection == JFileChooser.APPROVE_OPTION) {
-            File fileToOpen = fileChooser.getSelectedFile();
-            Desktop desktop = Desktop.getDesktop();
-            try {
-                desktop.open(fileToOpen);
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(this, "Error.", "ERROR MESSAGE", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-    }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem External_jMenuItem;
     private javax.swing.JMenuItem Instruments_jMenuItem;
