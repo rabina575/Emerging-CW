@@ -1838,14 +1838,24 @@ public class GUI extends javax.swing.JFrame {
     private void help_jMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_help_jMenuActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_help_jMenuActionPerformed
-
+    
+    /*
+     * Displays the data from Instuments.csv in the JTable
+    */
     private void Instruments_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Instruments_jMenuItemActionPerformed
-        // TODO add your handling code here:
+        // Clear the JTable and the arraylist.
+        // Read the file Instruments.csv and display the data.
+        inventory.clear();
+        clearTable(instrument_jTable);
+        readFile();
         displayInstruments();
     }//GEN-LAST:event_Instruments_jMenuItemActionPerformed
 
+    /*
+     * Displays a user manual.
+    */
     private void User_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_User_jMenuItemActionPerformed
-        // TODO add your handling code here:
+        // Link a file to display the manual.
         try{
             URI link= new URI ("");
             Desktop desktop= Desktop.getDesktop();
@@ -1857,13 +1867,19 @@ public class GUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_User_jMenuItemActionPerformed
 
+    /*
+     * Opens any file in the system.
+    */
     private void External_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_External_jMenuItemActionPerformed
-        // TODO add your handling code here:
+        // Call JFileChooser()
         JFileChooser();
     }//GEN-LAST:event_External_jMenuItemActionPerformed
 
+    /*
+     * Displays a manual for the teachers.
+    */
     private void Teacher_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Teacher_jMenuItemActionPerformed
-        // TODO add your handling code here:
+        // Link a file to display the manual.
         try{
             URI link= new URI ("");
             Desktop desktop= Desktop.getDesktop();
