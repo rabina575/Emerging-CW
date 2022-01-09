@@ -183,7 +183,7 @@ public class GUI extends javax.swing.JFrame {
         academyAddress_jlabel.setIconTextGap(0);
         academyAddress_jlabel.setMaximumSize(new java.awt.Dimension(0, 0));
         main_jPanel.add(academyAddress_jlabel);
-        academyAddress_jlabel.setBounds(250, 80, 310, 18);
+        academyAddress_jlabel.setBounds(250, 80, 310, 19);
 
         home_jPanel.setBackground(new java.awt.Color(230, 244, 254));
         home_jPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.lightGray, new java.awt.Color(26, 175, 247)));
@@ -422,7 +422,7 @@ public class GUI extends javax.swing.JFrame {
         description_jTextArea.setColumns(20);
         description_jTextArea.setFont(new java.awt.Font("Maiandra GD", 0, 12)); // NOI18N
         description_jTextArea.setRows(5);
-        description_jTextArea.setText(" Music has been transcending language, races and colors for years now. It \n has been one of the languages that could easily break barriers of the \n society into pieces just by its mere existence. Symphony Academy of \n Music has created a platform for artists since 1990’s. Being an institution\n with a long history, it ensures that everyone follows their passion and \n become the greatest of them all.");
+        description_jTextArea.setText(" Music has been transcending language, races and colors for years now. \n It has been one of the languages that could easily break barriers of\n the society into pieces just by its mere existence. Symphony Academy \n of Music has created a platform for artists since 1990’s. Being an\n institution with a long history, it ensures that everyone follows their\n passion and become the greatest of them all.");
         description_jTextArea.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.white, new java.awt.Color(164, 164, 245)));
         description_jTextArea.setFocusable(false);
 
@@ -434,12 +434,11 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(home_jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(home_jPanelLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(academyImage_jLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(academyImage_jLabel))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, home_jPanelLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(description_jTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addContainerGap()
+                        .addComponent(description_jTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(users_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(loginAdmin_jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -731,7 +730,7 @@ public class GUI extends javax.swing.JFrame {
         searchBy_jLabel.setFont(new java.awt.Font("Sitka Heading", 0, 14)); // NOI18N
         searchBy_jLabel.setText("Sort by:");
         instrumentMain_jPanel.add(searchBy_jLabel);
-        searchBy_jLabel.setBounds(30, 20, 70, 18);
+        searchBy_jLabel.setBounds(30, 20, 70, 19);
 
         instrument_jTable.setBackground(new java.awt.Color(234, 234, 253));
         instrument_jTable.setModel(new javax.swing.table.DefaultTableModel(
