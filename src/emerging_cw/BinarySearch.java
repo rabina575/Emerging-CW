@@ -14,18 +14,18 @@ import javax.swing.JOptionPane;
 public class BinarySearch {
     /*
      * An arrayList - instrumentList, a String - target and sortBy of type SortBy is passed in the parameter.
-     * The target value is search in a sorted arrayList.
+     * The target value is searched in a sorted arrayList.
      * If the target is found its object is returned with the type MusicalInstrument.
     */
 
-    public static MusicalInstrument binarySearch(ArrayList<MusicalInstrument> list, String target) {
+    public static MusicalInstrument binarySearch(ArrayList<MusicalInstrument> list, String searchElement) {
         int right = list.size() - 1;
         int left = 0;
         while (left <= right) {
             int mid = (left + right) / 2;
-                if (String.valueOf(list.get(mid).getPrice()).equals(target)) {
+                if (String.valueOf(list.get(mid).getPrice()).equals(searchElement)) {
                     return list.get(mid);
-                } else if (String.valueOf(list.get(mid).getPrice()).compareTo(target) > 0) {
+                } else if (String.valueOf(list.get(mid).getPrice()).compareTo(searchElement) > 0) {
                     right = mid - 1;
 
                 } else {
