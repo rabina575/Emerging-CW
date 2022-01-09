@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author acer
+ * The class consists of a method binarySearch which returns an object.
+ * @author Aashna Shrestha, Rabina Shrestha, Subriti Aryal
  */
 public class BinarySearch {
     /*
      * An arrayList - instrumentList, a String - target and sortBy of type SortBy is passed in the parameter.
      * The target value is search in a sorted arrayList.
-     * If the target is found it is returned with the type MusicalInstrument.
+     * If the target is found its object is returned with the type MusicalInstrument.
     */
 
     public static MusicalInstrument binarySearch(ArrayList<MusicalInstrument> list, String target) {

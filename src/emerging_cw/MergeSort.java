@@ -7,12 +7,12 @@ package emerging_cw;
 import java.util.ArrayList;
 
 /**
- *
- * @author acer
+ * The class consists of two methods: mergeSort and merge.
+ * @author Aashna Shrestha, Rabina Shrestha, Subriti Aryal
  */
 public class MergeSort {
     /*
-     * An arrayList - instrumentList and sortBy with the type SortBy is passed in the parameter.
+     * An arrayList - instrumentList and sortBy with the type SortBy are passed in the parameter.
      * The method sorts the ArrayList passed in the parameter using Merge Sort.
      * The sorted arrayList - instrumentList is returned 
      */
@@ -65,7 +65,6 @@ public class MergeSort {
                     instrumentList.set(instrumentListIndex, right.get(rightIndex));
                     rightIndex++;
                 }
-                instrumentListIndex++;
             } else {
                 if ((String.valueOf(left.get(leftIndex).getPrice()).compareTo(String.valueOf(right.get(rightIndex).getPrice()))) < 0) {
                     instrumentList.set(instrumentListIndex, left.get(leftIndex));
@@ -74,23 +73,21 @@ public class MergeSort {
                     instrumentList.set(instrumentListIndex, right.get(rightIndex));
                     rightIndex++;
                 }
-                instrumentListIndex++;
+                
             }
-
+            instrumentListIndex++;
         }
         ArrayList<MusicalInstrument> rest;
         int restIndex;
         if (leftIndex >= left.size()) {
-            // The left ArrayList has been used up...
             rest = right;
             restIndex = rightIndex;
         } else {
-            // The right ArrayList has been used up...
             rest = left;
             restIndex = leftIndex;
         }
 
-        // Copy the rest of whichever ArrayList (left or right) was not used up.
+        // The remaining elements in the arraylist are added.
         for (int i = restIndex; i < rest.size(); i++) {
             instrumentList.set(instrumentListIndex, rest.get(i));
             instrumentListIndex++;

@@ -5,8 +5,9 @@
 package emerging_cw;
 
 /**
- *
- * @author acer
+ * The special java class to store collections of fixed constants.
+ * Stores the constants CATEGORY and PRICE.
+ * @author Aashna Shrestha, Rabina Shrestha, Subriti Aryal
  */
 public enum SortBy {
     CATEGORY,

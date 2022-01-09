@@ -25,7 +25,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Aashna, Rabina, Subriti
+ * @author Aashna Shrestha, Rabina Shrestha, Subriti Aryal
  */
 public class GUI extends javax.swing.JFrame {
 
@@ -1246,8 +1246,12 @@ public class GUI extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
    
+    //Initializing arraylist inventory
     private static ArrayList<MusicalInstrument> inventory = new ArrayList();
-
+    
+    /*
+     * Method to read the file - Instruments.csv
+    */
     private static void readFile() {
         try {
             FileReader fileReader = new FileReader("src/CSV_Files/Instruments.csv");
@@ -1255,21 +1259,27 @@ public class GUI extends javax.swing.JFrame {
             String row;
 
             boolean isFirstLine = true;
+            //Reading the file and storing the objects in the arraylist.
             while ((row = csvReader.readLine()) != null) {
-                //skip first line
+                //Skip the first line(column title) of the file.
                 if (isFirstLine) {
                     isFirstLine = false;
                     continue;
                 }
+                //Split the rows where commas are present.
                 String instrumentList[] = row.split(",");
+                
+                //Each element of the arraylist is stored in the respective variables.
                 int instrumentId = Integer.parseInt(instrumentList[0]);
                 String instrumentName = instrumentList[1];
                 String modelNum = instrumentList[2];
                 String brand = instrumentList[3];
                 int price = Integer.parseInt(instrumentList[4]);
                 int warranty = Integer.parseInt(instrumentList[5]);
-
+                   
+                //Object creation of MusicalInstrument.
                 MusicalInstrument musicalInstrument = new MusicalInstrument(instrumentId, instrumentName, modelNum, brand, price, warranty);
+                //Adding the objects to the arraylist inventory.
                 inventory.add(musicalInstrument);
 
             }
@@ -1281,31 +1291,39 @@ public class GUI extends javax.swing.JFrame {
         } catch (ArrayIndexOutOfBoundsException e4) {
         }
     }
-
-    private void display() {
+    
+    /*
+     * Checks if the row is empty and displays the instruments in JTable.
+    */
+    private void displayInstruments() {
         for (MusicalInstrument instrument : inventory) {
-            String[] values = {String.valueOf(instrument.getInstrumentId()), instrument.getInstrumentName(), instrument.getmodelNum(), instrument.getBrand(), String.valueOf(instrument.getPrice()), String.valueOf(instrument.getWarranty())};
+            String[] instrumentDetail = {String.valueOf(instrument.getInstrumentId()), instrument.getInstrumentName(), instrument.getmodelNum(), instrument.getBrand(), String.valueOf(instrument.getPrice()), String.valueOf(instrument.getWarranty())};
             int columnCount = instrument_jTable.getColumnCount();
             int rowCount = instrument_jTable.getRowCount();
             int rowIndex = 0;
             boolean rowEmptyChecker = false;
             do {
-
-                String s = (String) instrument_jTable.getValueAt(rowIndex, 0);
-                if (s != null && s.length() != 0) {
+                //Casting Object as String.
+                String value = (String) instrument_jTable.getValueAt(rowIndex, 0);
+                //Checking if the row is empty.
+                if (value != null && value.length() != 0) {
                     rowIndex++;
                 } else {
                     rowEmptyChecker = true;
                 }
 
             } while (rowIndex < rowCount && !rowEmptyChecker);
-
+            
+            //Adding data to the JTable
             for (int i = 0; i < columnCount; i++) {
-                instrument_jTable.setValueAt(values[i], rowIndex, i);
+                instrument_jTable.setValueAt(instrumentDetail[i], rowIndex, i);
             }
         }
     }
-
+    
+    /*
+     * Clears all the data from the JTable.
+    */
     public static void clearTable(final JTable table) {
         for (int i = 0; i < table.getRowCount(); i++) {
             for (int j = 0; j < table.getColumnCount(); j++) {
@@ -1313,30 +1331,44 @@ public class GUI extends javax.swing.JFrame {
             }
         }
     }
+    
+    /*
+     * Shows the panel to login admin.
+    */
     private void admin_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_admin_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Change the visibility of the components according to the requirement.
         loginAdmin_jPanel.setVisible(true);
         users_jPanel.setVisible(false);
         loginMember_jPanel.setVisible(false);
     }//GEN-LAST:event_admin_jButtonActionPerformed
 
+    /*
+     * Shows the panel to register new members.
+    */
     private void registerMember_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerMember_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Change the visibility of the components according to the requirement.
         main_jPanel.setVisible(true);
         home_jPanel.setVisible(false);
         registerMember_jPanel.setVisible(true);
         instrumentMain_jPanel.setVisible(false);
     }//GEN-LAST:event_registerMember_jButtonActionPerformed
 
+    /*
+     * Shows the panel to login member.
+    */
     private void member_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_member_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Change the visibility of the components according to the requirement.
         loginAdmin_jPanel.setVisible(false);
         users_jPanel.setVisible(false);
         loginMember_jPanel.setVisible(true);
     }//GEN-LAST:event_member_jButtonActionPerformed
 
+    /*
+     * Checks if the username and password of the admin are correct.
+     * Allows admin to login.
+    */
     private void adminLogin_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminLogin_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Change the visibility of the components according to the requirement if the username and password of the admin are correct.
         String enteredUserName = adminName_jTextField.getText();
         String enteredPassword = admin_jPasswordField.getText();
         int count = 0;
@@ -1365,8 +1397,12 @@ public class GUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_adminLogin_jButtonActionPerformed
 
+    /*
+     * Checks if the username and password of the member are correct from a hashmap.
+     * Allows members to login.
+    */
     private void memberLogin_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memberLogin_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Change the visibility of the components according to the requirement if the username and password of the admin are correct.
         String enteredUserName = memberName_jTextField.getText();
         String enteredPassword = member_jPasswordField.getText();
         int count = 0;
@@ -1393,7 +1429,6 @@ public class GUI extends javax.swing.JFrame {
                     searchCategory_jButton.setVisible(false);
                     searchPrice_jButton.setVisible(false);
                     readFile();
-                    //display();
                 } else {
                     JOptionPane.showMessageDialog(this, "Invalid Password.", "ERROR!", JOptionPane.ERROR_MESSAGE);
                 }
@@ -1403,24 +1438,33 @@ public class GUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_memberLogin_jButtonActionPerformed
 
+    /*
+     * Returns to the previous panel from the admin panel.
+    */
     private void backAdmin_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backAdmin_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Change the visibility and text of the components according to the requirement.
         loginAdmin_jPanel.setVisible(false);
         users_jPanel.setVisible(true);
         adminName_jTextField.setText("");
         admin_jPasswordField.setText("");
     }//GEN-LAST:event_backAdmin_jButtonActionPerformed
 
+    /* 
+     * Returns to the previous panel from the member panel.
+    */
     private void backMember_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backMember_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Change the visibility and text of the components according to the requirement
         loginMember_jPanel.setVisible(false);
         users_jPanel.setVisible(true);
         memberName_jTextField.setText("");
         member_jPasswordField.setText("");
     }//GEN-LAST:event_backMember_jButtonActionPerformed
 
+    /*
+     * Returns to the previous panel from the registration panel.
+    */
     private void backRegistration_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backRegistration_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Change the visibility of the components according to the requirement
         registerMember_jPanel.setVisible(false);
         home_jPanel.setVisible(true);
         clearTable(memberInfo_jTable);
@@ -1435,11 +1479,20 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_age_jTextFieldActionPerformed
 
+    /*
+     * Accessor method for age.
+     * Returns the integer value of age entered by the user.
+    */
     public int getage() {
         return Integer.parseInt(this.age_jTextField.getText());
     }
+    
+    /*
+     * Validates the data entered by the user.
+     * Adds the member details entered by the user to the JTable and the file Members.csv
+    */
     private void submit_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Get the data entered by the user, add to JTable and write to the file Members.csv
         String period = "";
         String name = name_jTextField.getText();
         String age = age_jTextField.getText();
@@ -1508,8 +1561,12 @@ public class GUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_submit_jButtonActionPerformed
 
+    /*
+     * Returns to the previous panel.
+    */
     private void back_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Change the visibility and text of the components according to the requirement.
+        // Clear data from the JTable and unselect the radio buttons.
         instrumentMain_jPanel.setVisible(false);
         main_jPanel.setVisible(true);
         home_jPanel.setVisible(true);
@@ -1521,8 +1578,12 @@ public class GUI extends javax.swing.JFrame {
         searchBy_jButton.clearSelection();
     }//GEN-LAST:event_back_jButtonActionPerformed
 
+    /*
+     * Sort the data from the file Instruments.csv alphabetically according to the category.
+     * Display the sorted data in the JTable.
+    */
     private void category_jRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_category_jRadioButtonActionPerformed
-        // TODO add your handling code here:
+        // Change the visibility of the components according to the requirement and display the required data.
         categorySearch_jLabel.setVisible(true);
         category_jComboBox.setVisible(true);
         priceSearch_jLabel.setVisible(false);
@@ -1533,9 +1594,12 @@ public class GUI extends javax.swing.JFrame {
         inventory.clear();
         readFile();
         MergeSort.mergeSort(inventory, SortBy.CATEGORY);
-        display();
+        displayInstruments();
     }//GEN-LAST:event_category_jRadioButtonActionPerformed
 
+    /*
+     * Exit the System.
+    */
     private void exit_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exit_jMenuItemActionPerformed
         // TODO add your handling code here:
         System.exit(0);
@@ -1553,8 +1617,12 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_username_jTextFieldActionPerformed
 
+    /*
+     * Return to the previous panel from the admin panel.
+    */
     private void adminBack_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminBack_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Change the visibility and text of the components according to the requirement.
+        // Clear data from the JTable.
         adminAddInstruments_jPanel.setVisible(false);
         main_jPanel.setVisible(true);
         home_jPanel.setVisible(true);
@@ -1589,12 +1657,20 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_brand_jTextFieldActionPerformed
 
+    /*
+     * Accessor method for price.
+     * Returns the integer value of price entered by the user.
+    */
     public int getprice() {
         return Integer.parseInt(this.price_jTextField.getText());
     }
 
+    /*
+     * Validates the data entered by the admin.
+     * Add insrument details to the file Instruments.csv
+    */
     private void add_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Get data entered by the admin and add it to the file Instruments.csv
         String period = "";
         String id = instrumentID_jTextField.getText();
         String instrument = instrument_jTextField.getText();
@@ -1659,8 +1735,12 @@ public class GUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_add_jButtonActionPerformed
 
+    /*
+     * Sort the data from the file Instruments.csv in ascending order according to the price.
+     * Display the sorted data in the JTable.
+    */
     private void price_jRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_price_jRadioButtonActionPerformed
-        // TODO add your handling code here:
+        // Change the visibility of the components according to the requirement and display the required data.
         priceSearch_jLabel.setVisible(true);
         searchPrice_jTextField.setVisible(true);
         categorySearch_jLabel.setVisible(false);
@@ -1671,15 +1751,18 @@ public class GUI extends javax.swing.JFrame {
         inventory.clear();
         readFile();
         MergeSort.mergeSort(inventory, SortBy.PRICE);
-        display();
+        displayInstruments();
     }//GEN-LAST:event_price_jRadioButtonActionPerformed
 
     private void adminName_jTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminName_jTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_adminName_jTextFieldActionPerformed
 
+    /*
+     * Clears all data from the text fields of the registration panel.
+    */
     private void clearRegistration_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearRegistration_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Set empty strings in the JTextFields.
         name_jTextField.setText("");
         specialization_jTextField.setText("");
         age_jTextField.setText("");
@@ -1688,8 +1771,11 @@ public class GUI extends javax.swing.JFrame {
         repassword_jPasswordField.setText("");
     }//GEN-LAST:event_clearRegistration_jButtonActionPerformed
 
+    /*
+     * Clears all data from the text fields of the admin panel.
+    */
     private void clearAddInstruments_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearAddInstruments_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Set empty strings in the JTextFields.
         instrumentID_jTextField.setText("");
         instrument_jTextField.setText("");
         modelNo_jTextField.setText("");
@@ -1698,8 +1784,14 @@ public class GUI extends javax.swing.JFrame {
         brand_jTextField.setText("");
     }//GEN-LAST:event_clearAddInstruments_jButtonActionPerformed
 
+    /*
+     * Searches the arraylist with the instrument details to find all the instruments selected by the user.
+     * Counts the number of instruments of the selected category.
+     * Displays the total number of selected instrument with their respective model numbers.
+    */
     private void searchCategory_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchCategory_jButtonActionPerformed
-        // TODO add your handling code here:  
+        // Get the instrument selected by the user from the JComboBox.
+        // Search and count the selected instrument.
         String category = (String) category_jComboBox.getSelectedItem();
         int count = 0;
         ArrayList<String> modelNum = new ArrayList();
@@ -1721,8 +1813,13 @@ public class GUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_searchCategory_jButtonActionPerformed
 
+    /*
+     * Searches the instrument with the price input by the user.
+     * Displays only one instrument with the price in JOptionPane.
+    */
     private void searchPrice_jButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchPrice_jButtonActionPerformed
-        // TODO add your handling code here:
+        // Get the price entered by the user.
+        // Search and display the details of the instrument with the entered price.
         String price = searchPrice_jTextField.getText();
         int count = 0;
         if (price.equals("")) {
@@ -1744,7 +1841,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void Instruments_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Instruments_jMenuItemActionPerformed
         // TODO add your handling code here:
-        display();
+        displayInstruments();
     }//GEN-LAST:event_Instruments_jMenuItemActionPerformed
 
     private void User_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_User_jMenuItemActionPerformed
@@ -1781,8 +1878,13 @@ public class GUI extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    //Declaring a HashMap.
     static HashMap<String, String> loginMap;
 
+    /*
+     * Main method to call the GUI of the Music Academy.
+     * Reads the file Members.csv and stores the username and passwords from the file in the HashMap loginMap.
+    */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
