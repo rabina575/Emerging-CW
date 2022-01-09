@@ -1838,7 +1838,7 @@ public class GUI extends javax.swing.JFrame {
     private void User_jMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_User_jMenuItemActionPerformed
         // Link a file to display the manual.
         try{
-            URI link= new URI ("");
+            URI link= new URI ("https://drive.google.com/file/d/1lB_yEgBD0_DEbHO-_xId4eslUPxtIST5/view?usp=sharing");
             Desktop desktop= Desktop.getDesktop();
             desktop.browse(link);
         }
